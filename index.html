@@ -4,46 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
   <title>Postf</title>
   <style>
+
+  /* Core Styles */
+
     :root {
-      --background: #4fc3f7;
+      --background: #eee;
       --shadow: 0 1px 5px #29b6f6;
     }
-    html, body {
-      margin: 0;
+    body {
+      margin: .5rem .5rem;
       /* background: var(--background); */
-      background: #eee;
+      background: var(--background);
+      line-height: 1.4rem;
+      font-family: 'Roboto', sans-serif;
+    }
+    a {
+      text-decoration: none;
+    }
+    img {
+      width: 100%;
     }
     .container {
       display: grid;
       width: 100%;
       height: 100%;
+      grid-gap: 1rem;
     }
-    .main {
-      padding: 0px 10px;
-      /* height: 100%;
-      width: 100%; */
+
+    /* Navbar */
+
+    .navbar ul {
       display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 10px;
+      grid-template-rows: 50px;
+      margin-top: 1rem;
+      padding: 0;
+    }
+    @media only screen and (max-width: 540px) {
+    .navbar ul {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas:
-      ' . img . ';
+      grid-template-rows: repeat(4, minmax(30px, 1fr));
+      grid-row-gap: .5rem;
+      padding: 0;
     }
-    img {
-      margin: 5px;
-      width: 100%;
-      grid-area: img
-    }
+  }
+  .navbar li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #c5c2bd;
+    list-style: none;
+  }
+
+  /* Main Block */
+
+  .example {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    'img img'
+    'img img'
+    'about about';
+
+  }
+  .example img {
+    grid-area: img;
+  }
+  .about {
+    grid-area: about;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .about h1 {
+    margin-bottom: .5rem;
+  }
+  .about p {
+    margin-top: .1rem;
+  }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="nav"></div>
-    <div class="header"></div>
-    <div class="main">
-      <img src="./pic1.png" alt="">
-    </div>
-  </div>
+    <!-- <nav class="navbar">
+      <ul>
+        <li><a href='#'>item 1</a></li>
+        <li><a href='#'>item 2</a></li>
+        <li><a href='#'>item 3</a></li>
+        <li><a href='#'>item 4</a></li>
+      </ul>
+    </nav> -->
+    <section class="example">
+      <img src="./iPad-iPhone.png" alt="">
+      <div class="about">
+        <h1>React & Django</h1>
+        <p>Дизайн взят у бутстрапа</p>
+
+      </div>
+    </section>
 </body>
 </html>
