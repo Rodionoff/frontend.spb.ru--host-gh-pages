@@ -18,7 +18,7 @@
       margin: .5rem .5rem;
       /* background: var(--background); */
       background: var(--background);
-      line-height: 1.4rem;
+      line-height: 1.5rem;
       font-family: 'Roboto', sans-serif;
     }
     a {
@@ -63,20 +63,22 @@
   /* Main Block */
 
   .example {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
-    'img img'
-    'img img'
-    'about about';
+    ' img '
+    ' img '
+    ' about ';
 
   }
   .example img {
     grid-area: img;
   }
-  .about,
-  .about > * {
+  .about {
     grid-area: about;
+  }
+  .about,
+  .about div>* {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -87,6 +89,8 @@
   }
   .about div {
     margin-top: .1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   </style>
 </head>
