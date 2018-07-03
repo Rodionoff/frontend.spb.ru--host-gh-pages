@@ -78,7 +78,7 @@
     grid-area: about;
   }
   .about,
-  .about div>* {
+  .about div {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -91,6 +91,14 @@
     margin-top: .1rem;
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+  .about .features {
+    align-items: flex-start;
+  }
+  footer {
+    background: #171717;
+    color: #eee;
+    text-align: center;
   }
   </style>
 </head>
@@ -119,9 +127,10 @@
           основных приложения: 1 для постов и 1 для музыки. Фронт же состоит из
           нескольких компонентов. От отвечающего за рендер постов комопенета идет GET
           запрос и Django Rest Framework отдает данные в формате JSON обратно
-          клиенту. Код можно посмотреть <a href="https://github.com/Rodionoff/SPa_React_Django_Clean_Blog">здесь</a>.</p>
+          клиенту. Код можно посмотреть
+          <a href="https://github.com/Rodionoff/SPa_React_Django_Clean_Blog">здесь</a>.</p>
           <h3>Features</h3>
-          <ul>
+          <ul class='features'>
           <li>Ссылка на запись имеет вид 'post/lorem-ipsum'. То есть вместо первичного
           ключа для формирования ссылки используются кастомное значение, которое
           можно задать в админке.</li>
@@ -138,5 +147,8 @@
         </div>
       </div>
     </section>
+    <footer>
+      <p>Pavel Rodionoff &copy; 2018</p>
+    </footer>
 </body>
 </html>
