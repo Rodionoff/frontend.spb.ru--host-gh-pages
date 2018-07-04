@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
   <title>Postf</title>
   <style>
-
+  /* Font-Face */
+  @font-face {
+    font-family: 'Roboto';
+    src:  url('./fonts/Roboto-Light.woff2') format('woff2'),
+          url('./fonts/Roboto-Light.woff') format('woff'),
+          url('./fonts/Roboto-Light.ttf') format('truetype');
+    /* font-weight: 300; */
+        }
   /* Core Styles */
-
     :root {
       --background: #eee;
       --shadow: 0 1px 5px #29b6f6;
@@ -17,7 +22,7 @@
     body {
       margin: .5rem .5rem;
       /* background: var(--background); */
-      background: var(--background);
+      background: #eee;
       line-height: 1.5rem;
       font-family: 'Roboto', sans-serif;
     }
