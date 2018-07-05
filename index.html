@@ -132,25 +132,23 @@
     align-items: center; */
     margin: .1rem 1rem 0 1rem;
   }
-  .tasklist-description h1,
-  .blog-description h1 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
   .tasklist-tech,
-  .blog-tech {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    margin: .1rem 1rem 0 1rem;
-  }
+  .blog-tech,
   .tasklist-features,
   .blog-features {
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
+  }
+  .tasklist-tech,
+  .blog-tech {
+    margin: .1rem 1rem 0 1rem;
+  }
+  .tasklist-description h1,
+  .blog-description h1 {
+    text-align: center;
+    margin-bottom: 1rem;
   }
 
   h3 {
@@ -196,16 +194,19 @@
           <div class="tasklist-tech">
             <h3>Teхнологии</h3>
             <p>Для создания приложения использовались React, Django и Django Rest Framework. <br>
-            Рабочую версию приложения можно посмотреть здесь <a href='#'>здесь</a>.<br>
+            Рабочую версию приложения можно посмотреть <a href='#'>здесь</a>.<br>
             Код можно посмотреть
             <a href="https://github.com/Rodionoff/SPa_React_Django_Clean_Blog">здесь</a>.</p>
           </div>
         <div class="tasklist-features">
          <h3>Features</h3>
          <ul class='ul-features'>
-           <li>Изменение статуса исполнения – пользователь может отметить имеющуюся задачу как исполненную и наоборот (при этом два типа задач визуально отличаются).</li>
-           <li>Удаление задачи – удалённая задача пропадает из списка всех задач пользователя.</li>
-           <li>Создание – пользователь вводит текст задачи.</li>
+           <li>Пользователь может изменить статус выполнения задачи.
+           То есть возможно отметить любую задачу как исполненную или наоборот
+           (при этом эти два типа задач визуально отличаются).</li>
+           <li>Пользователь может удалить задачу. При этом удалённая задача
+           пропадает из списка всех задач пользователя.</li>
+           <li>Пользователь может создать новую задачу.</li>
          </ul>
        </div>
        <div class="blog-description">
@@ -230,11 +231,11 @@
           <div class="blog-features">
           <h3>Features</h3>
           <ul>
-          <li>Ссылка на запись имеет вид 'post/lorem-ipsum'. То есть вместо первичного
-          ключа для формирования ссылки используются кастомное значение, которое
+          <li>Ссылка на запись блога имеет вид 'post/lorem-ipsum'. То есть вместо первичного
+          ключа для формирования ссылки используется кастомное значение, которое
           можно задать в админке.</li>
-          <li>Посты на главной странице укорочены до 100 слов после которых добавлена
-          работающаяя кнопочка "Читать далее..".</li>
+          <li>Посты на главной странице укорочены до 100 слов, после которых добавлена
+          работающая кнопочка "Читать далее..".</li>
           <li>Перед Футером рендарятся иконки-ссылки на мой инстаграм, телеграм и
           гитхаб.</li>
           <li>В админке добавлена поддержка MarkDown разметки.</li>
