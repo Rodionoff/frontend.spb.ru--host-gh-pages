@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  img {
+    width: 100%;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    'img1 img2'
+    'div1 div2'
+    'div3 div4';
+  }
+  .div1 {
+    grid-area: div1;
+  }
+  .div2 {
+    grid-area: div2;
+  }
+  .div3 {
+    grid-area: div3;
+  }
+  .div4 {
+    grid-area: div4;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="./iPad-iPhone-compressed.png" alt="">
+    <img src="./iPhone-compressed.png" alt="">
+    <div class="div1">
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+    </div>
+    <div class="div2">
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+    </div>
+    <div class="div3">
+      <p>1</p>
+    </div>
+    <div class="div4">
+      <p>1</p>
+      <p>2</p>
+    </div>
+  </div>
+</body>
+</html>
