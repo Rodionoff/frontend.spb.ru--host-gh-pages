@@ -165,6 +165,26 @@
   /* .container {
     display: grid;
   } */
+  .greetings {
+    height: 100vh;
+    padding: 3rem;
+    font-size: 2rem;
+    line-height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .name {
+    text-align: center;
+  }
+  .btn {
+    background: #333;
+    color: #eee;
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+  }
   </style>
 </head>
 <body>
@@ -176,11 +196,24 @@
         <li><a href='#'>item 4</a></li>
       </ul>
     </nav> -->
-    <section class="portf">
+    <section class="greetings">
+      <div class="name">
+        <h1>Павел Родионов</h1>
+        <h3>FullStack Web Developer</h3>
+      </div>
+      <div class="btns">
+        <a href="#portf" class='btn'>Проекты</a>
+      </div>
+      <!-- <div class="bio">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Nemo corporis qui, neque quod!</p>
+      </div> -->
+    </section>
+    <section id='portf' class="portf">
       <div class="tasklist-description">
       <img src="./iPhone-compressed.png" alt="">
       <h1>React & Django TaskList</h1>
-            <h3>Немного о проекте</h3>
+            <h3>О проекте</h3>
             <p>Это моё клиент-серверное одностраничное веб-приложение для управления собств
             енными задачами.
             Каждая задача состоит непосредственно из строки, в которой сформулирована
@@ -211,7 +244,7 @@
        <div class="blog-description">
        <img src="./iPad-iPhone-compressed.png" alt="">
         <h1>React & Django Blog</h1>
-          <h3>Немного о проекте</h3>
+          <h3>О проекте</h3>
           <p>Это моя реализация одностраничного веб блога.
           Изначальная задумка была создать стартовую площадку для начинающих
           веб-разработчиков. Место, в котором можно черпать вдохновение и развиваться.</p>
