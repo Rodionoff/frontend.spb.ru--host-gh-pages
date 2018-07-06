@@ -166,17 +166,30 @@
     display: grid;
   } */
   .greetings {
-    height: 100%;
-    padding: 3rem;
+    height: calc(100vh - .5rem);
     font-size: 2rem;
     line-height: 2rem;
-    display: flex;
+    /* display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+    '.'
+    'name'
+    '.'
+    '.'
+    'btns'
+    '.';
   }
   .name {
-    text-align: center;
+    grid-area: name;
+  }
+  .btns {
+    grid-area: btns;
   }
   .btn {
     background: #333;
@@ -202,7 +215,8 @@
         <h3>FullStack Web Developer</h3>
       </div>
       <div class="btns">
-        <a href="#portf" class='btn'>Проекты</a>
+        <!-- <a href="#bio" class='btn'>аа</a> -->
+        <a href="#portf" class='btn'>Мои проекты</a>
       </div>
       <!-- <div class="bio">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
