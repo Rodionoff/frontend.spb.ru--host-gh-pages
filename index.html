@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Павел Родионов, FullStack Web Developer</title>
+  <title>Павел Родионов, FullStack Веб Разработчик</title>
   <style>
   /* Font-Face */
   @font-face {
@@ -78,7 +78,24 @@
 
   /* Main */
   @media only screen and (min-width: 1000px) {
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+      'greetings greetings'
+      'bio contacts'
+      'portf portf';
+    }
+    .greetings {
+      grid-area: greetings;
+    }
+    .bio {
+      grid-area: bio;
+    }
+    .contacts {
+      grid-area: contacts;
+    }
     .portf {
+      grid-area: portf;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(4, auto);
@@ -121,18 +138,6 @@
   } */
 
 
-  .tasklist-description p,
-  .blog-description p {
-  /* .tasklist-description,
-  .blg
-  .tasklist-tech,
-  .blog-tech { */
-    /* display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center; */
-    margin: .1rem 1rem 0 1rem;
-  }
 
   .tasklist-features,
   .blog-features {
@@ -144,8 +149,11 @@
   ul li {
     list-style-type: circle;
   }
+  .tasklist-description p,
+  .blog-description p,
   .tasklist-tech p,
-  .blog-tech p {
+  .blog-tech p,
+  .info p {
     margin: .1rem 1rem 0 1rem;
   }
   .tasklist-description h1,
@@ -176,10 +184,6 @@
     background: url('./brickwall-compressed.jpg') center;
     background-size: cover;
     color: #333;
-    /* display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column; */
     text-align: center;
     display: grid;
     grid-template-columns: 1fr;
@@ -205,9 +209,19 @@
     text-decoration: none;
     border: 0;
   }
+  .info h1,
+  .contacts h1 {
+    text-align: center;
+  }
+  .contacts p {
+    text-align: center;
+  }
+
+
   </style>
 </head>
 <body>
+  <div class="container">
     <!-- <nav class="navbar">
       <ul>
         <li><a href='#'>item 1</a></li>
@@ -225,10 +239,36 @@
         <!-- <a href="#bio" class='btn'>аа</a> -->
         <a href="#portf" class='btn'>Мои проекты</a>
       </div>
-      <!-- <div class="bio">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Nemo corporis qui, neque quod!</p>
-      </div> -->
+    </section>
+    <section class="bio">
+      <div class="info">
+        <h1>Обо мне</h1>
+        <p>
+        Примерно год назад от настоящего времени, а именно в августе 2017,
+        я осознал, что мне нравится программирование. <br>
+        Итак, это уже хорошо. На этом этапе мне нужно было выбрать свой первый язык, и я принялся искать информацию.
+        После прочтения некоторого количества статей выбор был сделан в сторону
+        Python. Обосновываю это тем что Python довольно-таки красивый легкочитаемый язык с низким
+        порогом вхождения. <br>
+        Следующий шаг был поиском соответствующей литературы. <br>
+        И этот шаг был сделан. Моей первой книгой по программированию стала книга
+        Майкла Доусона «Программируем на Python». Написаная легким языком, эта книга
+        послужила хорошиим введением в основы программирования, ведь каждая глава
+        в ней сопровождена задачами на закрепление материала, над которыми иногда
+        приходилось крепко поразмышлять.
+        После понимания основ ООП я перешел к изучению фреймворка Django. <br>
+        Начал с туториала в официальной документации, а потом уже сделал
+        на Django <a href='http://tabaluga.pythonanywhere.com/'>свой мини блог</a> с взятой из другого туториала возможностью регистрации.
+        Потом заинтересовался JavaScript'ом и прочитал по нему 2 из 6ти книг под
+        названием «You Don't Know JS».
+        Занимательное чтение. После прочтения я быстро построил аналогии с Python
+        и понял что этих двух книг мне явно не достаточно.
+        Поиск привел меня на сайт MDN от FireFox и на нем я познакомился с HTML,
+        CSS и прокачал свой навык JavaScript'а.
+        Потом переключился на React и чуть с ним поигрался. Пришла идея сделать
+        блог с фронтом на React и бэком на Django.
+        </p>
+      </div>
     </section>
     <section id='portf' class="portf">
       <div class="tasklist-description">
@@ -299,6 +339,12 @@
         </ul>
       </div>
     </section>
+  </div>
+  <section class="contacts">
+    <h1>Контакты</h1>
+    <p>@mail: rodionov134@gmail.com <br>
+    telegram: <a href="https://t.me/pavelrodionoff">pavelrodionoff</a></p>
+  </section>
     <footer>
       <p>Pavel Rodionoff &copy; 2018</p>
     </footer>
