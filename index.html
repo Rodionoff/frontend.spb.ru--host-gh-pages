@@ -43,6 +43,26 @@
     img {
       width: 100%;
     }
+    ul li {
+      list-style-type: circle;
+    }
+    h3 {
+      text-align: center;
+    }
+    footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #171717;
+      color: #eee;
+    }
+    .btn {
+      background: #333;
+      color: #eee;
+      padding: 0.6rem 1.3rem;
+      text-decoration: none;
+      border: 0;
+    }
     .container {
       display: grid;
       width: 100%;
@@ -50,33 +70,70 @@
       grid-gap: 1rem;
     }
 
-    /* Navbar */
+   /* Sections */
 
-    .navbar ul {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-column-gap: 10px;
-      grid-template-rows: 50px;
-      margin-top: 1rem;
-      padding: 0;
-    }
-    @media only screen and (max-width: 540px) {
-    .navbar ul {
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, minmax(30px, 1fr));
-      grid-row-gap: .5rem;
-      padding: 0;
-    }
-  }
-  .navbar li {
+   /* Greetings Section  */
+
+   .greetings {
+     height: 100vh;
+     font-size: 2rem;
+     line-height: 2rem;
+     background: url('./brickwall-compressed.jpg') center;
+     background-size: cover;
+     color: #333;
+     text-align: center;
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-rows: repeat(6, 1fr);
+     grid-template-areas:
+     '.'
+     'name'
+     '.'
+     '.'
+     'btns'
+     '.';
+   }
+   .name {
+     grid-area: name;
+   }
+   .btns {
+     grid-area: btns;
+   }
+
+   /* Info Section  */
+
+   .info h1,
+   .contacts h1,
+   .contacts p,
+   .skills-and-goal {
+     text-align: center;
+   }
+   /* Portfolio section */
+
+  .tasklist-features,
+  .blog-features {
     display: flex;
-    justify-content: center;
+    flex-flow: column wrap;
+    justify-content: flex-start;
     align-items: center;
-    background: #c5c2bd;
-    list-style: none;
   }
 
-  /* Main */
+  .tasklist-description p,
+  .blog-description p,
+  .tasklist-tech p,
+  .blog-tech p,
+  .info p,
+  .skills-and-goal p {
+    margin: .1rem 1rem 0 1rem;
+  }
+  .tasklist-description h1,
+  .blog-description h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  /* Media Queries */
+
   @media only screen and (min-width: 1000px) {
     .container {
       grid-template-columns: repeat(2, 1fr);
@@ -130,115 +187,41 @@
         grid-area: blog-features;
       }
     }
-  /* .blog img {
-    grid-area: img-blog;
-  }
-  .about-blog {
-    grid-area: about-blog;
-  } */
-
-
-
-  .tasklist-features,
-  .blog-features {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  ul li {
-    list-style-type: circle;
-  }
-  .tasklist-description p,
-  .blog-description p,
-  .tasklist-tech p,
-  .blog-tech p,
-  .info p {
-    margin: .1rem 1rem 0 1rem;
-  }
-  .tasklist-description h1,
-  .blog-description h1 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    text-align: center;
-  }
-  footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #171717;
-    color: #eee;
-    /* text-align: center; */
-    /* height: 50px; */
-  }
-  /* .container {
-    display: grid;
-  } */
-  .greetings {
-    height: 100vh;
-    font-size: 2rem;
-    line-height: 2rem;
-    background: url('./brickwall-compressed.jpg') center;
-    background-size: cover;
-    color: #333;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-areas:
-    '.'
-    'name'
-    '.'
-    '.'
-    'btns'
-    '.';
-  }
-  .name {
-    grid-area: name;
-  }
-  .btns {
-    grid-area: btns;
-  }
-  .btn {
-    background: #333;
-    color: #eee;
-    padding: 0.6rem 1.3rem;
-    text-decoration: none;
-    border: 0;
-  }
-  .info h1,
-  .contacts h1 {
-    text-align: center;
-  }
-  .contacts p {
-    text-align: center;
-  }
-
-
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- <nav class="navbar">
-      <ul>
-        <li><a href='#'>item 1</a></li>
-        <li><a href='#'>item 2</a></li>
-        <li><a href='#'>item 3</a></li>
-        <li><a href='#'>item 4</a></li>
-      </ul>
-    </nav> -->
     <section class="greetings">
       <div class="name">
         <h1>Павел Родионов</h1>
         <h3>FullStack Web Developer</h3>
       </div>
       <div class="btns">
-        <!-- <a href="#bio" class='btn'>аа</a> -->
         <a href="#portf" class='btn'>Мои проекты</a>
       </div>
+    </section>
+    <section class="contacts">
+      <h1>Контакты</h1>
+      <p>
+      tel: <a href="tel://+79006448466">+79006448466</a> <br>
+      @mail: rodionov134@gmail.com <br>
+      telegram: <a href="https://t.me/pavelrodionoff">pavelrodionoff</a> <br>
+      facebook: <a href="https://www.facebook.com/profile.php?id=100000918994969">Паша Родионов</a>
+
+      </p>
+
+      <h1>Умения</h1>
+      <p>
+      Python, Django, JavaScript, React
+      </p>
+
+      <h1>Цель</h1>
+      <p>
+      Найти стабильную работу в
+      муждународной компании, чтобы достойно
+      применять свои умения и навыки на благо коллектива.
+      <p>
+      </section>
     </section>
     <section class="bio">
       <div class="info">
@@ -266,7 +249,7 @@
         Поиск привел меня на сайт MDN от FireFox и на нем я познакомился с HTML,
         CSS и прокачал свой навык JavaScript'а.
         Потом переключился на React и чуть с ним поигрался. Пришла идея сделать
-        блог с фронтом на React и бэком на Django. И я ёё реализовал.
+        блог с фронтом на React и бэком на Django. И я ёё успешно реализовал.
         </p>
       </div>
     </section>
@@ -319,7 +302,7 @@
           запрос и Django Rest Framework отдает данные в формате JSON обратно
           клиенту. <br>
           Код можно посмотреть
-          <a href="https://github.com/Rodionoff/SPa_React_Django_Clean_Blog">здесь</a>.</p>
+          <a href="https://github.com/Rodionoff/React_Django_Clean_Blog">здесь</a>.</p>
           </div>
           <div class="blog-features">
           <h3>Features</h3>
@@ -340,11 +323,6 @@
       </div>
     </section>
   </div>
-  <section class="contacts">
-    <h1>Контакты</h1>
-    <p>@mail: rodionov134@gmail.com <br>
-    telegram: <a href="https://t.me/pavelrodionoff">pavelrodionoff</a></p>
-  </section>
     <footer>
       <p>Pavel Rodionoff &copy; 2018</p>
     </footer>
