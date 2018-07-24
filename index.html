@@ -93,41 +93,36 @@
      'btns'
      '.';
    }
-   .name {
+   .greetings__name {
      grid-area: name;
    }
-   .btns {
+   .greetings__btns {
      grid-area: btns;
    }
 
    /* Info Section  */
 
-   .info h1,
-   .contacts h1,
+   .info__header,
+   .contacts__header,
    .contacts p,
    .skills-and-goal {
      text-align: center;
    }
    /* Portfolio section */
 
-  .tasklist-features,
-  .blog-features {
+  .tasklist_features,
+  .blog_features {
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
   }
-
-  .tasklist-description p,
-  .blog-description p,
-  .tasklist-tech p,
-  .blog-tech p,
-  .info p,
-  .skills-and-goal p {
+  .info__paragraph,
+  .portf__paragraph {
     margin: .1rem 1rem 0 1rem;
   }
-  .tasklist-description h1,
-  .blog-description h1 {
+  .tasklist_description__header,
+  .blog_description__header {
     text-align: center;
     margin-bottom: 1rem;
   }
@@ -158,33 +153,33 @@
       grid-template-rows: repeat(4, auto);
       grid-template-areas:
       'tasklist-image       blog-image'
-      'tasklist-description blog-description'
-      'tasklist-tech        blog-tech'
-      'tasklist-features    blog-features';
+      'tasklist_description blog_description'
+      'tasklist_tech        blog_tech'
+      'tasklist_features    blog_features';
     }
-      .tasklist-description img {
+      .tasklist_img {
         grid-area: tasklist-image;
       }
-      .blog-description img {
+      .blog_img {
         grid-area: blog-image;
       }
-      .tasklist-description {
-        grid-area: tasklist-description;
+      .tasklist_description {
+        grid-area: tasklist_description;
       }
-      .blog-description {
-        grid-area: blog-description;
+      .blog_description {
+        grid-area: blog_description;
       }
-      .tasklist-tech {
-        grid-area: tasklist-tech;
+      .tasklist_tech {
+        grid-area: tasklist_tech;
       }
-      .blog-tech {
-        grid-area: blog-tech;
+      .blog_tech {
+        grid-area: blog_tech;
       }
-      .tasklist-features {
-        grid-area: tasklist-features;
+      .tasklist_features {
+        grid-area: tasklist_features;
       }
-      .blog-features {
-        grid-area: blog-features;
+      .blog_features {
+        grid-area: blog_features;
       }
     }
   </style>
@@ -192,16 +187,16 @@
 <body>
   <div class="container">
     <section class="greetings">
-      <div class="name">
+      <div class="greetings__name">
         <h1>Павел Родионов</h1>
         <h3>Веб разработчик</h3>
       </div>
-      <div class="btns">
+      <div class="greetings__btns">
         <a href="#portf" class='btn'>Мои проекты</a>
       </div>
     </section>
     <section class="contacts">
-      <h1>Контакты</h1>
+      <h1  class='contacts__header'>Контакты</h1>
       <p>
       tel: <a href="tel://+79006448466">+79006448466</a> <br>
       @mail: rodionov134@gmail.com <br>
@@ -210,7 +205,7 @@
 
       </p>
 
-      <h1>Умения</h1>
+      <h1 class='contacts__header'>Умения</h1>
       <p>
       Python, Django, JavaScript, React
       </p>
@@ -218,18 +213,17 @@
       Технический английский
       </p>
 
-      <h1>Цель</h1>
+      <h1 class='contacts__header'>Цель</h1>
       <p>
       Найти стабильную работу в
       мeждународной компании, чтобы достойно
       применять свои умения и навыки на благо коллектива.
       <p>
-      </section>
     </section>
     <section class="bio">
       <div class="info">
-        <h1>Обо мне</h1>
-        <p>
+        <h1 class='info__header'>Обо мне</h1>
+        <p class='info__paragraph'>
         Мне 22 года. Живу в Санкт-Петербурге. <br>
         <br>
         Примерно год назад от настоящего времени, а именно в августе 2017,
@@ -259,78 +253,78 @@
       </div>
     </section>
     <section id='portf' class="portf">
-      <div class="tasklist-description">
-      <img src="./iPhone-compressed.png" alt="">
-      <h1>React & Django TaskList</h1>
-            <h3>О проекте</h3>
-            <p>Это моё клиент-серверное одностраничное веб-приложение для управления
-            собственными задачами.
-            Каждая задача состоит непосредственно из строки, в которой сформулирована
-            цель задачи, и флага, хранящего информацию о статусе выполнения задачи.
-            Все задачи отображаются на странице в виде единого списка,
-            причём редактирование задач и изменение их статуса происходит тоже
-            внутри общего списка.
-            Вся информация о каждой задаче сохраняется в базе данных на бэкенде.</p>
-          </div>
-          <div class="tasklist-tech">
-            <h3>Teхнологии</h3>
-            <p>Для создания приложения использовались React, Django и Django Rest Framework. <br>
-            Рабочую версию приложения можно посмотреть <a href='http://rodionoff.pythonanywhere.com/'>здесь</a>.<br>
-            Код можно посмотреть
-            <a href="https://github.com/Rodionoff/SPA_React_Django_Tasklist/tree/master">здесь</a>.</p>
-          </div>
-        <div class="tasklist-features">
-         <h3>Features</h3>
-         <ul class='ul-features'>
-           <li>Пользователь может изменить статус выполнения задачи.
-           То есть возможно отметить любую задачу как исполненную или наоборот
-           (при этом эти два типа задач визуально отличаются).</li>
-           <li>Пользователь может удалить задачу. При этом удалённая задача
-           пропадает из списка всех задач пользователя.</li>
-           <li>Пользователь может создать новую задачу.</li>
-         </ul>
-       </div>
-       <div class="blog-description">
-       <img src="./iPad-iPhone-compressed.png" alt="">
-        <h1>React & Django Blog</h1>
-          <h3>О проекте</h3>
-          <p>Это моя реализация одностраничного блога.
-          Изначальная задумка была создать стартовую площадку для начинающих
-          веб-разработчиков. Место, в котором можно черпать вдохновение и развиваться.</p>
-          </div>
-          <div class="blog-tech">
-          <h3>Технологии</h3>
-          <p>Для создания блога использовались React, Django Rest Framework и,
-          собственно, сам Django. В основном всё стандартно. На бэкенде имеются 2
-          основных приложения: 1 для постов и 1 для музыки. Фронт же состоит из
-          нескольких компонентов. От отвечающего за рендер постов компонента идет GET
-          запрос и Django Rest Framework отдает данные в формате JSON обратно
-          клиенту. <br>
-          Код можно посмотреть
-          <a href="https://github.com/Rodionoff/React_Django_Clean_Blog">здесь</a>.</p>
-          </div>
-          <div class="blog-features">
-          <h3>Features</h3>
-          <ul>
-          <li>Ссылка на запись блога имеет вид 'post/lorem-ipsum'. То есть вместо первичного
-          ключа для формирования ссылки используется кастомное значение, которое
-          можно задать в админке.</li>
-          <li>Посты на главной странице укорочены до 100 слов, после которых добавлена
-          работающая кнопочка "Читать далее..".</li>
-          <li>Перед Футером рендерятся иконки-ссылки на мой инстаграм, телеграм и
-          гитхаб.</li>
-          <li>В админке добавлена поддержка MarkDown разметки.</li>
-          <li>Добавлена возможность отложенной публикации.</li>
-          <li>Добавлена адаптивная панель навигации.</li>
-          <li>Записи упорядочены по дате.</li>
-          <li>Добавлена пагинация.</li>
-        </ul>
+      <div class="tasklist_description">
+        <img class='tasklist_img' src="./iPhone-compressed.png" alt="">
+        <h1 class='tasklist_description__header'>React & Django TaskList</h1>
+        <h3>О проекте</h3>
+        <p class='portf__paragraph'>Это моё клиент-серверное одностраничное веб-приложение для управления
+        собственными задачами.
+        Каждая задача состоит непосредственно из строки, в которой сформулирована
+        цель задачи, и флага, хранящего информацию о статусе выполнения задачи.
+        Все задачи отображаются на странице в виде единого списка,
+        причём редактирование задач и изменение их статуса происходит тоже
+        внутри общего списка.
+        Вся информация о каждой задаче сохраняется в базе данных на бэкенде.</p>
       </div>
-    </section>
-  </div>
-    <footer>
-      <p>Pavel Rodionoff &copy; 2018</p>
-    </footer>
+      <div class="tasklist_tech">
+        <h3>Teхнологии</h3>
+        <p class='portf__paragraph'>Для создания приложения использовались React, Django и Django Rest Framework. <br>
+        Рабочую версию приложения можно посмотреть <a href='http://rodionoff.pythonanywhere.com/'>здесь</a>.<br>
+        Код можно посмотреть
+        <a href="https://github.com/Rodionoff/SPA_React_Django_Tasklist/tree/master">здесь</a>.</p>
+      </div>
+      <div class="tasklist_features">
+        <h3>Features</h3>
+        <ul class='ul-features'>
+          <li>Пользователь может изменить статус выполнения задачи.
+          То есть возможно отметить любую задачу как исполненную или наоборот
+          (при этом эти два типа задач визуально отличаются).</li>
+          <li>Пользователь может удалить задачу. При этом удалённая задача
+          пропадает из списка всех задач пользователя.</li>
+          <li>Пользователь может создать новую задачу.</li>
+        </ul>
+       </div>
+       <div class="blog_description">
+         <img class='blog_img' src="./iPad-iPhone-compressed.png" alt="">
+         <h1 class='blog_description__header'>React & Django Blog</h1>
+         <h3>О проекте</h3>
+         <p class='portf__paragraph'>Это моя реализация одностраничного блога.
+         Изначальная задумка была создать стартовую площадку для начинающих
+         веб-разработчиков. Место, в котором можно черпать вдохновение и развиваться.</p>
+       </div>
+       <div class="blog_tech">
+         <h3>Технологии</h3>
+         <p class='portf__paragraph'>Для создания блога использовались React, Django Rest Framework и,
+         собственно, сам Django. В основном всё стандартно. На бэкенде имеются 2
+         основных приложения: 1 для постов и 1 для музыки. Фронт же состоит из
+         нескольких компонентов. От отвечающего за рендер постов компонента идет GET
+         запрос и Django Rest Framework отдает данные в формате JSON обратно
+         клиенту. <br>
+         Код можно посмотреть
+         <a href="https://github.com/Rodionoff/React_Django_Clean_Blog">здесь</a>.</p>
+       </div>
+       <div class="blog_features">
+         <h3>Features</h3>
+         <ul>
+           <li>Ссылка на запись блога имеет вид 'post/lorem-ipsum'. То есть вместо первичного
+           ключа для формирования ссылки используется кастомное значение, которое
+           можно задать в админке.</li>
+           <li>Посты на главной странице укорочены до 100 слов, после которых добавлена
+           работающая кнопочка "Читать далее..".</li>
+           <li>Перед Футером рендерятся иконки-ссылки на мой инстаграм, телеграм и
+           гитхаб.</li>
+           <li>В админке добавлена поддержка MarkDown разметки.</li>
+           <li>Добавлена возможность отложенной публикации.</li>
+           <li>Добавлена адаптивная панель навигации.</li>
+           <li>Записи упорядочены по дате.</li>
+           <li>Добавлена пагинация.</li>
+          </ul>
+       </div>
+     </section>
+   </div>
+   <footer>
+     <p>Pavel Rodionoff &copy; 2018</p>
+   </footer>
     <!-- chrome-vh-fix -->
     <script src="./mobile-chrome-vh-fix.js"></script>
     <script>
