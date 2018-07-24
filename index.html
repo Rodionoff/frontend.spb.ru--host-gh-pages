@@ -37,19 +37,13 @@
       line-height: 1.5rem;
       font-family: 'Roboto', sans-serif;
     }
-    a {
+    .anchor {
       text-decoration: none;
     }
-    img {
-      width: 100%;
-    }
-    ul li {
-      list-style-type: circle;
-    }
-    h3 {
+    .small_header {
       text-align: center;
     }
-    footer {
+    .footer {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -104,10 +98,11 @@
 
    .info__header,
    .contacts__header,
-   .contacts p,
+   .contacts__paragraph,
    .skills-and-goal {
      text-align: center;
    }
+
    /* Portfolio section */
 
   .tasklist_features,
@@ -121,10 +116,17 @@
   .portf__paragraph {
     margin: .1rem 1rem 0 1rem;
   }
+  .portf_unordered {
+    list-style-type: circle;
+  }
   .tasklist_description__header,
   .blog_description__header {
     text-align: center;
     margin-bottom: 1rem;
+  }
+  .tasklist_img,
+  .blog_img {
+    width: 100%;
   }
 
   /* Media Queries */
@@ -189,32 +191,31 @@
     <section class="greetings">
       <div class="greetings__name">
         <h1>Павел Родионов</h1>
-        <h3>Веб разработчик</h3>
+        <h3 class='small_header'>Веб разработчик</h3>
       </div>
       <div class="greetings__btns">
-        <a href="#portf" class='btn'>Мои проекты</a>
+        <a href="#portf" class='anchor btn'>Мои проекты</a>
       </div>
     </section>
     <section class="contacts">
-      <h1  class='contacts__header'>Контакты</h1>
-      <p>
-      tel: <a href="tel://+79006448466">+79006448466</a> <br>
+      <h1 class='contacts__header'>Контакты</h1>
+      <p class='contacts__paragraph'>
+      tel: <a class='anchor' href="tel://+79006448466">+79006448466</a> <br>
       @mail: rodionov134@gmail.com <br>
-      telegram: <a href="https://t.me/pavelrodionoff">pavelrodionoff</a> <br>
-      facebook: <a href="https://www.facebook.com/profile.php?id=100000918994969">Паша Родионов</a>
-
+      telegram: <a class='anchor' href="https://t.me/pavelrodionoff">pavelrodionoff</a> <br>
+      facebook: <a class='anchor' href="https://www.facebook.com/profile.php?id=100000918994969">Паша Родионов</a>
       </p>
 
       <h1 class='contacts__header'>Умения</h1>
-      <p>
+      <p class='contacts__paragraph'>
       Python, Django, JavaScript, React
       </p>
-      <p>
+      <p class='contacts__paragraph'>
       Технический английский
       </p>
 
       <h1 class='contacts__header'>Цель</h1>
-      <p>
+      <p class='contacts__paragraph'>
       Найти стабильную работу в
       мeждународной компании, чтобы достойно
       применять свои умения и навыки на благо коллектива.
@@ -240,7 +241,7 @@
         приходилось крепко поразмышлять.
         После понимания основ ООП я перешел к изучению фреймворка Django. <br>
         Начал с туториала в официальной документации, а потом уже сделал
-        на Django <a href='http://tabaluga.pythonanywhere.com/'>свой мини блог</a> с взятой из другого туториала возможностью регистрации.
+        на Django <a class='anchor' href='http://tabaluga.pythonanywhere.com/'>свой мини блог</a> с взятой из другого туториала возможностью регистрации.
         Потом заинтересовался JavaScript'ом и прочитал по нему 2 из 6ти книг под
         названием «You Don't Know JS».
         Занимательное чтение. После этого я быстро построил аналогии с Python
@@ -256,7 +257,7 @@
       <div class="tasklist_description">
         <img class='tasklist_img' src="./iPhone-compressed.png" alt="">
         <h1 class='tasklist_description__header'>React & Django TaskList</h1>
-        <h3>О проекте</h3>
+        <h3 class='small_header'>О проекте</h3>
         <p class='portf__paragraph'>Это моё клиент-серверное одностраничное веб-приложение для управления
         собственными задачами.
         Каждая задача состоит непосредственно из строки, в которой сформулирована
@@ -267,15 +268,15 @@
         Вся информация о каждой задаче сохраняется в базе данных на бэкенде.</p>
       </div>
       <div class="tasklist_tech">
-        <h3>Teхнологии</h3>
+        <h3 class='small_header'>Teхнологии</h3>
         <p class='portf__paragraph'>Для создания приложения использовались React, Django и Django Rest Framework. <br>
-        Рабочую версию приложения можно посмотреть <a href='http://rodionoff.pythonanywhere.com/'>здесь</a>.<br>
+        Рабочую версию приложения можно посмотреть <a class='anchor' href='http://rodionoff.pythonanywhere.com/'>здесь</a>.<br>
         Код можно посмотреть
-        <a href="https://github.com/Rodionoff/SPA_React_Django_Tasklist/tree/master">здесь</a>.</p>
+        <a class='anchor' href="https://github.com/Rodionoff/SPA_React_Django_Tasklist/tree/master">здесь</a>.</p>
       </div>
       <div class="tasklist_features">
-        <h3>Features</h3>
-        <ul class='ul-features'>
+        <h3 class='small_header'>Features</h3>
+        <ul class='portf_unordered'>
           <li>Пользователь может изменить статус выполнения задачи.
           То есть возможно отметить любую задачу как исполненную или наоборот
           (при этом эти два типа задач визуально отличаются).</li>
@@ -287,13 +288,13 @@
        <div class="blog_description">
          <img class='blog_img' src="./iPad-iPhone-compressed.png" alt="">
          <h1 class='blog_description__header'>React & Django Blog</h1>
-         <h3>О проекте</h3>
+         <h3 class='small_header'>О проекте</h3>
          <p class='portf__paragraph'>Это моя реализация одностраничного блога.
          Изначальная задумка была создать стартовую площадку для начинающих
          веб-разработчиков. Место, в котором можно черпать вдохновение и развиваться.</p>
        </div>
        <div class="blog_tech">
-         <h3>Технологии</h3>
+         <h3 class='small_header'>Технологии</h3>
          <p class='portf__paragraph'>Для создания блога использовались React, Django Rest Framework и,
          собственно, сам Django. В основном всё стандартно. На бэкенде имеются 2
          основных приложения: 1 для постов и 1 для музыки. Фронт же состоит из
@@ -301,11 +302,11 @@
          запрос и Django Rest Framework отдает данные в формате JSON обратно
          клиенту. <br>
          Код можно посмотреть
-         <a href="https://github.com/Rodionoff/React_Django_Clean_Blog">здесь</a>.</p>
+         <a class='anchor' href="https://github.com/Rodionoff/React_Django_Clean_Blog">здесь</a>.</p>
        </div>
        <div class="blog_features">
-         <h3>Features</h3>
-         <ul>
+         <h3 class='small_header'>Features</h3>
+         <ul class='portf_unordered'>
            <li>Ссылка на запись блога имеет вид 'post/lorem-ipsum'. То есть вместо первичного
            ключа для формирования ссылки используется кастомное значение, которое
            можно задать в админке.</li>
@@ -321,8 +322,8 @@
           </ul>
        </div>
      </section>
-   </div>
-   <footer>
+  </div>
+   <footer class='footer'>
      <p>Pavel Rodionoff &copy; 2018</p>
    </footer>
     <!-- chrome-vh-fix -->
