@@ -73,7 +73,7 @@
       height: 100vh;
       font-size: 2rem;
       line-height: 2rem;
-      background: url('./src/img/brickwall-compressed.jpg') center;
+      background: url('../img/brickwall-compressed.jpg') center;
       background-size: cover;
       color: #333;
       text-align: center;
@@ -165,49 +165,16 @@
         grid-area: portf;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-       grid-template-rows: repeat(8, auto);
+        grid-template-rows: repeat(8, auto);
         grid-template-areas:
-          'tasklist-image       blog-image'
-          'tasklist_description blog_description'
-          'tasklist_tech        blog_tech'
-          'tasklist_features    blog_features'
           'verstka-lemon-img    verstka-bree-img'
           'verstka-lemon-title  verstka-bree-title'
           'verstka-lemon-github verstka-bree-github'
-          'verstka-lemon-live   verstka-bree-live';
-     
-      
-      }
-      .verstka-lemon-img {
-        grid-area: verstka-lemon-img;
-      }
-
-      .verstka-bree-img {
-        grid-area: verstka-bree-img;
-      }
-
-      .verstka-lemon-title {
-        grid-area: verstka-lemon-title;
-      }
-
-      .verstka-bree-title {
-        grid-area: verstka-bree-title;
-      }
-
-      .verstka-lemon-github {
-        grid-area: verstka-lemon-github;
-      }
-
-      .verstka-bree-github {
-        grid-area: verstka-bree-github;
-      }
-
-      .verstka-lemon-live {
-        grid-area: verstka-lemon-live;
-      }
-
-      .verstka-bree-live {
-        grid-area: verstka-bree-live;
+          'verstka-lemon-live   verstka-bree-live'
+          'tasklist-image       blog-image'
+          'tasklist_description blog_description'
+          'tasklist_tech        blog_tech'
+          'tasklist_features    blog_features';
       }
 
       .tasklist_img {
@@ -240,5 +207,37 @@
 
       .blog_features {
         grid-area: blog_features;
+      }
+
+      .verstka-lemon-img {
+        grid-area: verstka-lemon-img;
+      }
+
+      .verstka-bree-img {
+        grid-area: verstka-bree-img;
+      }
+
+      .verstka-lemon-title {
+        grid-area: verstka-lemon-title;
+      }
+
+      .verstka-bree-title {
+        grid-area: verstka-bree-title;
+      }
+
+      .verstka-lemon-github {
+        grid-area: verstka-lemon-github;
+      }
+
+      .verstka-bree-github {
+        grid-area: verstka-bree-github;
+      }
+
+      .verstka-lemon-live {
+        grid-area: verstka-lemon-live;
+      }
+
+      .verstka-bree-live {
+        grid-area: verstka-bree-live;
       }
     }
