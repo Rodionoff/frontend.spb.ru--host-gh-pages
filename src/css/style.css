@@ -1,0 +1,244 @@
+    /* Font-Face */
+    @font-face {
+      font-family: 'Roboto';
+      src: url('../../fonts/Roboto-Light.woff2') format('woff2'),
+           url('../../fonts/Roboto-Light.woff') format('woff'),
+           url('../../fonts/Roboto-Light.ttf') format('truetype');
+      /* font-weight: 300; */
+    }
+
+    /* Core Styles */
+    :root {
+      --background: #eee;
+      --shadow: 0 1px 5px #29b6f6;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    body {
+      height: 100%;
+      margin: .5rem .5rem;
+      /* background: var(--background); */
+      background: #eee;
+      line-height: 1.5rem;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .anchor {
+      text-decoration: none;
+    }
+
+    .skills {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      line-height: 2rem;
+      text-align: center;
+    }
+
+    .small_header {
+      text-align: center;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #171717;
+      color: #eee;
+    }
+
+    .btn {
+      background: #333;
+      color: #eee;
+      padding: 0.6rem 1.3rem;
+      text-decoration: none;
+      border: 0;
+    }
+
+    main {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      grid-gap: 1rem;
+    }
+
+    /* Sections */
+
+    /* Greetings Section  */
+
+    .greetings {
+      height: 100vh;
+      font-size: 2rem;
+      line-height: 2rem;
+      background: url('./src/img/brickwall-compressed.jpg') center;
+      background-size: cover;
+      color: #333;
+      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+      grid-template-areas:
+        '.'
+        'name'
+        '.'
+        '.'
+        'btns'
+        '.';
+    }
+
+    .greetings__name {
+      grid-area: name;
+    }
+
+    .greetings__btns {
+      grid-area: btns;
+    }
+
+    /* Info Section  */
+
+    .info__header,
+    .contacts__header,
+    .contacts__paragraph,
+    .skills-and-goal {
+      text-align: center;
+    }
+
+    /* Portfolio section */
+
+    .tasklist_features,
+    .blog_features,
+      {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .info__paragraph,
+    .portf__paragraph {
+      margin: .1rem 1rem 0 1rem;
+    }
+
+    .portf_unordered {
+      list-style-type: circle;
+    }
+
+    .tasklist_description__header,
+    .blog_description__header,
+    .verstka-lemon-title,
+    .verstka-lemon-github,
+    .verstka-lemon-live,
+    .verstka-bree-title,
+    .verstka-bree-github,
+    .verstka-bree-live {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    /* Media Queries */
+
+    @media only screen and (min-width: 1000px) {
+      main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+          'greetings greetings'
+          'bio contacts'
+          'portf portf';
+      }
+
+      .greetings {
+        grid-area: greetings;
+      }
+
+      .bio {
+        grid-area: bio;
+      }
+
+      .contacts {
+        grid-area: contacts;
+      }
+
+      .portf {
+        grid-area: portf;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+       grid-template-rows: repeat(8, auto);
+        grid-template-areas:
+          'tasklist-image       blog-image'
+          'tasklist_description blog_description'
+          'tasklist_tech        blog_tech'
+          'tasklist_features    blog_features'
+          'verstka-lemon-img    verstka-bree-img'
+          'verstka-lemon-title  verstka-bree-title'
+          'verstka-lemon-github verstka-bree-github'
+          'verstka-lemon-live   verstka-bree-live';
+     
+      
+      }
+      .verstka-lemon-img {
+        grid-area: verstka-lemon-img;
+      }
+
+      .verstka-bree-img {
+        grid-area: verstka-bree-img;
+      }
+
+      .verstka-lemon-title {
+        grid-area: verstka-lemon-title;
+      }
+
+      .verstka-bree-title {
+        grid-area: verstka-bree-title;
+      }
+
+      .verstka-lemon-github {
+        grid-area: verstka-lemon-github;
+      }
+
+      .verstka-bree-github {
+        grid-area: verstka-bree-github;
+      }
+
+      .verstka-lemon-live {
+        grid-area: verstka-lemon-live;
+      }
+
+      .verstka-bree-live {
+        grid-area: verstka-bree-live;
+      }
+
+      .tasklist_img {
+        grid-area: tasklist-image;
+      }
+
+      .blog_img {
+        grid-area: blog-image;
+      }
+
+      .tasklist_description {
+        grid-area: tasklist_description;
+      }
+
+      .blog_description {
+        grid-area: blog_description;
+      }
+
+      .tasklist_tech {
+        grid-area: tasklist_tech;
+      }
+
+      .blog_tech {
+        grid-area: blog_tech;
+      }
+
+      .tasklist_features {
+        grid-area: tasklist_features;
+      }
+
+      .blog_features {
+        grid-area: blog_features;
+      }
+    }
