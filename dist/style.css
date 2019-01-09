@@ -350,13 +350,19 @@ body {
   opacity: 1;
   z-index: 10; }
 
-@media only screen and (min-width: 730px) {
+@media only screen and (min-width: 700px) {
   .photos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 2vh; }
   .photo {
     margin-bottom: 0; } }
+
+@media only screen and (min-width: 930px) {
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2vh; } }
 
 .aboutme {
   width: 95%;
