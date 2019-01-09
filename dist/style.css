@@ -276,8 +276,8 @@ body {
   .modal {
     flex-direction: row; }
   .modalImage {
-    width: 90vw;
-    height: 90vh; }
+    max-width: 90vw;
+    max-height: 90vh; }
   .rightArrow {
     margin: 0 1.5vw;
     transform: rotate(0); }
