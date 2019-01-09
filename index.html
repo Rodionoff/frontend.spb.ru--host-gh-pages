@@ -1,193 +1,161 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121805242-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-121805242-1');
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" type="image/icon" href="./favicon.ico"/>
-  <link rel="stylesheet" href="./src/css/style.css">
-  <title>Павел Родионов, Веб Разработчик</title>
+  <meta name="theme-color" content="#fafbfb"/>
+  <link rel="shortcut icon" type="image/png" href="./favicon.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./src/icons/soyuz_apollo_apple_icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Krub|Muli" rel="stylesheet">
+  <link rel='stylesheet' href='./dist/style.css'>
+  <title>Lorem</title>
+  <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=105818b7-2b5d-40db-ae70-53ada8648561&lang=ru_RU" type="text/javascript">
+  </script>   -->
 </head>
 
 <body>
-  <main>
-    <section class="greetings">
-      <div class="greetings__name">
-        <h1>Павел Родионов</h1>
-        <h3 class='small_header'>Веб разработчик</h3>
+  <!--<div class="modal"></div>-->
+  <nav class="navbar">
+    <div class="navbar-min">
+      <div class="navbar-logo">Home</div>
+      <div class="navbar-toggle">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
       </div>
-      <div class="greetings__btns">
-        <a href="#portf" class='anchor btn'>Мои проекты</a>
-      </div>
-    </section>
-    <section class="contacts">
-      <h2 class='contacts__header'>Контакты</h2>
-      <p class='contacts__paragraph'>
-        tel: <a class='anchor' href="tel://+79006448466">+79006448466</a> <br>
-        @mail: rodionov134@gmail.com <br>
-        telegram: <a class='anchor' href="https://t.me/pavelrodionoff">pavelrodionoff</a> <br>
-        facebook: <a class='anchor' href="https://www.facebook.com/profile.php?id=100000918994969">Паша Родионов</a>
-      </p>
+    </div>
+    <ul class="navbar-items">
+      <!-- <li class="navlink"><a href="#">Link1</a></li> -->
+      <li class="navlink"><a href="./works.html">Works</a></li>
+      <li class="navlink"><a href="./aboutme.html">Me</a></li>
+      <!-- <li class="navlink"><a href="#">Link4</a></li> -->
+      <!-- <li class="navlink"><a href="#">Link5</a></li> -->
+      <!-- <li class="navlink"><a href="#">Link6</a></li> -->
+      <li class="navlink"><a href="./krooshkin.html">krooshkin</a></li>
+    </ul>
+  </nav>
+  <main class="main">
+    <header class="header">
+      <h1 class="header-title">За кулисами</h1>
+      <h3 class="header-text">Продолжение истории</h3>
+    </header>
+    <section class="posts">
+      <article class="post">
+        <figure class="post-image"><img src="./src/img/stories/chairs-min.jpg" alt="pustota"></figure>
 
-      <h1 class='contacts__header'>Умения</h1>
-      <ul class='skills'>
-        <li>JavaScript, React, Python, Django</li>
-        <li>HTML, CSS, SASS</li>
-        <li>Технический английский</li>
-      </ul>
+        <h3 class="post-title">Пустота</h3>
+        <p class="post-text">
+          Наверно слова в описании моего состояния лишние.
+          Попробуйте представить полное спокойствие ума, полную граничащую
+          с апатией и безразличием безмятежность и вы получите
+          понимание того как я чувствую себя в данный момент.
+          Слова выливаются из меня поскольку
+          постольку у меня есть потребность себя чем-то
+          занять а письмо в этом случае играет роль медитации.
+          Возможно в будущем я дорасту и
+          до медитаций в классическом их понимании только пока что потребности в них нет.
+          Зато есть потребности более глобальные.
+          Потребности которые уже примерно год маячат у меня на горизонте.
+          Чувствую себя путником в пустыне.
+          Как будто невдалеке виднеются
+          горы и я иду к ним, иду, иду, но они почти не приближаются
+          хотя и кажется что давно уже должен был прийти.
 
-      <h1 class='contacts__header'>Цель</h1>
-      <p class='contacts__paragraph'>
-        Найти стабильную работу в
-        мeждународной компании, чтобы достойно
-        применять свои умения и навыки на благо коллектива.
-        <p>
-    </section>
-    <section class="bio">
-      <div class="info">
-        <h1 class='info__header'>Обо мне</h1>
-        <p class='info__paragraph'>
-          Мне 22 года. Живу в Санкт-Петербурге. <br>
-          <br>
-          Примерно год назад от настоящего времени, а именно в августе 2017,
-          я осознал, что мне нравится программирование. <br>
-          Итак, это уже хорошо. На этом этапе мне нужно было выбрать свой первый язык, и я принялся искать информацию.
-          После прочтения некоторого количества статей выбор пал в сторону
-          Python. Обосновываю это тем, что Python довольно-таки красивый легкочитаемый язык с низким
-          порогом вхождения. <br>
-          Следующий шаг был поиском соответствующей литературы. <br>
-          И этот шаг был сделан. Моей первой книгой по программированию стала книга
-          Майкла Доусона «Программируем на Python». Написанная легким языком, эта книга
-          послужила хорошим введением в основы программирования, ведь каждая глава
-          в ней сопровождена задачами на закрепление материала, над которыми иногда
-          приходилось крепко поразмышлять.
-          После понимания основ ООП я перешел к изучению фреймворка Django. <br>
-          Начал с туториала в официальной документации, а потом уже сделал
-          на Django <a class='anchor' href='http://tabaluga.pythonanywhere.com/'>свой мини блог</a> с взятой из другого
-          туториала возможностью регистрации.
-          Потом заинтересовался JavaScript'ом и прочитал по нему 2 из 6ти книг под
-          названием «You Don't Know JS».
-          Занимательное чтение. После этого я быстро построил аналогии с Python
-          и понял что этих двух книг мне явно недостаточно.
-          Поиск привел меня на сайт MDN от FireFox и на нем я познакомился с HTML,
-          CSS и прокачал свой навык JavaScript'а.
-          Потом переключился на React. Пришла идея сделать
-          блог с фронтом на React и бэком на Django. И я ёё успешно реализовал.
         </p>
-      </div>
+        <p class="post-date">
+            4 November 2018
+          </p>
+      </article>
+      <article class="post">
+        <figure class="post-image"><img src="./src/img/stories/zima-min.jpg" alt="zima painting by sophia heymans"></figure>
+
+        <h3 class="post-title">Зима</h3>
+        </div>
+        <p class="post-text">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat pariatur praesentium id ex debitis
+          beatae quod mollitia, ad esse harum!
+        </p>
+        <p class="post-date">
+          29 October 2018
+        </p>
+      </article>
+      <article class="post">
+        <figure class="post-image"><img src="./src/img/stories/asia-min@2x.jpg" alt="asia"></figure>
+
+        <h3 class="post-title">Привет, мир!</h3>
+        <p class="post-text">
+
+          Пробую себя в новом старом для себя деле. <br>
+          <br>
+          В начальной школе по стечению обстоятельств
+          я был хорошим, много читал,
+          и даже писал свои мини рассказы.
+          Именно писал, в прошедшем времени,
+          так как у меня была потребность описывать
+          школьный быт - скорее всего как способ переварить информацию -
+          и поведение учительницы,
+          которая впоследствии подглядела
+          в мои черновики и зачем-то позволила
+          себя обсуждать моё самовыражение со
+          всем классом во время урока. <br>
+          <br>
+          Воспоминания об этом
+          накатили на меня совершенно случайно и уже много лет
+          спустя,- во время недавнего общения с Димой.
+          Это был понедельник.
+          Мы тогда всю ночь слушали
+          электронную музыку, пили чай, беседовали и кайфовали. <br>
+          <br>
+          В настоящий момент
+          ситуация в школе не так уж
+          важна для меня. У меня
+          не появляются мысли о том какой бы была моя жизнь
+          если бы я тогда несмотря ни на что продолжил свое творчество.
+        </p>
+        <p class="post-date">
+            28 October 2018
+          </p>
+      </article>
     </section>
-    <section id='portf' class="portf">
-      <!-- <article class="verstka-lemon"> -->
-      <div class="verstka-lemon-img"><img src="./src/img/iPad-Pro (5)-min.png" alt="lemon template"></div>
-      <h3 class="verstka-lemon-title">Верстка с использованием SASS</h3>
-      <div class="verstka-lemon-github"><a href="https://github.com/Rodionoff/lemon">Github репозиторий</a></div>
-      <div class="verstka-lemon-live"><a href="https://rodionoff.github.io/lemon/">Рабочая версия</a></div>
-      <!-- </article> -->
-      <!-- <article class="verstka-bree"> -->
-      <div class="verstka-bree-img"><img src="./src/img/iPad-Pro (6)-min.png" alt="bree template"></div>
-      <h3 class="verstka-bree-title">Верстка с использованием SASS</h3>
-      <div class="verstka-bree-github"><a href="https://github.com/Rodionoff/bree">Github репозиторий</a></div>
-      <div class="verstka-bree-live"><a href="https://rodionoff.github.io/bree/">Рабочая версия</a></div>
-      <!-- </article> -->
-      <!-- <article class="tasklist"> -->
-      <div class="tasklist_description">
-        <img class='tasklist_img' src="./src/img/iPhone-compressed.png" alt="">
-        <h1 class='tasklist_description__header'>React & Django TaskList</h1>
-        <h3 class='small_header'>О проекте</h3>
-        <p class='portf__paragraph'>Это моё клиент-серверное одностраничное веб-приложение для управления
-          собственными задачами.
-          Каждая задача состоит непосредственно из строки, в которой сформулирована
-          цель задачи, и флага, хранящего информацию о статусе выполнения задачи.
-          Все задачи отображаются на странице в виде единого списка,
-          причём редактирование задач и изменение их статуса происходит тоже
-          внутри общего списка.
-          Вся информация о каждой задаче сохраняется в базе данных на бэкенде.</p>
-      </div>
-      <div class="tasklist_tech">
-        <h3 class='small_header'>Teхнологии</h3>
-        <p class='portf__paragraph'>Для создания приложения использовались React, Django и Django Rest Framework. <br>
-          Рабочую версию приложения можно посмотреть <a class='anchor' href='http://rodionoff.pythonanywhere.com/'>здесь</a>.<br>
-          Код можно посмотреть
-          <a class='anchor' href="https://github.com/Rodionoff/SPA_React_Django_Tasklist/tree/master">здесь</a>.</p>
-      </div>
-      <div class="tasklist_features">
-        <h3 class='small_header'>Features</h3>
-        <ul class='portf_unordered'>
-          <li>Пользователь может изменить статус выполнения задачи.
-            То есть возможно отметить любую задачу как исполненную или наоборот
-            (при этом эти два типа задач визуально отличаются).</li>
-          <li>Пользователь может удалить задачу. При этом удалённая задача
-            пропадает из списка всех задач пользователя.</li>
-          <li>Пользователь может создать новую задачу.</li>
-        </ul>
-      </div>
-      <!-- </article> -->
-      <!-- <article class="blog"> -->
-      <div class="blog_description">
-        <img class='blog_img' src="./src/img/iPad-iPhone-compressed.png" alt="">
-        <h1 class='blog_description__header'>React & Django Blog</h1>
-        <h3 class='small_header'>О проекте</h3>
-        <p class='portf__paragraph'>Это моя реализация одностраничного блога.
-          Изначальная задумка была создать стартовую площадку для начинающих
-          веб-разработчиков. Место, в котором можно черпать вдохновение и развиваться.</p>
-      </div>
-      <div class="blog_tech">
-        <h3 class='small_header'>Технологии</h3>
-        <p class='portf__paragraph'>Для создания блога использовались React, Django Rest Framework и,
-          собственно, сам Django. В основном всё стандартно. На бэкенде имеются 2
-          основных приложения: 1 для постов и 1 для музыки. Фронт же состоит из
-          нескольких компонентов. От отвечающего за рендер постов компонента идет GET
-          запрос и Django Rest Framework отдает данные в формате JSON обратно
-          клиенту. <br>
-          Код можно посмотреть
-          <a class='anchor' href="https://github.com/Rodionoff/React_Django_Clean_Blog">здесь</a>.</p>
-      </div>
-      <div class="blog_features">
-        <h3 class='small_header'>Features</h3>
-        <ul class='portf_unordered'>
-          <li>Ссылка на запись блога имеет вид 'post/lorem-ipsum'. То есть вместо первичного
-            ключа для формирования ссылки используется кастомное значение, которое
-            можно задать в админке.</li>
-          <li>Посты на главной странице укорочены до 100 слов, после которых добавлена
-            работающая кнопочка "Читать далее..".</li>
-          <li>Перед Футером рендерятся иконки-ссылки на мой инстаграм, телеграм и
-            гитхаб.</li>
-          <li>В админке добавлена поддержка MarkDown разметки.</li>
-          <li>Добавлена возможность отложенной публикации.</li>
-          <li>Добавлена адаптивная панель навигации.</li>
-          <li>Записи упорядочены по дате.</li>
-          <li>Добавлена пагинация.</li>
-        </ul>
-      </div>
-      <!-- </article> -->
-    </section>
+
 
   </main>
-  <footer class='footer'>
-    <p>Pavel Rodionoff &copy; 2018</p>
+  <footer class="footer">
+    <p class="footer-whois">
+      Pavel Rodionoff
+    </p>
+    <p class="footer-copyright">
+      2018
+    </p>
+    <!-- <div id="map" style="width: 90%; height: 200px; margin-left: 5%;"></div> -->
+    <!-- <br> -->
+    </p>
   </footer>
-  <!-- chrome-vh-fix -->
-  <script src="./mobile-chrome-vh-fix.js"></script>
+  <script type="text/javascript">
+    // ymaps.ready(init);    
+    // function init(){ 
+    //     var myMap = new ymaps.Map("map", {
+    //         center: [59.93, 30.31],
+    //         zoom: 7
+    //     }); 
+    // }
+  </script>
+  <script type="text/javascript" src="dist/bundle.js"></script>
   <script>
-    let vhFix = new VHChromeFix(
-      [{
-        selector: '.greetings', // CSS selector
-        vh: 100, // height in vh units
-      }]);
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./serviceWorker.js').then(function (registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
   </script>
 </body>
 

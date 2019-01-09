@@ -1,0 +1,403 @@
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+h1, h3, p {
+  margin: 0;
+  padding: 0;
+  font-style: inherit;
+  font-weight: inherit; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+ul, a {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+img {
+  max-width: 100%;
+  display: block; }
+
+figure {
+  margin: 0;
+  padding: 0; }
+
+html,
+body {
+  margin: 0;
+  font-family: 'Krub', sans-serif;
+  padding-top: 10px;
+  background-color: #fafbfb;
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png"); }
+
+.navbar {
+  background-color: #0f4e7e;
+  left: 0;
+  top: 0;
+  padding: 2.5% 8.5% 2% 8.5%;
+  width: 100%;
+  position: absolute;
+  color: #fafbfb;
+  box-shadow: 3px 5px 4px 1px #b3c2c2;
+  z-index: 7; }
+
+.navbar-min {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.3%; }
+
+.navbar-logo {
+  font-size: 1.4rem;
+  font-weight: 700; }
+
+.navbar-toggle {
+  width: 21%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer; }
+  .navbar-toggle .line {
+    height: .3vh;
+    margin-bottom: 1vh;
+    background-color: #fafbfb;
+    width: 65%;
+    margin-left: auto; }
+  .navbar-toggle .line:last-child {
+    margin-bottom: 0; }
+
+.hiddenToggle {
+  opacity: 0.1; }
+
+.navbar-items {
+  display: none; }
+
+.navlink {
+  margin-bottom: 3%; }
+
+.show {
+  display: block; }
+
+@media only screen and (min-width: 5000px) {
+  .navbar {
+    display: flex; }
+  .navbar-min {
+    width: auto; }
+  .navbar-items {
+    display: flex;
+    width: 100%;
+    margin-left: 5%; }
+  .navlink {
+    margin-right: 2%; }
+    .navlink:nth-child(6) {
+      margin-left: auto; }
+    .navlink:last-child {
+      margin-right: 0; }
+  .navbar-toggle {
+    display: none; } }
+
+.navbar-fixed {
+  position: fixed;
+  margin: 0;
+  width: 100%;
+  top: 0; }
+
+.header {
+  font-family: 'Muli', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #293434;
+  width: 90%;
+  margin-top: 7%;
+  margin-left: 8.5%;
+  margin-bottom: 10px;
+  padding: 1.3rem 0; }
+
+.header-title {
+  margin-bottom: 1.4%; }
+
+.header-text {
+  font-size: 1.4rem;
+  margin-right: 8.5vw; }
+  .header-text a {
+    color: #1778c2;
+    cursor: pointer; }
+
+.posts {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  line-height: 1.5rem;
+  margin-bottom: 5%; }
+
+.post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 7vh;
+  background-color: White;
+  color: #293434;
+  box-shadow: 3px 5px 4px 1px #b3c2c2; }
+
+.post-image {
+  align-self: center; }
+  .post-image img {
+    width: 100%; }
+
+.post-title {
+  font-size: 1.3rem;
+  padding: 1.3rem 6vw; }
+
+.post-date {
+  border-radius: 7px;
+  padding: 1.3rem 6vw;
+  text-align: right; }
+
+.post-text {
+  letter-spacing: .075rem;
+  color: #333;
+  line-height: 1.5rem;
+  color: inherit;
+  margin-bottom: 1rem;
+  padding: 1.3rem 6vw;
+  letter-spacing: 0.000001; }
+
+.footer {
+  background-color: #1778c2;
+  color: #fafbfb;
+  padding: 7% 0;
+  font-weight: 700; }
+
+.footer-whois {
+  margin-left: 8.5%;
+  margin-bottom: 2%; }
+
+.footer-copyright {
+  margin-left: 8.5%;
+  margin-right: 55%; }
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden; }
+
+.showModal {
+  visibility: visible; }
+
+.works {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  line-height: 1.5rem;
+  margin-bottom: 5%; }
+
+.work {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 7vh;
+  background-color: White;
+  color: #293434;
+  box-shadow: 3px 5px 4px 1px #b3c2c2; }
+
+.work-image {
+  align-self: center; }
+  .work-image img {
+    width: 100%;
+    display: block; }
+
+.work-image-truncate {
+  max-height: 43vh;
+  overflow: hidden; }
+
+.work-title {
+  font-size: 1.3rem;
+  padding: 1.3rem 6vw; }
+
+.work-text {
+  letter-spacing: .075rem;
+  color: #333;
+  line-height: 1.5rem;
+  color: inherit;
+  margin-bottom: 1rem;
+  padding: 1.3rem 6vw;
+  letter-spacing: 0.000001; }
+
+.work-date {
+  border-radius: 7px;
+  padding: 1.3rem 6vw;
+  text-align: right; }
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  z-index: 7; }
+
+.modalImage {
+  max-width: 95%;
+  max-height: 83vh;
+  z-index: 8;
+  display: block; }
+
+.arrow {
+  padding: 0;
+  margin: 0;
+  color: #fafbfb;
+  font-size: 2rem;
+  width: 7vw;
+  height: 3rem;
+  z-index: 8;
+  opacity: 0.6;
+  display: block;
+  cursor: pointer; }
+
+.rightArrow {
+  margin: 5.9vh 0 0 0;
+  transform: rotate(90deg); }
+
+.leftArrow {
+  margin: 0 0 5.9vh 1.7rem;
+  transform: rotate(270deg); }
+
+@media only screen and (min-width: 750px) {
+  .modal {
+    flex-direction: row; }
+  .modalImage {
+    width: 90vw;
+    height: 90vh; }
+  .rightArrow {
+    margin: 0 1.5vw;
+    transform: rotate(0); }
+  .leftArrow {
+    margin: 0 1.5vw;
+    transform: rotateY(180deg);
+    visibility: hidden; } }
+
+.exit {
+  color: #fafbfb;
+  position: absolute;
+  top: 2.5vh;
+  right: 7.6%;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  cursor: pointer; }
+
+.showModal {
+  visibility: visible; }
+
+.photos {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  line-height: 1.5rem;
+  margin-bottom: 5%; }
+
+.photo {
+  margin-bottom: 2.5vh;
+  background-color: White;
+  color: #293434;
+  box-shadow: 3px 5px 4px 1px #b3c2c2;
+  position: relative;
+  z-index: 5;
+  cursor: pointer; }
+
+.photo-image {
+  align-self: center; }
+  .photo-image img {
+    width: 100%;
+    display: block; }
+
+.imageDescription {
+  position: absolute;
+  bottom: 8%;
+  left: 6%;
+  color: #354242;
+  opacity: 0;
+  letter-spacing: 0.001;
+  width: 90%; }
+  .imageDescription span {
+    font-weight: 700; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: #fafbfb;
+  opacity: 0;
+  z-index: 2;
+  display: block; }
+
+.showOverlay {
+  opacity: 0.85;
+  z-index: 1; }
+
+.showDescription {
+  opacity: 1;
+  z-index: 10; }
+
+@media only screen and (min-width: 730px) {
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2vh; }
+  .photo {
+    margin-bottom: 0; } }
+
+.aboutme {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  line-height: 1.5rem;
+  margin-bottom: 5%; }
+
+.about {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 7vh;
+  background-color: White;
+  color: #293434;
+  box-shadow: 3px 5px 4px 1px #b3c2c2; }
+
+.about-image {
+  align-self: center; }
+  .about-image img {
+    width: 100%;
+    display: block; }
+
+.about-image-truncate {
+  max-height: 43vh;
+  overflow: hidden; }
+
+.about-title {
+  font-size: 1.3rem;
+  padding: 1.3rem 6vw; }
+
+.about-text {
+  letter-spacing: .075rem;
+  color: #333;
+  line-height: 1.5rem;
+  color: inherit;
+  margin-bottom: 1rem;
+  padding: 1.3rem 6vw;
+  letter-spacing: 0.000001; }
+
+.about-date {
+  border-radius: 7px;
+  padding: 1.3rem 6vw;
+  text-align: right; }
+

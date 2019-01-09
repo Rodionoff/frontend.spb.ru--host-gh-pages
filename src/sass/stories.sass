@@ -1,0 +1,279 @@
+// type your sass here
+%reset-Button 
+  border: none
+  margin: 0
+  padding: 0
+  width: auto
+  overflow: visible
+
+  background: transparent
+
+  /* inherit font & color from ancestor */
+  color: inherit
+  font: inherit
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit
+  -moz-osx-font-smoothing: inherit
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none
+
+  outline: none
+  
+*, *::before, *::after
+  box-sizing: border-box
+
+// $primary-color: #ffeeff
+$primary-color: #fafbfb
+$cosmic-blue: #1778c2
+
+$navbar-font-color: darken($primary-color, 0%)
+$header-font-color: darken($primary-color, 80%)
+$post-font-color: darken($primary-color, 80%)
+$footer-font-color: $primary-color 
+
+$navbar-background-color: darken($cosmic-blue, 15%)
+$header-background-color: $primary-color
+$body-background-color: lighten($primary-color, 0%)
+// $post-background-color: darken($primary-color, 2%)
+$post-background-color: White
+// $post-background-color: darken($primary-color, 1%)
+$post-date-background-color: darken($primary-color, 24%)
+$footer-background-color: $cosmic-blue
+
+$navbar-box-shadow: 3px 5px 4px 1px darken($primary-color, 25%)
+$post-box-shadow: 3px 5px 4px 1px darken($primary-color, 25%)
+$post-date-box-shadow: 5px 4px 4px 1px darken(White, 20%)
+
+h1, h3, p
+  margin: 0
+  padding: 0
+  font-style: inherit
+  font-weight: inherit
+
+a
+  text-decoration: none
+  color: inherit
+
+ul, a
+  list-style: none
+  padding: 0
+  margin: 0
+
+img
+  max-width: 100%
+  display: block
+
+figure
+  margin: 0
+  padding: 0
+
+html,
+body
+  margin: 0
+  // color: $primary-font-color
+  font-family: 'Krub', sans-serif
+  // background-color: lighten($navbar-background-color ,45%)
+  // padding-top: 35px
+  padding-top: 10px
+  background-color: $body-background-color
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png")
+  // background-image: url("https://www.transparenttextures.com/patterns/dirty-old-black-shirt.png")
+
+.main
+
+.navbar
+  background-color: $navbar-background-color
+  left: 0
+  top: 0
+  padding: 2.5% 8.5% 2% 8.5%
+  width: 100%
+  position: absolute
+  color: $navbar-font-color
+  box-shadow: $navbar-box-shadow
+  z-index: 7
+
+.navbar-min
+  display: flex
+  justify-content: space-between
+  margin-bottom: 2.3%
+
+.navbar-logo
+  font-size: 1.4rem
+  font-weight: 700
+
+.navbar-toggle
+  // @extend %reset-Button
+  // margin-left: auto
+  // margin-right: 5%
+  // display: block
+  width: 21%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  cursor: pointer
+
+  .line
+    height: .3vh
+    margin-bottom: 1vh
+    background-color: $navbar-font-color
+    width: 65%
+    margin-left: auto
+
+  .line:last-child
+    margin-bottom: 0
+
+.hiddenToggle
+  opacity: 0.1
+
+
+.navbar-items
+  display: none
+
+.navlink
+  margin-bottom: 3%
+
+
+
+.show
+  display: block
+
+@media only screen and (min-width: 5000px)
+  .navbar 
+    display: flex
+
+  .navbar-min
+    width: auto
+    
+  .navbar-items
+    display: flex
+    width: 100%
+    margin-left: 5%
+
+  .navlink
+    margin-right: 2%
+    
+    &:nth-child(6)
+      margin-left: auto
+
+    &:last-child
+      margin-right: 0
+
+  .navbar-toggle
+    display: none
+
+.navbar-fixed
+  position: fixed
+  margin: 0
+  width: 100%
+  top: 0
+
+// .modal
+//   position: fixed
+//   top: 0 
+//   left: 0
+//   bottom: 0 
+//   right: 0 
+//   opacity: 0.7
+//   background-color: black
+//   z-index: 22
+
+.header
+  font-family: 'Muli', sans-serif
+  font-weight: 400
+  font-style: normal
+  color: $header-font-color
+  width: 90%
+  margin-top: 7%
+  margin-left: 8.5%
+  // margin-right: 8.5%
+  margin-bottom: 10px
+  padding: 1.3rem 0
+
+.header-image
+
+.header-title
+  margin-bottom: 1.4%
+
+.header-text
+  font-size: 1.4rem
+  // width: 90%
+  margin-right: 8.5vw
+
+  a
+    color: #1778c2
+    cursor: pointer
+
+
+.posts
+  width: 95%
+  margin-left: 2.5%
+  margin-right: 2.5%
+  line-height: 1.5rem
+  margin-bottom: 5%
+  // box-shadow: $post-date-box-shadow
+
+.post
+  display: flex
+  flex-direction: column
+  margin-bottom: 7vh
+  // padding: 1.3rem 1rem 
+  background-color: $post-background-color
+  color: $post-font-color
+  // border-radius: 10px
+  box-shadow: $post-box-shadow
+  // background-image: url("https://www.transparenttextures.com/patterns/dirty-old-black-shirt.png")
+
+.post-image
+  align-self: center
+  // margin-bottom: 2rem
+
+  img
+    width: 100%
+    // border-radius: 10px 
+    // box-shadow: $post-date-box-shadow
+
+.post-title
+  // margin-bottom: 1rem
+  font-size: 1.3rem
+  // text-align: center
+  padding: 1.3rem 6vw 
+
+.post-date
+  // padding: 6vw
+  // background-color: $post-date-background-color
+  // margin-bottom: 1.7rem
+  // width: 60%
+  border-radius: 7px
+  padding: 1.3rem 6vw
+  text-align: right
+  // box-shadow: $post-date-box-shadow
+  // color: $post-background-color
+
+.post-text
+  letter-spacing: .075rem
+  color: #333
+  line-height: 1.5rem
+  color: inherit
+  margin-bottom: 1rem
+  padding: 1.3rem 6vw
+  letter-spacing: 0.000001
+
+.footer
+  background-color: $footer-background-color
+  color: $footer-font-color
+  padding: 7% 0
+  font-weight: 700
+
+.footer-whois
+  margin-left: 8.5%
+  margin-bottom: 2%
+  
+
+.footer-copyright
+  margin-left: 8.5%
+  margin-right: 55%

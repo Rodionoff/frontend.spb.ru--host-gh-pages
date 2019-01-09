@@ -1,0 +1,145 @@
+.modal 
+  background-color: rgba(0, 0, 0, 0.7)
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  // flex-wrap: nowrap
+  // justify-content: space-around
+  // align-items: center
+  visibility: hidden
+  z-index: 7
+  // padding: 5vh 2.5vw
+
+.modalImage
+  max-width: 95%
+  max-height: 83vh
+  z-index: 8
+  display: block
+
+.arrow
+  padding: 0
+  margin: 0
+  color: $primary-color
+  font-size: 2rem
+  width: 7vw
+  height: 3rem
+  // margin-left: 1.5vw
+  // margin-left: 1.5vw
+  z-index: 8
+  opacity: 0.6
+  display: block
+  cursor: pointer
+
+.rightArrow
+  margin: 5.9vh 0 0 0
+  transform: rotate(90deg)
+
+.leftArrow
+  margin: 0 0 5.9vh 1.7rem
+  transform: rotate(270deg) 
+
+@media only screen and (min-width: 750px)
+  .modal
+    flex-direction: row
+
+  .modalImage
+    width: 90vw
+    height: 90vh
+
+  .rightArrow
+    margin: 0 1.5vw
+    transform: rotate(0)
+
+  .leftArrow
+    margin: 0 1.5vw
+    transform: rotateY(180deg)
+    visibility: hidden
+
+.exit
+  color: $primary-color
+  position: absolute
+  top: 2.5vh
+  right: 7.6%
+  font-size: 1.5rem
+  opacity: 0.6
+  cursor: pointer
+
+.showModal 
+  visibility: visible
+
+.photos
+  width: 95%
+  margin-left: 2.5%
+  margin-right: 2.5%
+  line-height: 1.5rem
+  margin-bottom: 5%
+
+.photo
+  margin-bottom: 2.5vh
+  background-color: $post-background-color
+  // backgroun-color: inherit
+  color: $post-font-color
+  box-shadow: $post-box-shadow
+  position: relative
+  z-index: 5
+  cursor: pointer
+
+.photo-image
+  align-self: center
+
+  img
+    width: 100%
+    display: block
+
+.imageDescription
+  position: absolute
+  bottom: 8%
+  left: 6%
+  // color: White
+  color: lighten($header-font-color, 5%)
+  // font-weight: 700
+  opacity: 0
+  letter-spacing: 0.001
+  width: 90%
+
+  span
+    font-weight: 700
+
+.overlay 
+  position: absolute
+  top: 0
+  width: 100%
+  height: 100%
+  left: 0
+  // background-color: #000000
+  // background-color: #1778c2
+  background-color: #fafbfb
+  opacity: 0
+  z-index: 2
+  display: block
+  // opacity: 1
+
+
+.showOverlay
+  opacity: 0.85
+  z-index: 1
+
+.showDescription
+  opacity: 1
+  z-index: 10
+// .imageDescription
+//   color: White
+//   bottom: 10%
+
+@media only screen and (min-width: 730px)
+  .photos
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 2vh
+
+  .photo
+    margin-bottom: 0

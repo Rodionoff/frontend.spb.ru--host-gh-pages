@@ -1,0 +1,20 @@
+{
+  "short_name": "Lorem",
+  "name": "Lorem",
+  "icons": [
+    {
+      "src": "./src/icons/soyuz_apollo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/icons/soyuz_apollo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#fafbfb",
+  "background_color": "#fafbfb"
+}
