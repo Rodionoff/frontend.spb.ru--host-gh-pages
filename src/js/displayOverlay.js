@@ -7,7 +7,7 @@ let links = []
 
 let exit = document.createElement('div')
 exit.classList.add('exit')
-exit.innerHTML = '✖'
+exit.innerHTML = '⌧'
 
 let rightArrow = document.createElement('div');
 rightArrow.classList.add('arrow');

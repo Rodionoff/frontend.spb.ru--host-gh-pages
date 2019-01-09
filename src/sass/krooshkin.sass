@@ -42,12 +42,21 @@
   margin: 0 0 5.9vh 1.7rem
   transform: rotate(270deg) 
 
-@media only screen and (min-width: 750px)
+.exit
+  color: $primary-color
+  position: absolute
+  top: 2.5vh
+  right: 3.6%
+  font-size: 1.5rem
+  opacity: 0.6
+  cursor: pointer
+
+@media only screen and (min-width: 480px)
   .modal
     flex-direction: row
 
   .modalImage
-    max-width: 90vw
+    max-width: 80vw
     max-height: 90vh
 
   .rightArrow
@@ -58,15 +67,6 @@
     margin: 0 1.5vw
     transform: rotateY(180deg)
     visibility: hidden
-
-.exit
-  color: $primary-color
-  position: absolute
-  top: 2.5vh
-  right: 7.6%
-  font-size: 1.5rem
-  opacity: 0.6
-  cursor: pointer
 
 .showModal 
   visibility: visible
