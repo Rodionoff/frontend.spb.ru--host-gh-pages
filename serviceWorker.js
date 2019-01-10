@@ -19,16 +19,8 @@ self.addEventListener('install', function (event) {
         './src/img/stories/chairs-min.jpg',
         './src/img/stories/zima-min.jpg',
         './src/img/works/lemon158.png',
-        './src/img/aboutme/image.jpg'
-        // './src/img/krooshkin/1.jpeg',
-        // './src/img/krooshkin/2.jpeg',
-        // './src/img/krooshkin/3.jpeg',
-        // './src/img/krooshkin/4.jpeg',
-        // './src/img/krooshkin/5.jpeg',
-        // './src/img/krooshkin/6.jpeg',
-        // './src/img/krooshkin/7.jpeg',
-        // './src/img/krooshkin/8.jpeg',
-        // './src/img/krooshkin/9.jpeg'        
+        './src/img/aboutme/image.jpg',
+        './src/img/lazyLoad/lazyLoad.jpg'        
       ]
     ))
   )
