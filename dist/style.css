@@ -7,13 +7,6 @@ h1, h2, h3, p {
   font-style: inherit;
   font-weight: inherit; }
 
-h1 {
-  font-size: 1.7rem; }
-
-h2 {
-  font-size: 1.2rem;
-  font-weight: 300; }
-
 a {
   text-decoration: none;
   color: inherit; }
@@ -53,7 +46,7 @@ body {
 .navbar-min {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2vh; }
+  margin-bottom: 2.3%; }
 
 .navbar-logo {
   font-size: 1.4rem;
@@ -111,25 +104,22 @@ body {
   top: 0; }
 
 .header {
-  font-family: "Muli", sans-serif;
+  font-family: 'Muli', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #293434;
   width: 90%;
   margin-top: 7%;
-  margin-left: 8.5vw;
+  margin-left: 8.5%;
+  margin-bottom: 10px;
   padding: 1.3rem 0; }
 
 .header-title {
-  margin-bottom: 1.4%;
-  margin-right: 8.5vw;
-  line-height: 2rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1.4%; }
 
 .header-text {
   font-size: 1.4rem;
-  margin-right: 8.5vw;
-  margin-bottom: .3rem; }
+  margin-right: 8.5vw; }
   .header-text a {
     color: #1778c2;
     cursor: pointer; }
@@ -150,14 +140,13 @@ body {
   box-shadow: 3px 5px 4px 1px #b3c2c2; }
 
 .post-image {
-  align-self: center;
-  margin-bottom: 1rem; }
+  align-self: center; }
   .post-image img {
     width: 100%; }
 
 .post-title {
   font-size: 1.3rem;
-  padding: 1.3rem 6vw .6rem; }
+  padding: 1.3rem 6vw; }
 
 .post-date {
   border-radius: 7px;

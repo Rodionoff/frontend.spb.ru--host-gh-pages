@@ -27,9 +27,6 @@
 *, *::before, *::after
   box-sizing: border-box
 
-
-$header-font: 'Muli', sans-serif
-
 // $primary-color: #ffeeff
 $primary-color: #fafbfb
 $cosmic-blue: #1778c2
@@ -58,13 +55,6 @@ h1, h2, h3, p
   font-style: inherit
   font-weight: inherit
 
-h1 
-  font-size: 1.7rem
-
-h2
-  font-size: 1.2rem
-  font-weight: 300
-
 a
   text-decoration: none
   color: inherit
@@ -90,8 +80,6 @@ body
   // background-color: lighten($navbar-background-color ,45%)
   // padding-top: 35px
   padding-top: 10px
-  // padding-top: calc(4.8vh + 1.4rem)
-  // padding-top: 7.3vh
   background-color: $body-background-color
   background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png")
   // background-image: url("https://www.transparenttextures.com/patterns/dirty-old-black-shirt.png")
@@ -112,7 +100,7 @@ body
 .navbar-min
   display: flex
   justify-content: space-between
-  margin-bottom: 2vh
+  margin-bottom: 2.3%
 
 .navbar-logo
   font-size: 1.4rem
@@ -195,31 +183,26 @@ body
 //   z-index: 22
 
 .header
-  font-family: $header-font
+  font-family: 'Muli', sans-serif
   font-weight: 400
   font-style: normal
   color: $header-font-color
   width: 90%
   margin-top: 7%
-  margin-left: 8.5vw
+  margin-left: 8.5%
   // margin-right: 8.5%
-  // margin-bottom: 10px
+  margin-bottom: 10px
   padding: 1.3rem 0
 
 .header-image
 
 .header-title
   margin-bottom: 1.4%
-  margin-right: 8.5vw
-
-  line-height: 2rem
-  margin-bottom: 1rem
 
 .header-text
   font-size: 1.4rem
   // width: 90%
   margin-right: 8.5vw
-  margin-bottom: .3rem
 
   a
     color: #1778c2
@@ -247,7 +230,7 @@ body
 
 .post-image
   align-self: center
-  margin-bottom: 1rem
+  // margin-bottom: 2rem
 
   img
     width: 100%
@@ -258,7 +241,7 @@ body
   // margin-bottom: 1rem
   font-size: 1.3rem
   // text-align: center
-  padding: 1.3rem 6vw .6rem
+  padding: 1.3rem 6vw 
 
 .post-date
   // padding: 6vw
