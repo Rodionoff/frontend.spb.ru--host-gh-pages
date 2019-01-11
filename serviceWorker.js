@@ -7,9 +7,10 @@ self.addEventListener('install', function (event) {
     .then(cache => cache.addAll(
       [
         './index.html',
-        './works.html',
         './aboutme.html',
         './krooshkin.html',
+        './stories.html',
+        './works.html',
         './favicon.png',
         './dist/bundle.js',
         './dist/style.css',
