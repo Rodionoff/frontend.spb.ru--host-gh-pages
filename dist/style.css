@@ -228,8 +228,12 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
   visibility: hidden;
-  z-index: 7; }
+  z-index: 7;
+  padding: 5vh 2.5vw; }
 
 .modalImage {
   max-width: 95%;
