@@ -6,7 +6,7 @@ Array.prototype.forEach.call(tagclouds, tagcloud => {
   Array.prototype.forEach.call(tagcloud.children, tag => {
     // console.log(tag)
     tag.style.cursor = 'pointer'
-    tag.onclick = searchForTag
+    tag.onclick = sortByTag
   })
 })
 
@@ -14,12 +14,12 @@ let tags = document.getElementsByClassName('tag')
 Array.prototype.forEach.call(tags, tag => {
   // console.log(tag)
   tag.style.cursor = 'pointer'
-  tag.onclick = searchForTag
+  tag.onclick = sortByTag
 })
 
 
 
-function searchForTag() {
+function sortByTag() {
   Array.prototype.forEach.call(tagclouds, (tagcloud, i) => {
     let postVisibility = false;
     Array.prototype.forEach.call(tagcloud.children, tag => {
@@ -35,9 +35,3 @@ function searchForTag() {
     
   })
 }
-
-// function hidePost() {
-//   Array.prototype.forEach.call(posts, post => {
-//     !post.contains(tagcloud) ? post.style.display = 'none' : undefined
-//   })
-// }
