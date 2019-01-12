@@ -279,27 +279,30 @@ body
   margin-left: 8.5%
   margin-right: 55%
 
+.tagcloud-wrapper
+  display: flex
+
 .tagcloud-label
   margin-left: 6vw
   margin-bottom: .5rem
 
 .tagcloud
   display: flex
-  margin-left: 6vw
+  margin-left: 2vw
   padding: 0
 
 .tagcloud::before
-  content: '['
+  // content: '['
 
 .tagcloud::after
-  content: ']'
+  // content: ']'
 
 .tagcloud li
   // margin-right: 0.5rem
   color: $cosmic-blue
 
 .tagcloud li:first-child::before
-  content: '  '
+  content: ''
 
 .tagcloud li::after
   content: ', '
