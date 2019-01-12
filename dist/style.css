@@ -110,15 +110,16 @@ body {
   color: #293434;
   width: 90%;
   margin-top: 7%;
-  margin-left: 8.5%;
   margin-bottom: 10px;
   padding: 1.3rem 0; }
 
 .header-title {
+  margin-left: 8.5vw;
   margin-bottom: 1.4%; }
 
 .header-text {
   font-size: 1.4rem;
+  margin-left: 8.5vw;
   margin-right: 8.5vw; }
   .header-text a {
     color: #1778c2;
@@ -175,6 +176,35 @@ body {
 .footer-copyright {
   margin-left: 8.5%;
   margin-right: 55%; }
+
+.tagcloud-label {
+  margin-left: 6vw;
+  margin-bottom: .5rem; }
+
+.tagcloud {
+  display: flex;
+  margin-left: 6vw;
+  padding: 0; }
+
+.tagcloud::before {
+  content: '['; }
+
+.tagcloud::after {
+  content: ']'; }
+
+.tagcloud li {
+  color: #1778c2; }
+
+.tagcloud li:first-child::before {
+  content: '  '; }
+
+.tagcloud li::after {
+  content: ', ';
+  margin-right: .5rem; }
+
+.tagcloud li:last-child::after {
+  content: '';
+  margin-right: 0; }
 
 .works {
   width: 95%;
@@ -361,7 +391,6 @@ body {
   margin-bottom: 5%; }
 
 .about {
-  margin-top: 5%;
   display: flex;
   flex-direction: column;
   margin-bottom: 7vh;
@@ -400,6 +429,18 @@ body {
 .list-wrapper {
   display: flex;
   flex-direction: column; }
+
+.list-inner-right {
+  margin-bottom: 1.5rem; }
+
+@media only screen and (min-width: 675px) {
+  .list-wrapper {
+    flex-direction: row;
+    margin-bottom: 1.5rem; }
+  .list-inner-left {
+    margin-right: 5vw; }
+  .list-inner-right {
+    margin-bottom: 0; } }
 
 .about-text:last-child {
   margin-bottom: 2.4rem; }

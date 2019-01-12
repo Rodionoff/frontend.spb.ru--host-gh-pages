@@ -189,7 +189,7 @@ body
   color: $header-font-color
   width: 90%
   margin-top: 7%
-  margin-left: 8.5%
+  // margin-left: 8.5vw
   // margin-right: 8.5%
   margin-bottom: 10px
   padding: 1.3rem 0
@@ -197,11 +197,13 @@ body
 .header-image
 
 .header-title
+  margin-left: 8.5vw
   margin-bottom: 1.4%
 
 .header-text
   font-size: 1.4rem
   // width: 90%
+  margin-left: 8.5vw
   margin-right: 8.5vw
 
   a
@@ -277,3 +279,33 @@ body
 .footer-copyright
   margin-left: 8.5%
   margin-right: 55%
+
+.tagcloud-label
+  margin-left: 6vw
+  margin-bottom: .5rem
+
+.tagcloud
+  display: flex
+  margin-left: 6vw
+  padding: 0
+
+.tagcloud::before
+  content: '['
+
+.tagcloud::after
+  content: ']'
+
+.tagcloud li
+  // margin-right: 0.5rem
+  color: $cosmic-blue
+
+.tagcloud li:first-child::before
+  content: '  '
+
+.tagcloud li::after
+  content: ', '
+  margin-right: .5rem
+
+.tagcloud li:last-child::after
+  content: ''
+  margin-right: 0
