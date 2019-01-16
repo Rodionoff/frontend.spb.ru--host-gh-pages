@@ -21,7 +21,8 @@ self.addEventListener('install', function (event) {
         './src/img/stories/zima-min.jpg',
         './src/img/works/lemon158.png',
         './src/img/aboutme/image.jpg',
-        './src/img/lazyLoad/lazyLoad.jpg'        
+        './src/img/lazyLoad/lazyLoad.jpg',
+        './src/img/frontend/sv_vscode1.png'     
       ]
     ))
   )
