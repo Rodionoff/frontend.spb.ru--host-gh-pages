@@ -1,7 +1,6 @@
 let cache_v1 = 'cache_v1';
 
-self.addEventListener('install', function (event) {
-  // self.skipWaiting();
+self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cache_v1)
     .then(cache => cache.addAll(
@@ -11,6 +10,7 @@ self.addEventListener('install', function (event) {
         './krooshkin.html',
         './stories.html',
         './works.html',
+        './delaem-svoi-website-progressivnim.html',
         './favicon.png',
         './dist/bundle.js',
         './dist/style.css',

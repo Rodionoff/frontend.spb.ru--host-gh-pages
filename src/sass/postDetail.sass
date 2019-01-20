@@ -1,0 +1,64 @@
+.postDetail-header-title
+  text-shadow: 3px 5px darken($primary-color, 25%)
+
+.postDetail
+  width: 95%
+  margin: 0 2.5% 5%
+
+
+  .post-image
+    overflow: hidden
+    margin-bottom: 1.75rem
+    
+  .postDetail-text
+    color: #333
+    color: inherit
+    // margin-bottom: 1rem
+    // padding: .5rem 3.5vw 1.3rem 3.5vw
+    padding: 0 3.5vw 1vh
+    font-size: 18px
+    line-height: 23px
+
+  .postDetail-text:last-child
+    margin-bottom: 1rem
+
+  code
+    // font-size: 1rem
+
+
+@media only screen and (max-width:690px)
+  .postDetail-code
+    max-width: 100%
+    // width: auto
+    // margin: auto
+    padding: 0 3.5vw 1vh
+
+
+    code
+      // display: block
+      // padding: 0
+  
+  
+@media only screen and (min-width: 690px)
+  .postDetail-text
+    font-size: 21px
+    width: 670px
+    line-height: 29px
+    margin: auto
+
+  .postDetail-code
+    width: 670px
+    max-width: 100%
+    padding: 0 3.5vw 1vh
+    margin: auto
+
+    code
+      // padding: 0
+
+#disqus_thread
+  width: 95%
+  margin: auto
+  background-color: white
+  margin-bottom: 5%
+  padding: 5vh 5vw
+  box-shadow: $post-box-shadow

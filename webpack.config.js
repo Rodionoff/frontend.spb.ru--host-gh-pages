@@ -11,8 +11,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(png|jpg)$/,
         loader: "url-loader",
       },
@@ -23,7 +22,20 @@ module.exports = {
           {
             loader: "css-loader"
           },
-          'sass-loader'
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: 'postcss',
+              plugins: [
+                require('autoprefixer')({
+                  'browsers': ['> 1%', 'last 2 versions', 'IE > 7']
+                }),
+              ]
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
         ]
       },
       {
@@ -42,5 +54,5 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "style.css"
     }),
-   ]    
+  ]
 };

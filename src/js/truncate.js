@@ -1,19 +1,19 @@
-let texts = document.getElementsByClassName('post-text');
+let genericTexts = document.getElementsByClassName('post-text');
 
-truncate()
+truncate(genericTexts, 60)
   .then(truncated => addReadMoreLink(truncated))
   .then(links => makeLinksUseFull(links))
 
-function truncate() {
+function truncate(texts, wordsToKeep) {
   return new Promise(resolve => {
     let sample = [];
     resolve(
       Array.prototype.map.call(texts, (text, index) => {
         sample.push(text.innerHTML);
-        let textArray = text.innerHTML.split(' ');
+        let textArray = text.innerText.split(' ');
 
-        if (textArray.length >= 100) {
-          let truncated = textArray.splice(0, 100).join(' ').trim();
+        if (textArray.length >= wordsToKeep) {
+          let truncated = textArray.splice(0, wordsToKeep).join(' ').trim();
 
           let lastSymbol = truncated.split('')[truncated.length - 1]
 
@@ -21,7 +21,7 @@ function truncate() {
             truncated = truncated.split('').splice(0, truncated.length - 1).join('')
 
           }
-          text.innerHTML = truncated + '...'
+          text.innerText = truncated + '...'
           // readMore(text)
           return [text, index, sample]
         }
