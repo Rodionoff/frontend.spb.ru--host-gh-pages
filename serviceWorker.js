@@ -29,11 +29,13 @@ self.addEventListener('install', function(event) {
 })
 
 self.addEventListener('fetch', function (event) {
-  // if (event.request.url.includes('favicon')) {
-  //   event.respondWith(
-  //     caches.match('./favicon.png')
-  //       .then(matching => matching)
-  //   )}
+  if (event.request.url.includes('favicon')) {
+    event.respondWith(
+      caches.match('./favicon.png')
+        .then(matching => matching)
+    )
+  return
+  }
 
   event.respondWith(
     caches.match(event.request)
