@@ -22,7 +22,7 @@ self.addEventListener('install', function(event) {
         './src/img/works/lemon158.png',
         './src/img/aboutme/image.jpg',
         './src/img/lazyLoad/lazyLoad.jpg',
-        'delaem-svoi-website-progressivnim.jpeg'   
+        './src/img/frontend/delaem-svoi-website-progressivnim.jpeg'   
       ]
     ))
   )
