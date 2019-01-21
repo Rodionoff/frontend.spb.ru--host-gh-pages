@@ -51,12 +51,11 @@
       <h2 class="header-text">В процессе...</h2>
     </header>
     <section class="posts frontend">
-    
+
       <article class="post">
         <figure class="post-image">
           <!-- <img src="./src/img/frontend/service_worker_pexels.jpeg" alt="vscode service worker screenshot"> -->
-          <img src="./src/img/frontend/delaem-svoi-website-progressivnim.jpeg"
-          alt="stock photo from pexels">
+          <img src="./src/img/frontend/delaem-svoi-website-progressivnim.jpeg" alt="stock photo from pexels">
         </figure>
         <h3 class="post-title"><a href='./delaem-svoi-website-progressivnim.html'>Делаем свой веб сайт прогрессивным</a></h3>
         <p class="post-text">
@@ -68,14 +67,14 @@
           quaerat quisquam doloremque! Mollitia iusto rem similique.
         </p>
         <div class="tagcloud-wrapper">
-        <p class='tagcloud-label'>Тэги:</p>
-        <ul class="tagcloud">
-            
-            
-              <li class="tag">воспоминания</li>
-              <li class="tag">тест1</li>
-            </ul>
-          </div>
+          <p class='tagcloud-label'>Тэги:</p>
+          <ul class="tagcloud">
+
+
+            <li class="tag">воспоминания</li>
+            <li class="tag">тест1</li>
+          </ul>
+        </div>
         <p class="post-date">
           4 November 2018
         </p>
@@ -93,14 +92,14 @@
           quaerat quisquam doloremque! Mollitia iusto rem similique.
         </p>
         <div class="tagcloud-wrapper">
-        <p class='tagcloud-label'>Тэги:</p>
-        <ul class="tagcloud">
-            
-            
-              <li class="tag">воспоминания</li>
-              <li class="tag">тест</li>
-            </ul>
-          </div>
+          <p class='tagcloud-label'>Тэги:</p>
+          <ul class="tagcloud">
+
+
+            <li class="tag">воспоминания</li>
+            <li class="tag">тест</li>
+          </ul>
+        </div>
         <p class="post-date">
           4 November 2018
         </p>
@@ -118,14 +117,14 @@
           quaerat quisquam doloremque! Mollitia iusto rem similique.
         </p>
         <div class="tagcloud-wrapper">
-        <p class='tagcloud-label'>Тэги:</p>
-        <ul class="tagcloud">
-            
-            
-              <li class="tag">воспоминания</li>
-              <li class="tag">тест11</li>
-            </ul>
-          </div>
+          <p class='tagcloud-label'>Тэги:</p>
+          <ul class="tagcloud">
+
+
+            <li class="tag">воспоминания</li>
+            <li class="tag">тест11</li>
+          </ul>
+        </div>
         <p class="post-date">
           4 November 2018
         </p>
@@ -149,14 +148,14 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('./serviceWorker.js')
-        .then(registration => {
-          // Регистрация прошла успешно
-          console.log('Sw registered with scope: ', registration.scope);
-        })
-        .catch(err => {
-          // Регистрация не удалась
-          console.log('SW registration failed: ', err);
-        });
+          .then(registration => {
+            // Регистрация прошла успешно
+            console.log('Sw registered with scope: ', registration.scope);
+          })
+          .catch(err => {
+            // Регистрация не удалась
+            console.log('SW registration failed: ', err);
+          });
       });
     }
   </script>

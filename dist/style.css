@@ -131,7 +131,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
   color: #293434;
   width: 90%;
-  margin-top: 5.5%;
+  margin-top: 3.8%;
   padding: 1.7rem 0 1.125rem;
   margin-left: 1.5vw;
   padding-left: 3.5vw; }
@@ -539,7 +539,7 @@ body {
 .frontend .post-text {
   display: none; }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 730px) {
   .frontend {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
@@ -610,7 +610,7 @@ body {
   margin: auto;
   background-color: white;
   margin-bottom: 5%;
-  padding: 5vh 5vw;
+  padding: 1.75rem 3.5vw 0;
   -webkit-box-shadow: 3px 5px 4px 1px #b3c2c2;
           box-shadow: 3px 5px 4px 1px #b3c2c2; }
 
