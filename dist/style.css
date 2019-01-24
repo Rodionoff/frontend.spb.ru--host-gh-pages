@@ -139,14 +139,12 @@ body {
 .header-title {
   margin-bottom: 1.4%;
   padding: 1vh 1vw 0;
-  line-height: 2rem;
-  text-shadow: 3px 5px #b3c2c2; }
+  line-height: 2rem; }
 
 .header-text {
   font-size: 1.4rem;
   padding: 1vh 1vw;
-  margin-right: 6vw;
-  text-shadow: 3px 5px #b3c2c2; }
+  margin-right: 6vw; }
   .header-text a {
     color: #1778c2;
     cursor: pointer; }
