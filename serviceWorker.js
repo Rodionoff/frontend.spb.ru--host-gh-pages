@@ -10,7 +10,7 @@ self.addEventListener('install', function(event) {
         './krooshkin.html',
         './stories.html',
         './works.html',
-        './delaem-svoi-website-progressivnim.html',
+        './frontend/1.html',
         './favicon.png',
         './dist/bundle.js',
         './dist/style.css',
