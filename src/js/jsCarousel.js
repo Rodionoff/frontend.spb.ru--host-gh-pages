@@ -1,6 +1,6 @@
-export default function jsCarousel(links) {
+export default function jsCarousel(links, imgs) {
   let modal = document.getElementsByClassName('modal')[0]
-  let images = document.getElementsByClassName('photo-image')
+  // let imgs = document.getElementsByClassName('photo-image')
 
   let exit = document.createElement('div')
   exit.classList.add('exit')
@@ -32,14 +32,14 @@ export default function jsCarousel(links) {
       if (img.pk == 0) {
         leftArrow.style.visibility = 'hidden'
         rightArrow.style.visibility = 'visible'
-      } else if (img.pk > 0 && img.pk < images.length - 1) {
+      } else if (img.pk > 0 && img.pk < imgs.length - 1) {
         leftArrow.style.visibility = 'visible'
         rightArrow.style.visibility = 'visible'
-      } else if (img.pk == images.length - 1) {
+      } else if (img.pk == imgs.length - 1) {
         leftArrow.style.visibility = 'visible'
         rightArrow.style.visibility = 'hidden'
       }
-      img.src = images[i].lastElementChild.src
+      img.src = imgs[i].lastElementChild.src
       console.log(img)
       appendElementsToModal(img)
       modal.classList.add('showModal')
@@ -56,9 +56,9 @@ export default function jsCarousel(links) {
     leftArrow.style.visibility = 'visible'
     let image = document.getElementsByClassName('modalImage')[0]
     image.pk += 1
-    image.src = images[image.pk].lastElementChild.src
+    image.src = imgs[image.pk].lastElementChild.src
 
-    let nextImageExists = images[image.pk + 1] !== undefined
+    let nextImageExists = imgs[image.pk + 1] !== undefined
 
     if (!nextImageExists) {
       rightArrow.style.visibility = 'hidden'
@@ -69,9 +69,9 @@ export default function jsCarousel(links) {
     rightArrow.style.visibility = 'visible'
     let image = document.getElementsByClassName('modalImage')[0]
     image.pk -= 1
-    image.src = images[image.pk].lastElementChild.src
+    image.src = imgs[image.pk].lastElementChild.src
     
-    let previousImageExists = images[image.pk - 1] !== undefined
+    let previousImageExists = imgs[image.pk - 1] !== undefined
 
     if (!previousImageExists) {
       leftArrow.style.visibility = 'hidden'

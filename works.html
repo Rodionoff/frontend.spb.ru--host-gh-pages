@@ -15,7 +15,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#fafbfb"/>
+  <meta name="theme-color" content="#fafbfb" />
   <link rel="shortcut icon" type="image/png" href="./favicon.png">
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./src/icons/soyuz_apollo_apple_icon.png">
@@ -51,37 +51,151 @@
     </ul>
   </nav>
   <main class="main">
-      <header class="header">
-          <h1 class="header-title">Портфолио</h1>
-          <h2 class="header-text">Webpack, SASS</h2>
-        </header>
+    <header class="header">
+      <h1 class="header-title">Портфолио</h1>
+      <h2 class="header-text">Webpack, SASS, Babel</h2>
+    </header>
+    <div class="modal">
+      <div class="tooltip"></div>
+      <div class="tooltip__exit">⌧</div>
+    </div>
     <section class="works">
       <article class="work">
+        <figure class="work-image work-image-truncate">
+          <img src="./src/img/works/blog_in.png" alt="html template image">
+        </figure>
+
+        <h3 class="work-title">Главная страница блога</h3>
+        <p class="work-text">
+          <a href="https://pavelrodionoff.gitlab.io/blog_in/">Готовая страница</a>
+          <a href="https://gitlab.com/pavelrodionoff/blog_in/">Исходники</a>
+          Сверстанный (адаптивно) с применением Webpack, Sass и Babel
+          .psd макет.
+        </p>
+        <p class="work-date">
+          28 October 2018
+        </p>
+      </article>
+      <article class="work">
+        <figure class="work-image work-image-truncate">
+          <img src="./src/img/works/changenow_form.png" alt="html template image">
+        </figure>
+
+        <h3 class="work-title">Форма обмена валют</h3>
+        <p class="work-text">
+          <a href="https://rodionoff.github.io/smena">Готовая форма</a>
+          <a href="https://github.com/rodionoff/smena">Исходники</a>
+          Выполненное тестовое задание:
+          <br>
+          Без использования компонентных либ\фрэймворков сделать функционально 
+          и визуально максимально похожую форму: <br>
+          <img src="./src/img/works/source_form.png" alt="source form">
+          <br>
+          Дано:
+          <br>
+          - скриншот формы
+          <br>
+          - <a href="https://changenow.io" style='display: inline;'>веб сайт</a>, форму которого нужно повторить
+          <br>
+          - доступные по <a href="https://changenow.io/api/docs/fixed-rate-flow/method-market-info-fixed-rate" style='display: inline;'>api</a> данные
+        </p>
+        <p class="work-date">
+          28 October 2018
+        </p>
+      </article>
+      <article class="work">
+        <figure class="work-image work-image-truncate">
+          <img src="./src/img/works/telecom.png" alt="html template image">
+        </figure>
+
+        <h3 class="work-title">Лэндинг</h3>
+        <p class="work-text">
+          <a href="https://pavelrodionoff.gitlab.io/telecom">Готовая страница</a>
+          <a href="https://gitlab.com/pavelrodionoff/telecom">Исходники</a>
+          Выполненное тестовое задание:
+          <br>
+          сверстать лэндинг
+          <br>
+          <br>
+          Дано:
+         <br>
+          - <a href='https://www.figma.com/file/eFm81qtQQ86IZVbNBZRtBaod/MAIN?node-id=0%3A1' style='display: inline;'>
+            макет в фигме
+            </a>
+          <br>
+          - образец как это должно быть (фото)
+          <img src="./src/img/works/telecom_example.png" alt="telecom example">
+          <br>
+          Напутствие:
+          <br>- при верстке страницы основной акцент должен быть сфокусирован на мобильном адаптиве.
+          <br>- необходимо адаптировать страницу под все основные разрешения мобильных устройств. Будет достаточно вертикального отображения.
+          <br>- отсутствие вертикального и горизонтального скрола.
+          <br>- блок номер 3 должен располагаться на расстоянии в 35 px от кнопки.
+          <br>- кнопка “Смотреть”(4) Должна располагаться строго по центру экрана. Размеры кнопки - 80% на 20%.
+          <br>- блок №5 должен располагаться на расстоянии в 10px от блока №4
+          <br>- на маленьких экранах пункты 1,2 и 3 можно убрать (если они не умещаются). 
+          <br>- изображения 1 и 2 необходимо выполнить без потери качества (svg)
+          <br>- графа 6 должна располагаться строго снизу страницы, в эту форму необходимо ввести свои данные.
+
+          <br>
+        </p>
+        <p class="work-date">
+          28 October 2018
+        </p>
+      </article>
+      <article class="work">
           <!-- <img src="./src/img/works/lemon158.png" alt="html template image"> -->
+          <!-- </div> -->
+          <figure class="work-image work-image-truncate">
+            <img src="./src/img/works/shopyes.png" alt="html template image"></figure>
+  
+          <h3 class="work-title">Лэндинг</h3>
+          <p class="work-text">
+            <a href="https://pavelrodionoff.gitlab.io/responsive">Готовая страница</a>
+            <a href="https://gitlab.com/pavelrodionoff/responsive">Исходники</a>
+            Сверстанный (адаптивно) с применением Webpack, Sass и Babel
+            .psd макет.
+          </p>
+          <p class="work-date">
+            28 October 2018
+          </p>
+        </article>
+        <article class="work">
+            <!-- <img src="./src/img/works/lemon158.png" alt="html template image"> -->
+            <!-- </div> -->
+            <figure class="work-image work-image-truncate">
+              <img src="./src/img/works/bree.png" alt="html template image"></figure>
+    
+            <h3 class="work-title">Лэндинг</h3>
+            <p class="work-text">
+              <a href="https://rodionoff.github.io/bree">Готовая страница</a>
+              <a href="https://github.com/Rodionoff/bree">Исходники</a>
+              Сверстанный (фиксированно) с применением Webpack, Sass и Babel
+              .psd макет.
+            </p>
+            <p class="work-date">
+              28 October 2018
+            </p>
+          </article>
+      <article class="work">
+        <!-- <img src="./src/img/works/lemon158.png" alt="html template image"> -->
         <!-- </div> -->
         <figure class="work-image work-image-truncate"><img src="./src/img/works/lemon158.png" alt="html template image"></figure>
 
-        <h3 class="work-title">Lemon</h3>
+        <h3 class="work-title">Главная страница блога</h3>
         <p class="work-text">
-
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-          <br>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Fugiat culpa reiciendis aspernatur voluptatem, 
-          maxime velit neque quia commodi repellendus qui.<br>
-          <br>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Fugiat culpa reiciendis aspernatur voluptatem, 
-          maxime velit neque quia commodi repellendus qui.<br>
-          <br>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Fugiat culpa reiciendis aspernatur voluptatem, 
-          maxime velit neque quia commodi repellendus qui.
+          <a href="https://rodionoff.github.io/lemon">Готовая страница</a>
+          <a href="https://github.com/Rodionoff/lemon">Исходники</a>
+          Сверстанный (фиксированно) с применением Webpack, Sass и Babel
+          .psd макет.
         </p>
         <p class="work-date">
-            28 October 2018
-          </p>
+          28 October 2018
+        </p>
       </article>
+
+
+
     </section>
 
 

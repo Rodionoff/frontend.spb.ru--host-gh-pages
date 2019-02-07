@@ -1,3 +1,80 @@
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8; }
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic; }
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold; }
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080; }
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14; }
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold; }
+
+.hljs-subst {
+  font-weight: normal; }
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold; }
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal; }
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926; }
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073; }
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3; }
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold; }
+
+.hljs-deletion {
+  background: #fdd; }
+
+.hljs-addition {
+  background: #dfd; }
+
+.hljs-emphasis {
+  font-style: italic; }
+
+.hljs-strong {
+  font-weight: bold; }
+
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
@@ -271,7 +348,7 @@ body {
 
 .work-title {
   font-size: 1.3rem;
-  padding: 1.3rem 3.5vw .1rem 3.5vw; }
+  padding: 1.3rem 3.5vw 1.9rem 3.5vw; }
 
 .work-text {
   letter-spacing: .075rem;
@@ -280,12 +357,41 @@ body {
   color: inherit;
   margin-bottom: 1rem;
   padding: 1.3rem 3.5vw;
-  letter-spacing: 0.000001; }
+  letter-spacing: 0.000001;
+  display: none; }
 
 .work-date {
   border-radius: 7px;
   padding: 1.3rem 3.5vw;
   text-align: right; }
+
+@media only screen and (min-width: 730px) {
+  .works {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+    grid-gap: 2vw; }
+    .works .work {
+      margin-bottom: 0; }
+    .works .work:first-child(n) {
+      display: none; }
+    .works .work-image {
+      max-height: 35vh;
+      overflow: hidden; }
+    .works .work-date {
+      display: none; } }
+
+@media only screen and (min-width: 1050px) {
+  .works {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); }
+    .works .work-image {
+      max-height: 25vh; } }
+
+.tagcloud-wrapper {
+  margin-bottom: 1.2rem; }
+
+.showText {
+  display: block; }
 
 .modal {
   background-color: rgba(0, 0, 0, 0.7);
@@ -612,80 +718,33 @@ body {
   -webkit-box-shadow: 3px 5px 4px 1px #b3c2c2;
           box-shadow: 3px 5px 4px 1px #b3c2c2; }
 
-.hljs {
+.tooltip {
+  width: 80vw;
+  max-height: 80vh;
+  background-color: #fff;
   display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8; }
+  padding: 2rem 3.5vw;
+  background-color: #eee;
+  position: relative;
+  cursor: pointer;
+  overflow-y: auto; }
+  .tooltip a {
+    margin-bottom: .7rem;
+    color: #1778c2;
+    display: block; }
+  .tooltip img {
+    margin: .4rem 0; }
 
-.hljs-comment,
-.hljs-quote {
-  color: #998;
-  font-style: italic; }
+@media (min-width: 730px) {
+  .tooltip {
+    width: 50vw; }
+    .tooltip img {
+      width: 50%;
+      float: right; } }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: bold; }
-
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080; }
-
-.hljs-string,
-.hljs-doctag {
-  color: #d14; }
-
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: bold; }
-
-.hljs-subst {
-  font-weight: normal; }
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: bold; }
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal; }
-
-.hljs-regexp,
-.hljs-link {
-  color: #009926; }
-
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073; }
-
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3; }
-
-.hljs-meta {
-  color: #999;
-  font-weight: bold; }
-
-.hljs-deletion {
-  background: #fdd; }
-
-.hljs-addition {
-  background: #dfd; }
-
-.hljs-emphasis {
-  font-style: italic; }
-
-.hljs-strong {
-  font-weight: bold; }
+.tooltip__exit {
+  position: absolute;
+  top: 1.5vw;
+  right: 2vw;
+  color: #000; }
 

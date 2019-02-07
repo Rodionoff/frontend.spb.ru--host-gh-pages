@@ -1,5 +1,7 @@
 import jsCarousel from './jsCarousel'
 
+let images = document.getElementsByClassName('photo-image')
+
 let photos = document.getElementsByClassName('photo')
 let overlays = document.getElementsByClassName('overlay')
 let imageDescriptions = document.getElementsByClassName('imageDescription')
@@ -28,4 +30,4 @@ function makeALinkWhichOpensModal() {
   return link
 }
 
-jsCarousel(linksToOpenModal)
+jsCarousel(linksToOpenModal, images)
