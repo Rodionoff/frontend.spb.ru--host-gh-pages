@@ -375,7 +375,7 @@ body {
     .works .work:first-child(n) {
       display: none; }
     .works .work-image {
-      max-height: 35vh;
+      max-height: 25vh;
       overflow: hidden; }
     .works .work-date {
       display: none; } }
@@ -653,7 +653,7 @@ body {
     .frontend .post:first-child(n) {
       display: none; }
     .frontend .post-image {
-      max-height: 35vh;
+      max-height: 25vh;
       overflow: hidden; }
     .frontend .post-text {
       display: none; }
