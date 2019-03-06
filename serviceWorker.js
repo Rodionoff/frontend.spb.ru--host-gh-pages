@@ -20,6 +20,7 @@ self.addEventListener('install', function(event) {
         './src/img/stories/chairs-min.jpg',
         './src/img/stories/zima-min.jpg',
         './src/img/works/lemon158.png',
+        './src/img/works/vue-inspiration-app--mobile--lite.png',
         './src/img/aboutme/image.jpg',
         './src/img/lazyLoad/lazyLoad.jpg',
         './src/img/frontend/delaem-svoi-website-progressivnim.jpeg'   
