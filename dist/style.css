@@ -170,7 +170,7 @@ body {
 .show {
   display: block; }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 650px) {
   .navbar {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -689,6 +689,9 @@ body {
     padding: 0 3.5vw 1vh;
     font-size: 18px;
     line-height: 23px; }
+  .postDetail .postDetail-small-header {
+    padding: 0 3.5vw 1vh;
+    font-weight: 700; }
   .postDetail .postDetail-text:last-child {
     margin-bottom: 1rem; }
 
@@ -702,6 +705,11 @@ body {
     font-size: 21px;
     width: 670px;
     line-height: 29px;
+    margin: auto; }
+    .postDetail-text a {
+      color: #1778c2; }
+  .postDetail-small-header {
+    width: 670px;
     margin: auto; }
   .postDetail-code {
     width: 670px;

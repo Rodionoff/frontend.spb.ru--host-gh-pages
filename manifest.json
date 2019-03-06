@@ -1,6 +1,6 @@
 {
-  "short_name": "PR Blog",
-  "name": "PR Frontend Blog",
+  "short_name": "Frontend",
+  "name": "Frontend Blog",
   "icons": [
     {
       "src": "./src/icons/soyuz_apollo192.png",
