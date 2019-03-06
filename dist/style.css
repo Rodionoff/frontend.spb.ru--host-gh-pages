@@ -689,6 +689,8 @@ body {
     padding: 0 3.5vw 1vh;
     font-size: 18px;
     line-height: 23px; }
+    .postDetail .postDetail-text a {
+      color: #1778c2; }
   .postDetail .postDetail-small-header {
     padding: 0 3.5vw 1vh;
     font-weight: 700; }
@@ -706,8 +708,6 @@ body {
     width: 670px;
     line-height: 29px;
     margin: auto; }
-    .postDetail-text a {
-      color: #1778c2; }
   .postDetail-small-header {
     width: 670px;
     margin: auto; }
