@@ -141,6 +141,12 @@ body
   margin-bottom: 3%
   // font-weight: 500
   // font-size: 1.1rem
+  padding-bottom: 3px
+  border-bottom: 1px solid transparent
+
+.navlink:not(.navlink-active):hover,
+.navlink-active
+  border-bottom: 1px solid $navbar-font-color
 
 
 .show
@@ -195,6 +201,7 @@ body
   font-family: 'Ubuntu', sans-serif
   // font-weight: 400
   // font-style: normal
+  // font-weight: 700
   color: $header-font-color
   width: 90%
   margin-top: 3.8%
@@ -225,6 +232,7 @@ body
   // width: 90%
   // margin-left: 6vw
   margin-right: 6vw
+  display: none
   // text-shadow: 3px 5px darken($primary-color, 25%)
 
 

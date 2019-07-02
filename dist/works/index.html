@@ -6,9 +6,12 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121805242-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
-  
+
     gtag('config', 'UA-121805242-1');
   </script>
 
@@ -17,13 +20,13 @@
   <meta name="description" content="Раздел с моими работами">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#fafbfb" />
-  <link rel="shortcut icon" type="image/png" href="./favicon.png">
-  <link rel="manifest" href="./manifest.json">
-  <link rel="apple-touch-icon" href="./src/icons/soyuz_apollo_apple_icon.png">
+  <link rel="shortcut icon" type="image/png" href="../assets/icons/favicon.png">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../assets/icons/soyuz_apollo_apple_icon.png">
   <!-- <link href="https://fonts.googleapis.com/css?family=Krub|Muli" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css?family=Jura:500|Ubuntu&amp;subset=cyrillic" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Jura:500|Ubuntu&amp;subset=cyrillic" rel="stylesheet"> -->
 
-  <link rel='stylesheet' href='./dist/style.css'>
+  <link rel='stylesheet' href='../style.css'>
   <title>Портфолио | Павел Родионов, разработчик интерфейсов</title>
   <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=105818b7-2b5d-40db-ae70-53ada8648561&lang=ru_RU" type="text/javascript">
   </script>   -->
@@ -33,7 +36,11 @@
   <!--<div class="modal"></div>-->
   <nav class="navbar">
     <div class="navbar-min">
-      <div class="navbar-logo"><a href='./'>Главная</a></div>
+      <div class="navbar-logo">
+        <a href='../'>
+          Главная
+        </a>
+      </div>
       <div class="navbar-toggle">
         <div class="line"></div>
         <div class="line"></div>
@@ -41,35 +48,62 @@
       </div>
     </div>
     <ul class="navbar-items">
-      <!-- <li class="navlink"><a href="#">Link1</a></li> -->
-      <li class="navlink"><a href="./">Фронтенд</a></li>
-      <li class="navlink"><a href="./about.html">Обо мне</a></li>
-      <li class="navlink"><a href="./stories.html">Истории</a></li>
-      <!-- <li class="navlink"><a href="#">Link4</a></li> -->
-      <!-- <li class="navlink"><a href="#">Link5</a></li> -->
-      <!-- <li class="navlink"><a href="#">Link6</a></li> -->
-      <li class="navlink"><a href="./krooshkin.html">krooshkin</a></li>
+      <li class="navlink">
+        <a href="../">
+          Статьи
+        </a>
+      </li>
+      <li class="navlink navlink-active">
+        Портфолио
+
+        </a>
+      </li>
+      <li class='navlink'>
+        <a href="../about">
+          Обо мне
+        </a>
+      </li>
+      <li class="navlink">
+        <a href="../krooshkin">
+          krooshkin
+        </a>
+      </li>
+      <!-- <li class="navlink">
+        <a href="../stories">
+          Истории
+        </a>
+      </li> -->
     </ul>
   </nav>
   <main class="main">
     <header class="header">
-      <h1 class="header-title">Портфолио</h1>
-      <h2 class="header-text">Webpack, SASS, Babel</h2>
+      <h1 class="header-title">
+        Портфолио
+      </h1>
+      <h2 class="header-text">
+        Webpack, SASS, Babel
+      </h2>
     </header>
     <div class="modal">
       <div class="tooltip"></div>
-      <div class="tooltip__exit">⌧</div>
+      <div class="tooltip__exit">
+        ⌧
+      </div>
     </div>
     <section class="works">
       <article class="work">
         <figure class="work-image work-image-truncate">
-          <img src="./src/img/works/vue-inspiration-app--mobile--lite.png" alt="vue inspiration app image">
+          <img src="../assets/img/works/vue-inspiration-app--mobile--lite.png" alt="vue inspiration app image">
         </figure>
 
         <h3 class="work-title">Vue/Vuex app</h3>
         <p class="work-text">
-          <a href="https://rodionoff.github.io/vue-inspiration-app/">Готовая страница</a>
-          <a href="https://github.com/rodionoff/vue-inspiration-app/">Исходники</a>
+          <a href="https://rodionoff.github.io/vue-inspiration-app/">
+            Готовая страница
+          </a>
+          <a href="https://github.com/rodionoff/vue-inspiration-app/">
+            Исходники
+          </a>
           Написанное на vue/vuex приложение, служащее для моментального вдохновления
           путем созерцания красивых фотографий.
           <br>
@@ -81,13 +115,19 @@
       </article>
       <article class="work">
         <figure class="work-image work-image-truncate">
-          <img src="./src/img/works/blog_in.png" alt="html template image">
+          <img src="../assets/img/works/blog_in.png" alt="html template image">
         </figure>
 
-        <h3 class="work-title">Главная страница блога</h3>
+        <h3 class="work-title">
+          Главная страница блога
+        </h3>
         <p class="work-text">
-          <a href="https://pavelrodionoff.gitlab.io/blog_in/">Готовая страница</a>
-          <a href="https://gitlab.com/pavelrodionoff/blog_in/">Исходники</a>
+          <a href="https://pavelrodionoff.gitlab.io/blog_in/">
+            Готовая страница
+          </a>
+          <a href="https://gitlab.com/pavelrodionoff/blog_in/">
+            Исходники
+          </a>
           Сверстанный (адаптивно) с применением Webpack, Sass и Babel
           .psd макет.
         </p>
@@ -97,18 +137,24 @@
       </article>
       <article class="work">
         <figure class="work-image work-image-truncate">
-          <img src="./src/img/works/changenow_form.png" alt="html template image">
+          <img src="../assets/img/works/changenow_form.png" alt="html template image">
         </figure>
 
-        <h3 class="work-title">Форма обмена валют</h3>
+        <h3 class="work-title">
+          Форма обмена валют
+        </h3>
         <p class="work-text">
-          <a href="https://rodionoff.github.io/smena">Готовая форма</a>
-          <a href="https://github.com/rodionoff/smena">Исходники</a>
+          <a href="https://rodionoff.github.io/smena">
+            Готовая форма
+          </a>
+          <a href="https://github.com/rodionoff/smena">
+            Исходники
+          </a>
           Выполненное тестовое задание:
           <br>
           Без использования компонентных либ\фрэймворков сделать функционально
           и визуально максимально похожую форму: <br>
-          <img src="./src/img/works/source_form.png" alt="source form">
+          <img src="../assets/img/works/source_form.png" alt="source form">
           <br>
           Дано:
           <br>
@@ -116,7 +162,8 @@
           <br>
           - <a href="https://changenow.io" style='display: inline;'>веб сайт</a>, форму которого нужно повторить
           <br>
-          - доступные по <a href="https://changenow.io/api/docs/fixed-rate-flow/method-market-info-fixed-rate" style='display: inline;'>api</a>
+          - доступные по <a href="https://changenow.io/api/docs/fixed-rate-flow/method-market-info-fixed-rate"
+            style='display: inline;'>api</a>
           данные
         </p>
         <p class="work-date">
@@ -125,7 +172,7 @@
       </article>
       <article class="work">
         <figure class="work-image work-image-truncate">
-          <img src="./src/img/works/telecom.png" alt="html template image">
+          <img src="../assets/img/works/telecom.png" alt="html template image">
         </figure>
 
         <h3 class="work-title">Адаптивный лэндинг</h3>
@@ -144,7 +191,7 @@
           </a>
           <br>
           - образец как это должно быть (фото)
-          <img src="./src/img/works/telecom_example.png" alt="telecom example">
+          <img src="../assets/img/works/telecom_example.png" alt="telecom example">
           <br>
           Напутствие:
           <br>- при верстке страницы основной акцент должен быть сфокусирован на мобильном адаптиве.
@@ -165,10 +212,10 @@
         </p>
       </article>
       <article class="work">
-        <!-- <img src="./src/img/works/lemon158.png" alt="html template image"> -->
+        <!-- <img src="../assets/img/works/lemon158.png" alt="html template image"> -->
         <!-- </div> -->
         <figure class="work-image work-image-truncate">
-          <img src="./src/img/works/shopyes.png" alt="html template image"></figure>
+          <img src="../assets/img/works/shopyes.png" alt="html template image"></figure>
 
         <h3 class="work-title">Адаптивный лэндинг</h3>
         <p class="work-text">
@@ -182,10 +229,10 @@
         </p>
       </article>
       <article class="work">
-        <!-- <img src="./src/img/works/lemon158.png" alt="html template image"> -->
+        <!-- <img src="../assets/img/works/lemon158.png" alt="html template image"> -->
         <!-- </div> -->
         <figure class="work-image work-image-truncate">
-          <img src="./src/img/works/bree.png" alt="html template image"></figure>
+          <img src="../assets/img/works/bree.png" alt="html template image"></figure>
 
         <h3 class="work-title">Лэндинг</h3>
         <p class="work-text">
@@ -199,9 +246,10 @@
         </p>
       </article>
       <article class="work">
-        <!-- <img src="./src/img/works/lemon158.png" alt="html template image"> -->
+        <!-- <img src="../assets/img/works/lemon158.png" alt="html template image"> -->
         <!-- </div> -->
-        <figure class="work-image work-image-truncate"><img src="./src/img/works/lemon158.png" alt="html template image"></figure>
+        <figure class="work-image work-image-truncate"><img src="../assets/img/works/lemon158.png"
+            alt="html template image"></figure>
 
         <h3 class="work-title">Главная страница блога</h3>
         <p class="work-text">
@@ -241,7 +289,7 @@
     //     }); 
     // }
   </script>
-  <script type="text/javascript" src="dist/bundle.js"></script>
+  <script type="text/javascript" src="../bundle.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {

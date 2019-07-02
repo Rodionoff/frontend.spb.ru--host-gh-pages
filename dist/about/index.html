@@ -6,9 +6,12 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121805242-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
-  
+
     gtag('config', 'UA-121805242-1');
   </script>
 
@@ -17,12 +20,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#fafbfb" />
   <link rel="shortcut icon" type="image/png" href="./favicon.png">
-  <link rel="manifest" href="./manifest.json">
-  <link rel="apple-touch-icon" href="./src/icons/soyuz_apollo_apple_icon.png">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href=".../assets/icons/soyuz_apollo_apple_icon.png">
   <!-- <link href="https://fonts.googleapis.com/css?family=Krub|Muli" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css?family=Jura:500,700|Ubuntu&amp;subset=cyrillic" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Jura:500,700|Ubuntu&amp;subset=cyrillic" rel="stylesheet"> -->
 
-  <link rel='stylesheet' href='./dist/style.css'>
+  <link rel='stylesheet' href='../style.css'>
   <title>Обо мне | Павел Родионов, разработчик интерфейсов</title>
   <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=105818b7-2b5d-40db-ae70-53ada8648561&lang=ru_RU" type="text/javascript">
   </script>   -->
@@ -32,7 +35,11 @@
   <!--<div class="modal"></div>-->
   <nav class="navbar">
     <div class="navbar-min">
-      <div class="navbar-logo"><a href='./'>Главная</a></div>
+      <div class="navbar-logo">
+        <a href='../'>
+          Главная
+        </a>
+      </div>
       <div class="navbar-toggle">
         <div class="line"></div>
         <div class="line"></div>
@@ -41,29 +48,49 @@
     </div>
     <ul class="navbar-items">
       <!-- <li class="navlink"><a href="#">Link1</a></li> -->
-      <li class="navlink"><a href="./">Фронтенд</a></li>
-      <li class="navlink"><a href="./works.html">Портфолио</a></li>
-      <li class="navlink"><a href="./stories.html">Истории</a></li>
-      <!-- <li class="navlink"><a href="#">Link4</a></li> -->
-      <!-- <li class="navlink"><a href="#">Link5</a></li> -->
-      <!-- <li class="navlink"><a href="#">Link6</a></li> -->
-      <li class="navlink"><a href="./krooshkin.html">krooshkin</a></li>
+      <li class="navlink">
+        <a href="../">
+          Статьи
+        </a>
+      </li>
+      <li class="navlink">
+        <a href="../works">
+          Портфолио
+        </a>
+      </li>
+      <li class='navlink navlink-active'>
+        Обо мне
+      </li>
+      <li class="navlink">
+        <a href="../krooshkin">
+          krooshkin
+        </a>
+      </li>
+      <!-- <li class="navlink">
+        <a href="../stories">
+          Истории
+        </a>
+      </li> -->
     </ul>
   </nav>
-  <h1 style='visibility: hidden; display: none'>Павел Родионов, разработчик интерфейсов</h1>
   <main class="main">
     <header class="header">
-      <h1 class="header-title">Павел Родионов</h1>
-      <h2 class="header-text">Разработчик интерфейсов</h2>
+      <h1 class="header-title">
+        Павел Родионов
+      </h1>
+      <h2 class="header-text show">
+        Разработчик интерфейсов
+      </h2>
     </header>
     <section class="aboutme">
       <article class="about">
-        <!-- <div class="modal showModal"> -->
-        <!-- <img src="./src/img/abouts/lemon158.png" alt="html template image"> -->
-        <!-- </div> -->
-        <figure class="about-image"><img src="./src/img/aboutme/image.jpg" alt="Pavel Rodionoff"></figure>
+        <figure class="about-image">
+          <img src="../assets/img/aboutme/image.jpg" alt="Pavel Rodionoff">
+        </figure>
 
-        <h3 class="about-title">###</h3>
+        <h3 class="about-title">
+          ###
+        </h3>
         <div class="about-text">
           <p>
             Много про себя писать не буду,-
@@ -90,7 +117,7 @@
             <div class="list-inner-right">
               <p>Имею опыт:</p>
               <ul>
-                <li>React</li>
+                <li>Vue</li>
                 <li>Webpack</li>
                 <li>Babel</li>
                 <li>SASS</li>
@@ -106,10 +133,13 @@
 
           <br>
 
-          <p>Для связи пишите мне в:
+          <p>
+            Для связи пишите мне в:
             <ul>
               <li>
-                <a href="tg://resolve?domain=pavelrodionoff">телеграм</a>
+                <a href="tg://resolve?domain=pavelrodionoff">
+                  телеграм
+                </a>
               </li>
               <li>
                 <a href="https://www.facebook.com/profile.php?id=100000918994969">фейсбук</a>
@@ -117,10 +147,6 @@
             </ul>
           </p>
         </div>
-        <!-- </div>
-        <p class="about-date">
-            28 October 2018
-          </p> -->
       </article>
     </section>
 
@@ -133,20 +159,11 @@
     <p class="footer-copyright">
       2018 - 2019
     </p>
-    <!-- <div id="map" style="width: 90%; height: 200px; margin-left: 5%;"></div> -->
-    <!-- <br> -->
     </p>
   </footer>
   <script type="text/javascript">
-    // ymaps.ready(init);    
-    // function init(){ 
-    //     var myMap = new ymaps.Map("map", {
-    //         center: [59.93, 30.31],
-    //         zoom: 7
-    //     }); 
-    // }
   </script>
-  <script type="text/javascript" src="dist/bundle.js"></script>
+  <script type="text/javascript" src="../bundle.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {

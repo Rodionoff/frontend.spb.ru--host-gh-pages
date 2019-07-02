@@ -6,24 +6,27 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121805242-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
-  
+
     gtag('config', 'UA-121805242-1');
   </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#fafbfb"/>
-  <link rel="shortcut icon" type="image/png" href="./favicon.png">
-  <link rel="manifest" href="./manifest.json">
-  <link rel="apple-touch-icon" href="./src/icons/soyuz_apollo_apple_icon.png">
+  <meta name="theme-color" content="#fafbfb" />
+  <link rel="shortcut icon" type="image/png" href="../assets/icons/favicon.png">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../assets/icons/soyuz_apollo_apple_icon.png">
   <!-- <link href="https://fonts.googleapis.com/css?family=Krub|Muli" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css?family=Jura:500|Ubuntu&amp;subset=cyrillic" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Jura:500|Ubuntu&amp;subset=cyrillic" rel="stylesheet"> -->
 
-  <link rel='stylesheet' href='./dist/style.css'>
-  <title>Истории о всяком | Павел Родионов, разработчик интерфейсов</title>
+  <link rel='stylesheet' href='../style.css'>
+  <title>Истории | Павел Родионов, разработчик интерфейсов</title>
   <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=105818b7-2b5d-40db-ae70-53ada8648561&lang=ru_RU" type="text/javascript">
   </script>   -->
 </head>
@@ -32,7 +35,11 @@
   <!--<div class="modal"></div>-->
   <nav class="navbar">
     <div class="navbar-min">
-      <div class="navbar-logo"><a href='./'>Главная</a></div>
+      <div class="navbar-logo">
+        <a href='../'>
+          Главная
+        </a>
+      </div>
       <div class="navbar-toggle">
         <div class="line"></div>
         <div class="line"></div>
@@ -40,26 +47,49 @@
       </div>
     </div>
     <ul class="navbar-items">
-      <!-- <li class="navlink"><a href="#">Link1</a></li> -->
-      <li class="navlink"><a href="./">Фронтенд</a></li>
-      <li class="navlink"><a href="./works.html">Портфолио</a></li>
-      <li class="navlink"><a href="./about.html">Обо мне</a></li>
-      <!-- <li class="navlink"><a href="#">Link4</a></li> -->
-      <!-- <li class="navlink"><a href="#">Link5</a></li> -->
-      <!-- <li class="navlink"><a href="#">Link6</a></li> -->
-      <li class="navlink"><a href="./krooshkin.html">krooshkin</a></li>
+      <li class="navlink">
+        <a href="../">
+          Статьи
+        </a>
+      </li>
+      <li class="navlink">
+        <a href="../works">
+          Портфолио
+        </a>
+      </li>
+      <li class='navlink navlink-active'>
+        Обо мне
+      </li>
+      <li class="navlink">
+        <a href="../krooshkin">
+          krooshkin
+        </a>
+      </li>
+      <li class="navlink">
+        <a href="../stories">
+          Истории
+        </a>
+      </li>
     </ul>
   </nav>
   <main class="main">
-      <header class="header">
-        <h1 class="header-title">Истории</h1>
-        <h2 class="header-text">[никому не нужные]</h2>
-      </header>
+    <header class="header">
+      <h1 class="header-title">
+        Истории
+      </h1>
+      <h2 class="header-text">
+        [никому не нужные]
+      </h2>
+    </header>
     <section class="posts">
       <article class="post">
-        <figure class="post-image"><img src="./src/img/stories/chairs-min.jpg" alt="pustota"></figure>
+        <figure class="post-image">
+          <img src="../assets/img/stories/chairs-min.jpg" alt="pustota">
+        </figure>
 
-        <h2 class="post-title">Пустота</h2>
+        <h2 class="post-title">
+          Пустота
+        </h2>
         <p class="post-text">
           Наверно слова в описании моего состояния лишние.
           Попробуйте представить полное спокойствие ума, полную граничащую
@@ -79,43 +109,59 @@
 
         </p>
         <div class="tagcloud-wrapper">
-        <p class='tagcloud-label'>Тэги:</p>
+          <p class='tagcloud-label'>
+            Тэги:
+          </p>
 
-        <ul class="tagcloud">
-            <li class="tag">бытие</li>
+          <ul class="tagcloud">
+            <li class="tag">
+              бытие
+            </li>
             <!-- <li class="tag"></li> -->
           </ul>
         </div>
         <p class="post-date">
-            4 November 2018
-          </p>  
+          4 November 2018
+        </p>
       </article>
       <article class="post">
-        <figure class="post-image"><img src="./src/img/stories/zima-min.jpg" alt="zima painting by sophia heymans"></figure>
+        <figure class="post-image">
+          <img src="../assets/img/stories/zima-min.jpg" alt="zima painting by sophia heymans">
+        </figure>
 
-        <h2 class="post-title">Зима</h2>
+        <h2 class="post-title stories">
+          Зима
+        </h2>
         </div>
-        <p class="post-text">
+        <p class="post-text stories">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat pariatur praesentium id ex debitis
           beatae quod mollitia, ad esse harum!
         </p>
         <div class="tagcloud-wrapper">
-        <p class='tagcloud-label'>Тэги:</p>
-        <ul class="tagcloud">
-          
+          <p class='tagcloud-label'>
+            Тэги:
+          </p>
+          <ul class="tagcloud">
+
             <!-- <li class="tag">///</li>           -->
-            <li class="tag">тест</li>
-          
-            </ul>
-          </div>
+            <li class="tag">
+              тест
+            </li>
+
+          </ul>
+        </div>
         <p class="post-date">
           29 October 2018
         </p>
       </article>
       <article class="post">
-        <figure class="post-image"><img src="./src/img/stories/asia-min@2x.jpg" alt="asia"></figure>
+        <figure class="post-image">
+          <img src="../assets/img/stories/asia-min@2x.jpg" alt="asia">
+        </figure>
 
-        <h2 class="post-title">Привет, мир!</h2>
+        <h2 class="post-title">
+          Привет, мир!
+        </h2>
         <p class="post-text">
 
           Пробую себя в новом старом для себя деле. <br>
@@ -146,17 +192,23 @@
           если бы я тогда несмотря ни на что продолжил свое творчество.
         </p>
         <div class="tagcloud-wrapper">
-        <p class='tagcloud-label'>Тэги:</p>
-        <ul class="tagcloud">
-            
-            
-              <li class="tag">воспоминания</li>
-              <li class="tag">тест</li>
-            </ul>
-          </div>
-        <p class="post-date">
-            28 October 2018
+          <p class='tagcloud-label'>
+            Тэги:
           </p>
+          <ul class="tagcloud">
+
+
+            <li class="tag">
+              воспоминания
+            </li>
+            <li class="tag">
+              тест
+            </li>
+          </ul>
+        </div>
+        <p class="post-date">
+          28 October 2018
+        </p>
       </article>
     </section>
 
@@ -182,7 +234,7 @@
     //     }); 
     // }
   </script>
-  <script type="text/javascript" src="dist/bundle.js"></script>
+  <script type="text/javascript" src="../bundle.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {

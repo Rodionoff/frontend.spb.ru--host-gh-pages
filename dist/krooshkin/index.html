@@ -6,9 +6,12 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121805242-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
-  
+
     gtag('config', 'UA-121805242-1');
   </script>
 
@@ -18,13 +21,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#fafbfb" />
-  <link rel="shortcut icon" type="image/png" href="./favicon.png">
+  <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
   <link rel="manifest" href="./manifest.json">
-  <link rel="apple-touch-icon" href="./src/icons/soyuz_apollo_apple_icon.png">
+  <link rel="apple-touch-icon" href="../assets/icons/soyuz_apollo_apple_icon.png">
   <!-- <link href="https://fonts.googleapis.com/css?family=Krub|Muli" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css?family=Jura:500|Ubuntu&amp;subset=cyrillic" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Jura:500|Ubuntu&amp;subset=cyrillic" rel="stylesheet"> -->
 
-  <link rel='stylesheet' href='./dist/style.css'>
+  <link rel='stylesheet' href='../style.css'>
   <title>Фотографии | sanya krooshkin</title>
   <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=105818b7-2b5d-40db-ae70-53ada8648561&lang=ru_RU" type="text/javascript">
   </script>   -->
@@ -34,7 +37,11 @@
   <!--<div class="modal"></div>-->
   <nav class="navbar">
     <div class="navbar-min">
-      <div class="navbar-logo"><a href='./'>Главная</a></div>
+      <div class="navbar-logo">
+        <a href='../'>
+          Главная
+        </a>
+      </div>
       <div class="navbar-toggle">
         <div class="line"></div>
         <div class="line"></div>
@@ -42,20 +49,39 @@
       </div>
     </div>
     <ul class="navbar-items">
-      <!-- <li class="navlink"><a href="#">Link1</a></li> -->
-      <li class="navlink"><a href="./">Фронтенд</a></li>
-      <li class="navlink"><a href="./stories.html">Истории</a></li>
-      <li class="navlink"><a href="./works.html">Портфолио</a></li>
-      <!-- <li class="navlink"><a href="#">Link4</a></li> -->
-      <!-- <li class="navlink"><a href="#">Link5</a></li> -->
-      <!-- <li class="navlink"><a href="#">Link6</a></li> -->
-      <li class="navlink"><a href="./about.html">Обо мне</a></li>
+      <li class="navlink">
+        <a href="../">
+          Статьи
+        </a>
+      </li>
+      <li class="navlink">
+        <a href="../works">
+          Портфолио
+        </a>
+      </li>
+      <li class='navlink'>
+        <a href="../about">
+          Обо мне
+        </a>
+      </li>
+      <li class="navlink navlink-active">
+        krooshkin
+        </a>
+      </li>
+      <!-- <li class="navlink">
+        <a href="../stories">
+        Истории
+      </a>
+    </li> -->
     </ul>
   </nav>
   <main class="main">
     <header class="header">
-      <h1 class="header-title">sanya krooshkin</h1>
-      <h2 class="header-text">мой друг @krooshkin есть и в
+      <h1 class="header-title">
+        sanya krooshkin
+      </h1>
+      <h2 class="header-text show">
+        мой друг @krooshkin есть и в
         <a href='https://www.instagram.com/krooshkin/' title='link to krooshkin instagram'>инстаграм</a>
       </h2>
     </header>
@@ -64,7 +90,7 @@
     <section class="photos">
       <!-- <article class="photo">
         <figure class="photo-image">
-          <img src="./src/img/lazyLoad/lazyLoad.jpg" alt="'three-point' by krooshkin">
+          <img src="../assets/img/lazyLoad/lazyLoad.jpg" alt="'three-point' by krooshkin">
         </figure>
         <div class="overlay"></div>
         <p class='imageDescription'>
@@ -74,7 +100,7 @@
       </article> -->
       <!-- <article class="photo">
         <figure class="photo-image">
-          <img src="./src/img/lazyLoad/lazyLoad.jpg" alt="'a village' by krooshkin">
+          <img src="../assets/img/lazyLoad/lazyLoad.jpg" alt="'a village' by krooshkin">
         </figure>
         <div class="overlay"></div>
         <p class='imageDescription'>
@@ -84,7 +110,7 @@
       </article> -->
       <article class="photo">
         <figure class="photo-image">
-          <img src="./src/img/lazyLoad/lazyLoad.jpg" alt="'back to the winter' by krooshkin">
+          <img src="../assets/img/lazyLoad/lazyLoad.jpg" alt="'back to the winter' by krooshkin">
         </figure>
         <div class="overlay"></div>
         <p class='imageDescription'>
@@ -94,7 +120,7 @@
       </article>
       <article class="photo">
         <figure class="photo-image">
-          <img src="./src/img/lazyLoad/lazyLoad.jpg" alt="'autumn vibes' by krooshkin"></figure>
+          <img src="../assets/img/lazyLoad/lazyLoad.jpg" alt="'autumn vibes' by krooshkin"></figure>
         <div class="overlay"></div>
         <p class='imageDescription'>
           <span>Leningrad region</span> <br>
@@ -102,7 +128,7 @@
       </article>
       <article class="photo">
         <figure class="photo-image">
-          <img src="./src/img/lazyLoad/lazyLoad.jpg" alt="'a home' by krooshkin"></figure>
+          <img src="../assets/img/lazyLoad/lazyLoad.jpg" alt="'a home' by krooshkin"></figure>
         <div class="overlay"></div>
         <p class='imageDescription'>
           <span>Paul's safehouse</span> <br>
@@ -111,7 +137,7 @@
       </article>
       <article class="photo">
         <figure class="photo-image">
-          <img src="./src/img/lazyLoad/lazyLoad.jpg" alt="gradient by krooshkin"></figure>
+          <img src="../assets/img/lazyLoad/lazyLoad.jpg" alt="gradient by krooshkin"></figure>
         <div class="overlay"></div>
         <p class='imageDescription'>
           <span>Sevastopol, Crimea</span> <br>
@@ -120,7 +146,7 @@
       </article>
       <article class="photo">
         <figure class="photo-image">
-          <img src="./src/img/lazyLoad/lazyLoad.jpg" alt="a sad road to nowhere by krooshkin"></figure>
+          <img src="../assets/img/lazyLoad/lazyLoad.jpg" alt="a sad road to nowhere by krooshkin"></figure>
         <div class="overlay"></div>
         <p class='imageDescription'>
           <span>Saint-Petersburg</span> <br>
@@ -129,7 +155,8 @@
       </article>
       <article class="photo">
         <figure class="photo-image">
-          <img src="./src/img/lazyLoad/lazyLoad.jpg" alt="'a time when the life is better then it used to be' by krooshkin"></figure>
+          <img src="../assets/img/lazyLoad/lazyLoad.jpg"
+            alt="'a time when the life is better then it used to be' by krooshkin"></figure>
         <div class="overlay"></div>
         <p class='imageDescription'>
           <span>Sevastopol, Crimea</span> <br>
@@ -138,7 +165,7 @@
       </article>
       <article class="photo">
         <figure class="photo-image">
-          <img src="./src/img/lazyLoad/lazyLoad.jpg" alt="'do not look down' by krooshkin"></figure>
+          <img src="../assets/img/lazyLoad/lazyLoad.jpg" alt="'do not look down' by krooshkin"></figure>
         <div class="overlay"></div>
         <p class='imageDescription'>
           <span>Yalta, Crimea</span> <br>
@@ -147,7 +174,7 @@
       </article>
       <article class="photo">
         <figure class="photo-image">
-          <img src="./src/img/lazyLoad/lazyLoad.jpg" alt="'it's time to sleep' by krooshkin"></figure>
+          <img src="../assets/img/lazyLoad/lazyLoad.jpg" alt="'it's time to sleep' by krooshkin"></figure>
         <div class="overlay"></div>
         <p class='imageDescription'>
           <span>Foros, Crimea</span> <br>
@@ -179,7 +206,7 @@
     //     }); 
     // }
   </script>
-  <script type="text/javascript" src="dist/bundle.js"></script>
+  <script type="text/javascript" src="../bundle.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
