@@ -63,6 +63,10 @@ module.exports = {
         to: './manifest.json'
       },
       {
+        from: './serviceWorker.js',
+        to: './serviceWorker.js'
+      },
+      {
         from: './src/works',
         to: './works'
       },
