@@ -144,10 +144,9 @@ body
   padding-bottom: 3px
   border-bottom: 1px solid transparent
 
-.navlink:not(.navlink-active):hover,
-.navlink-active
+.navlink:not(.navlink-active):hover span,
+.navlink-active span
   border-bottom: 1px solid $navbar-font-color
-
 
 .show
   display: block
@@ -163,6 +162,7 @@ body
     
   .navbar-items
     display: flex
+    // flex-direction: row
     width: 100%
     margin-left: 5%
 
@@ -225,7 +225,6 @@ body
   // margin-bottom: 1%
   // text-shadow: 3px 5px darken($primary-color, 25%)
 
-
 .header-text
   font-size: 1.4rem
   padding: 1vh 1vw
@@ -235,10 +234,13 @@ body
   display: none
   // text-shadow: 3px 5px darken($primary-color, 25%)
 
-
   a
     color: #1778c2
     cursor: pointer
+
+
+.showHeaderText
+  display: block
 
 .posts
   width: 95%

@@ -199,8 +199,8 @@ body {
   padding-bottom: 3px;
   border-bottom: 1px solid transparent; }
 
-.navlink:not(.navlink-active):hover,
-.navlink-active {
+.navlink:not(.navlink-active):hover span,
+.navlink-active span {
   border-bottom: 1px solid #fafbfb; }
 
 .show {
@@ -262,6 +262,9 @@ body {
   .header-text a {
     color: #1778c2;
     cursor: pointer; }
+
+.showHeaderText {
+  display: block; }
 
 .posts {
   width: 95%;
@@ -586,9 +589,6 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2vh; } }
 
-.show {
-  display: block; }
-
 .aboutme {
   width: 95%;
   margin-left: 2.5%;
@@ -668,7 +668,7 @@ body {
             flex-direction: row;
     margin-bottom: 2.1rem; }
   .list-inner-left {
-    margin-right: 5vw; }
+    margin-right: 4vw; }
   .list-inner-right {
     margin-bottom: 0; } }
 

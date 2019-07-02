@@ -45,29 +45,32 @@
     <ul class="navbar-items">
       <li class="navlink">
         <a href="../">
-          Статьи
+          <span>
+            Статьи
+          </span>
         </a>
       </li>
       <li class="navlink">
         <a href="../../works">
-          Портфолио
+          <span>
+            Портфолио
+          </span>
         </a>
       </li>
       <li class='navlink'>
         <a href="../../about">
-          Обо мне
+          <span>
+            Обо мне
+          </span>
         </a>
       </li>
       <li class="navlink">
         <a href="../../krooshkin">
-          krooshkin
+          <span>
+            krooshkin
+          </span>
         </a>
       </li>
-      <!-- <li class="navlink">
-        <a href="../../stories">
-          Истории
-        </a>
-      </li> -->
     </ul>
   </nav>
   <main>
@@ -164,13 +167,9 @@ self.addEventListener('install', function(event) {
     .then(cache => cache.addAll(
       [
         './index.html',
-        './about.html',
-        './krooshkin.html',
-        './stories.html',
-        './works.html',
-        './favicon.png',
-        './dist/bundle.js',
-        './dist/style.css'    
+        './assets/icons/favicon.png',
+        './bundle.js',
+        './style.css'    
       ]
     ))
   )
@@ -333,7 +332,7 @@ self.addEventListener('fetch', function(event) {
         6 March 2019
       </p>
     </section>
-    <section id="disqus_thread"></section>
+    <!-- <section id="disqus_thread"></section> -->
 
   </main>
   <footer class="footer">
@@ -351,20 +350,20 @@ self.addEventListener('fetch', function(event) {
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-//     var disqus_config = function () {
-//       this.page.url =
-//         'https://pavelrodionoff.ru/delaem-svoi-website-progressivnim.html'; // Replace PAGE_URL with your page's canonical URL variable
-//       this.page.identifier =
-//         'delaem-svoi-website-progressivnim'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-//     };
+    //     var disqus_config = function () {
+    //       this.page.url =
+    //         'https://pavelrodionoff.ru/delaem-svoi-website-progressivnim.html'; // Replace PAGE_URL with your page's canonical URL variable
+    //       this.page.identifier =
+    //         'delaem-svoi-website-progressivnim'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    //     };
 
-//     (function () { // DON'T EDIT BELOW THIS LINE
-//       var d = document,
-//         s = d.createElement('script');
-//       s.src = 'https://pavelrodionoff-ru.disqus.com/embed.js';
-//       s.setAttribute('data-timestamp', +new Date());
-//       (d.head || d.body).appendChild(s);
-//     })(); 
+    //     (function () { // DON'T EDIT BELOW THIS LINE
+    //       var d = document,
+    //         s = d.createElement('script');
+    //       s.src = 'https://pavelrodionoff-ru.disqus.com/embed.js';
+    //       s.setAttribute('data-timestamp', +new Date());
+    //       (d.head || d.body).appendChild(s);
+    //     })(); 
   </script>
   <!-- <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
       Disqus.</a></noscript> -->
