@@ -250,7 +250,7 @@ body {
   padding-left: 3.5vw; }
 
 .header-title {
-  margin-bottom: 1.4%;
+  margin-bottom: .2rem;
   padding: 1vh 1vw 0;
   line-height: 2rem; }
 
@@ -397,9 +397,9 @@ body {
     transition: transform .5s;
     transition: transform .5s, -webkit-transform .5s; }
     .work-image img:hover {
-      -webkit-transform: scale(1.01);
-          -ms-transform: scale(1.01);
-              transform: scale(1.01); }
+      -webkit-transform: scale(1.0251);
+          -ms-transform: scale(1.0251);
+              transform: scale(1.0251); }
   .work-image img {
     width: 100%;
     display: block; }
@@ -587,7 +587,7 @@ body {
   background-color: #fafbfb;
   opacity: 0;
   z-index: 2;
-  display: block; }
+  display: none; }
 
 .showOverlay {
   opacity: 0.85;

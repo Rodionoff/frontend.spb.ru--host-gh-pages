@@ -1,13 +1,15 @@
-export default function jsCarousel(links, imgs) {
-  let modal = document.getElementsByClassName('modal')[0]
-  // let imgs = document.getElementsByClassName('photo-image')
+// export default function jsCarousel(links, images) {
+const jsCarousel = () => {
+  const modal = document.querySelector('.modal')
+  const images = document.querySelectorAll('.photo-image')
+  const imagesWrapper = document.querySelector('.photos')
 
-  let exit = document.createElement('div')
+  const exit = document.createElement('div')
   exit.classList.add('exit')
   exit.innerHTML = '⌧'
-  
-  let leftArrow = createArrow('div', 'leftArrow', '⌦')
-  let rightArrow = createArrow('div', 'rightArrow', '⌦')
+
+  const leftArrow = createArrow('div', 'leftArrow', '⌦')
+  const rightArrow = createArrow('div', 'rightArrow', '⌦')
 
   function createArrow(elementName, className, sign) {
     let arrow = document.createElement(elementName)
@@ -17,32 +19,64 @@ export default function jsCarousel(links, imgs) {
     return arrow
   }
 
-  let image = document.createElement('img');
-  image.classList.add('modalImage')
+  // links.forEach((link, index) => {
+  //   link.onclick = function() {
+  //     showModal(image, index)
+  //   }
+  // })
 
+  imagesWrapper.addEventListener('click', (event) => {
+    // const target  = event.target,
+    //       parent  = target.parentNode,
+    //       grandParent = parent.parentNode
 
-  links.forEach((link, index) => {
-    link.onclick = function() {
-      showModal(image, index)
+    // const elements = [target, parent, grandParent]
+
+    // const whichPhoto = (elements) => {
+    //   const filtered = elements.filter(element => {
+    //     return element.classList.contains('photo')
+    //   })
+
+    //   if (filtered.length === 1) return filtered[0]
+    // }
+
+    const findIndex = (node) => {
+      if (node !== undefined) {
+        return Array.prototype.indexOf.call(images, node)
+      }
     }
+
+    const target = event.target
+
+    if (target.tagName = 'IMG') {
+      const parent = target.parentNode
+      const index = findIndex(parent)
+      showModal(index)
+    }
+
   })
 
-  function showModal(img, i) {
+  function showModal(i) {
+    let img = document.createElement('img');
+    img.classList.add('modalImage')
+
+    leftArrow.style.visibility = 'visible'
+    rightArrow.style.visibility = 'visible'
     img.pk = i
-      if (img.pk == 0) {
-        leftArrow.style.visibility = 'hidden'
-        rightArrow.style.visibility = 'visible'
-      } else if (img.pk > 0 && img.pk < imgs.length - 1) {
-        leftArrow.style.visibility = 'visible'
-        rightArrow.style.visibility = 'visible'
-      } else if (img.pk == imgs.length - 1) {
-        leftArrow.style.visibility = 'visible'
-        rightArrow.style.visibility = 'hidden'
-      }
-      img.src = imgs[i].lastElementChild.src
-      console.log(img)
-      appendElementsToModal(img)
-      modal.classList.add('showModal')
+    if (img.pk == 0) {
+      // leftArrow.style.visibility = 'hidden'
+      // rightArrow.style.visibility = 'visible'
+    } else if (img.pk > 0 && img.pk < images.length - 1) {
+      // leftArrow.style.visibility = 'visible'
+      // rightArrow.style.visibility = 'visible'
+    } else if (img.pk === images.length - 1) {
+      // leftArrow.style.visibility = 'visible'
+      // rightArrow.style.visibility = 'hidden'
+    }
+    img.src = images[i].lastElementChild.src
+    console.log(img)
+    appendElementsToModal(img)
+    modal.classList.add('showModal')
   }
 
   function appendElementsToModal(img) {
@@ -52,30 +86,30 @@ export default function jsCarousel(links, imgs) {
     modal.appendChild(rightArrow)
   }
 
-  rightArrow.onclick = function() {
+  rightArrow.onclick = function () {
     leftArrow.style.visibility = 'visible'
     let image = document.getElementsByClassName('modalImage')[0]
     image.pk += 1
-    image.src = imgs[image.pk].lastElementChild.src
+    let isLastImage = images[image.pk] === undefined
 
-    let nextImageExists = imgs[image.pk + 1] !== undefined
-
-    if (!nextImageExists) {
-      rightArrow.style.visibility = 'hidden'
+    if (isLastImage) {
+      // rightArrow.style.visibility = 'hidden'
+      image.pk = 0
     }
+    image.src = images[image.pk].lastElementChild.src
   }
 
-  leftArrow.onclick = function() {
+  leftArrow.onclick = function () {
     rightArrow.style.visibility = 'visible'
     let image = document.getElementsByClassName('modalImage')[0]
     image.pk -= 1
-    image.src = imgs[image.pk].lastElementChild.src
+    let isFirstImage = images[image.pk] === undefined
     
-    let previousImageExists = imgs[image.pk - 1] !== undefined
-
-    if (!previousImageExists) {
-      leftArrow.style.visibility = 'hidden'
+    if (isFirstImage) {
+      // leftArrow.style.visibility = 'hidden'
+      image.pk = images.length - 1
     }
+    image.src = images[image.pk].lastElementChild.src
   }
 
   exit.onclick = function () {
@@ -86,3 +120,5 @@ export default function jsCarousel(links, imgs) {
     modal.classList.remove('showModal')
   }
 }
+
+jsCarousel()
