@@ -281,7 +281,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 3.5rem;
   margin-bottom: 7vh;
+  position: relative;
   background-color: White;
   color: #293434;
   -webkit-box-shadow: 3px 5px 4px 1px #b3c2c2;
@@ -289,7 +291,17 @@ body {
 
 .post-image {
   -ms-flex-item-align: center;
-      align-self: center; }
+      align-self: center;
+  overflow: hidden; }
+  .post-image img {
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s; }
+    .post-image img:hover {
+      -webkit-transform: scale(1.01);
+          -ms-transform: scale(1.01);
+              transform: scale(1.01); }
   .post-image img {
     width: 100%; }
 
@@ -327,11 +339,10 @@ body {
 .tagcloud-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
-
-.tagcloud-label {
-  margin-left: 3.5vw;
-  margin-bottom: .5rem; }
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 3.5vw; }
 
 .tagcloud {
   display: -webkit-box;
@@ -377,7 +388,18 @@ body {
 
 .work-image {
   -ms-flex-item-align: center;
-      align-self: center; }
+      align-self: center;
+  align-self: center;
+  overflow: hidden; }
+  .work-image img {
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s; }
+    .work-image img:hover {
+      -webkit-transform: scale(1.01);
+          -ms-transform: scale(1.01);
+              transform: scale(1.01); }
   .work-image img {
     width: 100%;
     display: block; }
@@ -723,6 +745,10 @@ body {
   .postDetail .post-image {
     overflow: hidden;
     margin-bottom: 1.75rem; }
+    .postDetail .post-image img:hover {
+      -webkit-transform: none;
+          -ms-transform: none;
+              transform: none; }
   .postDetail .postDetail-text {
     color: #333;
     color: inherit;

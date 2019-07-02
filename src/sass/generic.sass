@@ -253,7 +253,9 @@ body
 .post
   display: flex
   flex-direction: column
+  padding-bottom: 3.5rem
   margin-bottom: 7vh
+  position: relative
   // padding: 1.3rem 1rem 
   background-color: $post-background-color
   color: $post-font-color
@@ -263,6 +265,13 @@ body
 
 .post-image
   align-self: center
+  overflow: hidden 
+
+  img
+    transition: transform .5s
+    
+    &:hover
+      transform: scale(1.01)
   // margin-bottom: 2rem
 
   img
@@ -313,10 +322,13 @@ body
 
 .tagcloud-wrapper
   display: flex
+  position: absolute
+  bottom: 1rem
+  left: 3.5vw
 
 .tagcloud-label
-  margin-left: 3.5vw
-  margin-bottom: .5rem
+  // margin-left: 3.5vw
+  // margin-bottom: .5rem
 
 .tagcloud
   display: flex
