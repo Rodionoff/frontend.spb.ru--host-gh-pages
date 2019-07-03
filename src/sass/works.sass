@@ -15,6 +15,8 @@
   // border-radius: 10px
   box-shadow: $post-box-shadow
   transition: box-shadow .3s, border .3s
+  position: relative
+  padding-bottom: 3rem
 
   &:hover
     box-shadow: $post-box-shadow--hover
@@ -38,7 +40,7 @@
 
 .work-image-truncate
   // max-height: 43vh
-  max-height: 53vh
+  max-height: 53vw
   overflow: hidden
 
 .work-title
@@ -56,7 +58,7 @@
   line-height: 1.5rem
   color: inherit
   margin-bottom: 1rem
-  padding: .9rem 3.5vw 1.7rem
+  padding: .5rem 3.5vw 2.9rem
   letter-spacing: 0.000001
   // display: none
 
@@ -76,6 +78,15 @@
     // margin-bottom: .5rem
     margin-bottom: 0.7rem
 
+.work-tech
+  position: absolute
+  top: calc(100% - 5.5rem)
+  left: 3.5vw
+  width: calc(100% - 7vw)
+ 
+  // &::before
+    // content: ' '
+
   span
     // background-color: lighten($cosmic-blue, 50%)
     background-color: #eee
@@ -88,6 +99,7 @@
   border-radius: 7px
   padding: 1.3rem 3.5vw
   text-align: right
+  display: none
 
 @media only screen and (min-width: 730px)
   .works 
@@ -108,7 +120,7 @@
       // display: none
 
     .work-image
-      max-height: 25vh
+      max-height: 22vw
       overflow: hidden
 
     .work-text
@@ -135,7 +147,7 @@
     grid-template-columns: repeat(auto-fill, minmax(30%, 1fr))
 
     .work-image
-      max-height: 25vh
+      max-height: 20vw
 
 .tagcloud-wrapper
   margin-bottom: 1.2rem

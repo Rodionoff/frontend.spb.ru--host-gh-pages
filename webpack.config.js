@@ -75,10 +75,6 @@ module.exports = {
         to: './about'
       },
       {
-        from: './src/stories',
-        to: './stories'
-      },
-      {
         from: './src/krooshkin',
         to: './krooshkin'
       },

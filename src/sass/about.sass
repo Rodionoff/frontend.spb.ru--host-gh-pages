@@ -16,7 +16,7 @@
   box-shadow: $post-box-shadow
 
 .about-image
-  align-self: center
+  // align-self: center
   // margin-bottom: 2rem
   // margin-bottom: 1rem
 
@@ -25,9 +25,9 @@
     width: 100%
     display: block
 
-.about-image-truncate
-  max-height: 43vh
-  overflow: hidden
+
+.about-header-inner
+  display: none
 
 .about-title
   // margin-bottom: 1rem
@@ -100,3 +100,16 @@
   border-radius: 7px
   padding: 1.3rem 3.5vw
   text-align: right
+
+@media only screen and (min-width: 730px)
+  .about
+    // flex-direction: row
+
+  .about-header
+    display: flex
+
+  .about-image
+    // float: left
+    width: 50%
+
+  
