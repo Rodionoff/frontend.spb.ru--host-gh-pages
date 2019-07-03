@@ -14,6 +14,11 @@
   color: $post-font-color
   // border-radius: 10px
   box-shadow: $post-box-shadow
+  transition: box-shadow .3s, border .3s
+
+  &:hover
+    box-shadow: $post-box-shadow--hover
+    border: pink
 
 .work-image
   align-self: center
@@ -32,15 +37,18 @@
     display: block
 
 .work-image-truncate
-  max-height: 43vh
+  // max-height: 43vh
+  max-height: 53vh
   overflow: hidden
 
 .work-title
   // margin-bottom: 1rem
   font-size: 1.3rem
   // text-align: center
-  padding: 1.3rem 3.5vw 1.9rem 3.5vw
- 
+  padding: 1.3rem 3.5vw 0rem
+  font-weight: 500
+  // color: darken($cosmic-blue, 20%)
+  // text-decoration: underline
 
 .work-text
   letter-spacing: .075rem
@@ -48,9 +56,29 @@
   line-height: 1.5rem
   color: inherit
   margin-bottom: 1rem
-  padding: 1.3rem 3.5vw
+  padding: .9rem 3.5vw 1.7rem
   letter-spacing: 0.000001
-  display: none
+  // display: none
+
+  br
+    // line-height: 1rem
+    // line-height: 0
+    // height: 0
+    content: ''
+    display: block
+
+  // br::after
+    // line-height: .7rem
+    // content: ' '
+    // margin-bottom: 0.7rem
+  br:nth-child(2)
+    content: ' '
+    // margin-bottom: .5rem
+    margin-bottom: 0.7rem
+
+  span
+    // background-color: lighten($cosmic-blue, 50%)
+    background-color: #eee
 
 .work-date
   // padding: 6vw

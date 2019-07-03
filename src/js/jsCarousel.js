@@ -26,20 +26,6 @@ const jsCarousel = () => {
   // })
 
   imagesWrapper.addEventListener('click', (event) => {
-    // const target  = event.target,
-    //       parent  = target.parentNode,
-    //       grandParent = parent.parentNode
-
-    // const elements = [target, parent, grandParent]
-
-    // const whichPhoto = (elements) => {
-    //   const filtered = elements.filter(element => {
-    //     return element.classList.contains('photo')
-    //   })
-
-    //   if (filtered.length === 1) return filtered[0]
-    // }
-
     const findIndex = (node) => {
       if (node !== undefined) {
         return Array.prototype.indexOf.call(images, node)
