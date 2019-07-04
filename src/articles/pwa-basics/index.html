@@ -80,9 +80,17 @@
       </h1>
     </header>
     <section class="post postDetail">
-      <figure class="post-image">
-        <img src="../../assets/img/frontend/vs_sw_screenshot.png" alt="vscode serviceWorker screenshot">
-      </figure>
+      <div class="post-header">
+        <figure class="post-image">
+          <img src="../../assets/img/frontend/vscode_sw.png" alt="vscode serviceWorker screenshot">
+        </figure>
+        <div class="info-card info-card-blue">
+          <h2>Как сделать веб-сайт прогрессивным</h2>
+          <h3>Краткое руководство</h3>
+          <div class="divider-line divider-line-vscode"></div>
+          <p>Приблизительное время чтения 5 мин</p>
+        </div>
+      </div>
       <p class="postDetail-text">
         По версии Google Lighthouse мой сайт на 100% прогрессивен.
         Ваш может также. Для этого нужно сделать пару небольших шагов и всё,- мы у цели и
@@ -370,7 +378,7 @@ self.addEventListener('fetch', function(event) {
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./serviceWorker.js')
+        navigator.serviceWorker.register('../../serviceWorker.js')
           .then(function (registration) {
             // Registration was successful
             console.log('ServiceWorker registration successful with scope: ', registration.scope);

@@ -8,12 +8,13 @@ self.addEventListener('install', function(event) {
         './index.html',
         './works/pwa-basics/index.html',
         './assets/favicon.png',
+        './assets/img/frontend/vs_sw_screenshot.png',
         './bundle.js',
         './style.css',
         './assets/icons/soyuz_apollo192.png',
         './assets/icons/soyuz_apollo_apple_icon.png' 
-      ]
-    ))
+      ] 
+    )) 
   )
 })
 
