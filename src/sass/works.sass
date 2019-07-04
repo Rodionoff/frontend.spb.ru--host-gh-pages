@@ -26,20 +26,19 @@
   align-self: center
   // margin-bottom: 2rem
   align-self: center
+  max-height: 30vh
   overflow: hidden 
 
   img
+    width: 100%
+    display: block
     transition: transform .5s
     
     &:hover
       transform: scale(1.0251)
 
-  img
-    width: 100%
-    display: block
-
 .work-image-truncate
-  // max-height: 43vh
+  // max-height: 25vw
   // max-height: 53vw
   // overflow: hidden
 
@@ -121,7 +120,8 @@
       // display: none
 
     .work-image
-      max-height: 22vw
+      // max-height: 22vw
+      max-height: 28vw
       overflow: hidden
 
     .work-text
@@ -149,9 +149,13 @@
 
     .work-image
       // max-height: 20vw
-      max-height: calc(236.91px / 530.82px * 1%)
+      // height: 25vw
+      height: 19vw
+      // height: 195px
+      // max-height: 195px
 
-      img 
+    .work-image-synth
+      height: 1000px
 
 .tagcloud-wrapper
   margin-bottom: 1.2rem
