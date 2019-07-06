@@ -1,3 +1,5 @@
+import { handleRefresh } from "./handleRefresh";
+
 (() => {
   let posts = document.getElementsByClassName('post')
   let tagclouds = document.getElementsByClassName('tagcloud')
@@ -21,6 +23,7 @@
 
 
   function sortByTag() {
+    handleRefresh()
     Array.prototype.forEach.call(tagclouds, (tagcloud, i) => {
       let postVisibility = false;
       Array.prototype.forEach.call(tagcloud.children, tag => {

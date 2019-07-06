@@ -8,3 +8,4 @@ import './js/sortByTag.js';
 import './js/highlght.js';
 import './js/jsCarousel.js';
 // import './js/handleWorkImagesSizes'
+// import './js/tagCloudLink';
