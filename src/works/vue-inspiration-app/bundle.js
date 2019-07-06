@@ -42,7 +42,7 @@
     return n.d(e, "a", e), e
   }, n.o = function (t, e) {
     return Object.prototype.hasOwnProperty.call(t, e)
-  }, n.p = "/portf/works/vue-inspiration-app/", n(n.s = 7)
+  }, n.p = "/frontend.spb.ru/works/vue-inspiration-app/", n(n.s = 7)
 }([function (t, e, n) {
   var r = n(12);
   "string" == typeof r && (r = [
@@ -3199,7 +3199,7 @@
   var r = n(2);
   n.n(r).a
 }, function (t, e, n) {
-  (t.exports = n(5)(!1)).push([t.i, 'body {\n  margin: 0;\n  padding: 5vh 6vw;\n  font-family: "Roboto", sans-serif;\n  color: #000;\n}\nh1, h3, p {\n  padding: 0;\n  margin: 0;\n}\n.header h3 {\n  color: #e7429c;\n  font-size: 1.2rem;\n  margin-bottom: 0.7rem;\n}', ""])
+  (t.exports = n(5)(!1)).push([t.i, 'body {\n  margin: 0;\n  padding: 1.9rem 6vw;\n  font-family: "Roboto", sans-serif;\n  color: #000;\n}\nh1, h3, p {\n  padding: 0;\n  margin: 0;\n}\n.header h1 {\n color: #222;\n margin-bottom: 0rem;\n}\n.header h3 {\n  color: #e7429c;\n  font-size: 1.2rem;\n  margin-bottom: 0.65rem;\n}', ""])
 }, function (t, e, n) {
   "use strict";
   n.r(e);
