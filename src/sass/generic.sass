@@ -30,6 +30,7 @@
 // $primary-color: #ffeeff
 $primary-color: #fafbfb
 $cosmic-blue: #1778c2
+$light-blue: lighten(#d5e8e4, 8%)
 
 $navbar-font-color: darken($primary-color, 0%)
 $header-font-color: darken($primary-color, 80%)
@@ -84,18 +85,66 @@ body
   // background-color: lighten($navbar-background-color ,45%)
   // padding-top: 35px
   font-weight: 500
-  padding-top: 10px
+
+body
   background-color: $body-background-color
   background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png")
   // background-image: url("https://www.transparenttextures.com/patterns/dirty-old-black-shirt.png")
 
 .main
+  // padding-top: 6.65rem
+  padding-top: 6.25rem
+  
+.header
+  font-family: 'Ubuntu', sans-serif
+  // font-weight: 400
+  // font-style: normal
+  // font-weight: 700
+  color: $header-font-color
+  width: 90%
+  // margin-top: 1.1rem
+  display: none
+  // margin-left: 6vw
+  // margin-right: 6%
+  // margin-bottom: 10px
+  padding: 0//1.7rem 0 0 //1.125rem
+  // background-color: $primary-color
+  padding-left: 3.5vw
+  margin-left: 1.5vw
+  margin-bottom: 0.75rem
+  // margin-bottom: 0.3rem
 
+.header-image
+
+
+.header-title
+  padding: 0 1vw
+  margin-bottom: .2rem
+  // margin-left: 6vw
+  // width: auto
+  line-height: 2rem
+  display: none
+  // margin-bottom: 1%
+  // text-shadow: 3px 5px darken($primary-color, 25%)
+
+.header-text
+  font-size: 1.4rem
+  padding: 1vh 1vw
+  // width: 90%
+  // margin-left: 6vw
+  margin-right: 6vw
+  display: none
+  // text-shadow: 3px 5px darken($primary-color, 25%)
+
+  a
+    color: #1778c2
+    cursor: pointer
+    
 .navbar
   background-color: $navbar-background-color
   left: 0
   top: 0
-  padding: 2.5% 6% 2% 6%
+  padding: 1.3rem 6vw 1.7rem
   width: 100%
   position: absolute
   color: $navbar-font-color
@@ -105,7 +154,7 @@ body
 .navbar-min
   display: flex
   justify-content: space-between
-  margin-bottom: 2.3%
+  // margin-bottom: 2.3rem
 
 .navbar-logo
   font-size: 1.4rem
@@ -141,7 +190,7 @@ body
   display: none
 
 .navlink
-  margin-bottom: 3%
+  margin-bottom: .3rem
   // font-weight: 500
   // font-size: 1.1rem
   // padding-bottom: 3px
@@ -189,7 +238,8 @@ body
 
 @media only screen and (min-width: 730px)
   .info-card
-    background-color: #eee
+    // background-color: #eee
+    background-color: $light-blue
     display: flex
     flex-direction: column
     justify-content: center
@@ -274,48 +324,7 @@ body
 //   opacity: 0.7
 //   background-color: black
 //   z-index: 22
- 
-.header
-  font-family: 'Ubuntu', sans-serif
-  // font-weight: 400
-  // font-style: normal
-  // font-weight: 700
-  color: $header-font-color
-  width: 90%
-  margin-top: 3.8%
-  // margin-left: 6vw
-  // margin-right: 6%
-  // margin-bottom: 10px
-  padding: 1.7rem 0 1.125rem
-  // background-color: $primary-color
-  margin-left: 1.5vw
-  padding-left: 3.5vw
 
-.header-image
-
-
-.header-title
-  margin-bottom: .2rem
-  padding: 1vh 1vw 0
-  // margin-left: 6vw
-  // width: auto
-  line-height: 2rem
-  display: none
-  // margin-bottom: 1%
-  // text-shadow: 3px 5px darken($primary-color, 25%)
-
-.header-text
-  font-size: 1.4rem
-  padding: 1vh 1vw
-  // width: 90%
-  // margin-left: 6vw
-  margin-right: 6vw
-  display: none
-  // text-shadow: 3px 5px darken($primary-color, 25%)
-
-  a
-    color: #1778c2
-    cursor: pointer
 
 
 // .showHeaderText

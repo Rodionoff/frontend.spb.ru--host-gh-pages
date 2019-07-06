@@ -6,8 +6,8 @@ self.addEventListener('install', function(event) {
     .then(cache => cache.addAll(
       [
         './index.html',
-        './works/pwa-basics/index.html',
-        './assets/favicon.png',
+        './articles/pwa-basics/index.html',
+        './assets/icons/favicon.png',
         './assets/img/frontend/vs_sw_screenshot.png',
         './bundle.js',
         './style.css',
