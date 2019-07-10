@@ -229,14 +229,23 @@ header {
 .sneaker-info-size {
   width: 115px;
   cursor: pointer;
-  color: #666666; }
+  color: #333;
+  background-color: transparent;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIKIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiICB2aWV3Qm94PSIwIDAgMTMgMTAiPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiICBmaWxsPSIjMzMzMzMzIgogZD0iTTEwLjMzMjg4NiwxLjkxMjU5NzcgQzEwLjMzMjg4NiwxLjkxMjU5NzcgNi41LDUuNzUxMDk4NiA2LjUsNS43NTEwOTg2IEM2LjUsNS43NTEwOTg2IDIuNjY3MjM2MywxLjkxMjU5NzcgMi42NjcyMzYzLDEuOTEyNTk3NyBDMi42NjcyMzYzLDEuOTEyNTk3NyAxLjUwMDYxMDQsMy4wODA4MTA1IDEuNTAwNjEwNCwzLjA4MDgxMDUgQzEuNTAwNjEwNCwzLjA4MDgxMDUgNi41LDguMDg3NDAyIDYuNSw4LjA4NzQwMiBDNi41LDguMDg3NDAyIDExLjQ5OTI2OCwzLjA4MDgxMDUgMTEuNDk5MjY4LDMuMDgwODEwNSBDMTEuNDk5MjY4LDMuMDgwODEwNSAxMC4zMzI4ODYsMS45MTI1OTc3IDEwLjMzMjg4NiwxLjkxMjU5NzcgWiIvPgo8L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  border: 1px solid #333;
+  padding: 10px; }
 
 .sneaker-add-to-card {
   width: 115px;
   padding: 15px 8px;
   color: #ffffff;
   width: 115px;
-  background-color: #333333;
+  background-color: #333;
   font-size: 14px;
   cursor: pointer; }
 

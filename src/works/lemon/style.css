@@ -451,7 +451,9 @@ nav {
   padding-left: 93px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-bottom: 83px; }
+  margin-bottom: 83px;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .bananas-header {
   font-size: 24px;
@@ -598,18 +600,20 @@ nav {
   background: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  display: grid;
-  grid-template-columns: 560px 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "cinnamon-image cinnamon-recipe";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding-bottom: 0;
   margin-bottom: 137px; }
 
 .cinnamon-image {
-  grid-area: cinnamon-image; }
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2; }
+  .cinnamon-image img {
+    width: 100%; }
 
 .cinnamon-recipe {
-  grid-area: cinnamon-recipe;
   padding-top: 20px;
   padding-left: 42px;
   padding-bottom: 22px; }
@@ -738,7 +742,9 @@ nav {
 .not-found {
   margin-right: 84px;
   width: 518px;
-  padding-top: 23px; }
+  padding-top: 23px;
+  background-size: cover;
+  background-position: center; }
 
 .not-found-header {
   font-family: "Josefin Sans", sans;

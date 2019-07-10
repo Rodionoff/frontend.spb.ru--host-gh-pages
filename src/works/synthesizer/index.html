@@ -2,6 +2,19 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121805242-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121805242-1');
+  </script>
+
   <meta charset="UTF-8">
   <meta author="Pavel Rodionoff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +22,8 @@
   <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon">
   </script>
   <title>Synthesizer</title>
-<link href="style.css" rel="stylesheet"></head>
+  <link href="style.css" rel="stylesheet">
+</head>
 
 <body>
   <div class="container containerInitial">
@@ -136,6 +150,7 @@
       </svg>
     </div>
   </div>
-<script type="text/javascript" src="bundle.js"></script></body>
+  <script type="text/javascript" src="bundle.js"></script>
+</body>
 
 </html>

@@ -88,7 +88,7 @@ body
 
 body
   background-color: $body-background-color
-  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png")
+  background-image: url("../assets/textures/concrete-wall.png")
   // background-image: url("https://www.transparenttextures.com/patterns/dirty-old-black-shirt.png")
 
 .main
@@ -159,7 +159,7 @@ body
 .navbar-logo
   font-size: 1.4rem
   font-weight: 700
-  padding-bottom: 3px
+  padding-bottom: 0px
 
 .navbar-toggle
   // @extend %reset-Button
@@ -189,12 +189,29 @@ body
 .navbar-items
   display: none
 
+.navbar-logo
+  // padding-bottom: 3px
+
 .navlink
-  margin-bottom: .3rem
+  // margin-bottom: .85rem
   // font-weight: 500
   // font-size: 1.1rem
   // padding-bottom: 3px
   border-bottom: 1px solid transparent
+
+  span
+    width: auto
+  a
+    display: block
+    width: 100%
+    padding: 0.175rem 0.175rem 0.175rem 0
+
+
+.navlink-active
+  padding: 0.175rem 0.175rem calc(0.175rem + 1px) 0
+
+
+    // padding-top: 0.85rem
 
 .navlink:not(.navlink-active):hover span,
 .navlink-active span
@@ -224,8 +241,14 @@ body
   .navlink
     margin-bottom: 0
 
+  .navlink-active
+    padding: 0
+
   .navlink
     margin-right: 3.5%
+
+    a
+      display: inline
     
     &:nth-child(6)
       margin-left: auto
