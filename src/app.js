@@ -1,11 +1,13 @@
 // import you .js files here
-import './js/toggle.js';
+
 // import './js/truncate.js';
 // import './js/tooltip.js';
 // import './js/displayOverlay.js';
-import './js/lazyLoad.js';
-import './js/sortByTag.js';
-import './js/highlght.js';
-import './js/jsCarousel.js';
+import './js/changeFooterYear';
+import './js/highlght';
+import './js/jsCarousel';
+import './js/lazyLoad';
+import './js/sortByTag';
+import './js/toggle';
 // import './js/handleWorkImagesSizes'
 // import './js/tagCloudLink';
