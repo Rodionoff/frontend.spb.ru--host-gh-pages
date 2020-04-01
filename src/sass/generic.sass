@@ -1,5 +1,5 @@
 // type your sass here
-%reset-Button 
+%reset-Button
   border: none
   margin: 0
   padding: 0
@@ -23,7 +23,7 @@
   -webkit-appearance: none
 
   outline: none
-  
+
 *, *::before, *::after
   box-sizing: border-box
 
@@ -35,7 +35,7 @@ $light-blue: lighten(#d5e8e4, 8%)
 $navbar-font-color: darken($primary-color, 0%)
 $header-font-color: darken($primary-color, 80%)
 $post-font-color: darken($primary-color, 80%)
-$footer-font-color: $primary-color 
+$footer-font-color: $primary-color
 
 $navbar-background-color: darken($cosmic-blue, 15%)
 $header-background-color: $primary-color
@@ -78,68 +78,46 @@ figure
 html,
 body
   margin: 0
-  // color: $primary-font-color
-  // font-family: 'Krub', sans-serif
-  // font-family: 'Jura', sans-serif
   font-family: 'Montserrat', sans-serif
-  // background-color: lighten($navbar-background-color ,45%)
-  // padding-top: 35px
   font-weight: 500
 
 body
   background-color: $body-background-color
   background-image: url("../assets/textures/concrete-wall.png")
-  // background-image: url("https://www.transparenttextures.com/patterns/dirty-old-black-shirt.png")
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  min-height: 100vh
 
 .main
-  // padding-top: 6.65rem
   padding-top: 6.25rem
-  
+
 .header
   font-family: 'Ubuntu', sans-serif
-  // font-weight: 400
-  // font-style: normal
-  // font-weight: 700
   color: $header-font-color
   width: 90%
-  // margin-top: 1.1rem
   display: none
-  // margin-left: 6vw
-  // margin-right: 6%
-  // margin-bottom: 10px
   padding: 0//1.7rem 0 0 //1.125rem
-  // background-color: $primary-color
   padding-left: 3.5vw
   margin-left: 1.5vw
   margin-bottom: 0.75rem
-  // margin-bottom: 0.3rem
-
-.header-image
-
 
 .header-title
   padding: 0 1vw
   margin-bottom: .2rem
-  // margin-left: 6vw
-  // width: auto
   line-height: 2rem
   display: none
-  // margin-bottom: 1%
-  // text-shadow: 3px 5px darken($primary-color, 25%)
 
 .header-text
   font-size: 1.4rem
   padding: 1vh 1vw
-  // width: 90%
-  // margin-left: 6vw
   margin-right: 6vw
   display: none
-  // text-shadow: 3px 5px darken($primary-color, 25%)
 
   a
     color: #1778c2
     cursor: pointer
-    
+
 .navbar
   background-color: $navbar-background-color
   left: 0
@@ -154,7 +132,6 @@ body
 .navbar-min
   display: flex
   justify-content: space-between
-  // margin-bottom: 2.3rem
 
 .navbar-logo
   font-size: 1.4rem
@@ -162,10 +139,6 @@ body
   padding-bottom: 0px
 
 .navbar-toggle
-  // @extend %reset-Button
-  // margin-left: auto
-  // margin-right: 5%
-  // display: block
   width: 21%
   display: flex
   flex-direction: column
@@ -189,14 +162,7 @@ body
 .navbar-items
   display: none
 
-.navbar-logo
-  // padding-bottom: 3px
-
 .navlink
-  // margin-bottom: .85rem
-  // font-weight: 500
-  // font-size: 1.1rem
-  // padding-bottom: 3px
   border-bottom: 1px solid transparent
 
   span
@@ -210,9 +176,6 @@ body
 .navlink-active
   padding: 0.175rem 0.175rem calc(0.175rem + 1px) 0
 
-
-    // padding-top: 0.85rem
-
 .navlink:not(.navlink-active):hover span,
 .navlink-active span
   border-bottom: 1px solid $navbar-font-color
@@ -220,21 +183,20 @@ body
 .show
   display: block
 
-.info-card 
+.info-card
   display: none
 
 @media only screen and (min-width: 650px)
-  .navbar 
+  .navbar
     display: flex
     align-items: center
 
   .navbar-min
     width: auto
     margin-bottom: 0
-    
+
   .navbar-items
     display: flex
-    // flex-direction: row
     width: 100%
     margin-left: 5%
 
@@ -249,7 +211,7 @@ body
 
     a
       display: inline
-    
+
     &:nth-child(6)
       margin-left: auto
 
@@ -268,11 +230,11 @@ body
     justify-content: center
     width: 50%
     height: auto
-    padding: 0 3.5vw 
+    padding: 0 3.5vw
 
     // &-blue
       // background-color: $cosmic-blue
-  
+
     h2,
     h3,
     p
@@ -289,23 +251,23 @@ body
       padding: 0
       margin-right: 0
       margin-left: auto
-     
+
     h2,
     h3,
     p,
     .divider-line
       max-width: 684.47px
-  
+
     h2,
     h3
       margin-right: auto
 
     h2
       margin-bottom: .2rem
-  
+
     h3
       margin-bottom: 0.6rem
-  
+
     .divider-line
       height: 2px
       width: 100%
@@ -314,7 +276,7 @@ body
 
       &-vscode
         border-bottom: 2px solid #1e1e1e
-    
+
 @media (min-width: 730px) and (max-width: 835px)
   .info-card
     // h2
@@ -340,10 +302,10 @@ body
 
 // .modal
 //   position: fixed
-//   top: 0 
+//   top: 0
 //   left: 0
-//   bottom: 0 
-//   right: 0 
+//   bottom: 0
+//   right: 0
 //   opacity: 0.7
 //   background-color: black
 //   z-index: 22
@@ -367,7 +329,7 @@ body
   padding-bottom: 3.5rem
   margin-bottom: 7vh
   position: relative
-  // padding: 1.3rem 1rem 
+  // padding: 1.3rem 1rem
   background-color: $post-background-color
   color: $post-font-color
   // border-radius: 10px
@@ -376,18 +338,18 @@ body
 
 .post-image
   align-self: center
-  overflow: hidden 
+  overflow: hidden
 
   img
     transition: transform .5s
-    
+
     &:hover
       transform: scale(1.01)
   // margin-bottom: 2rem
 
   img
     width: 100%
-    // border-radius: 10px 
+    // border-radius: 10px
     // box-shadow: $post-date-box-shadow
 
 .post-title
@@ -418,8 +380,8 @@ body
 @media only screen and (min-width: 1050px)
   .header-title,
   .header-text
-    display: none  
-    
+    display: none
+
 .footer
   background-color: $footer-background-color
   color: $footer-font-color
@@ -430,7 +392,7 @@ body
   margin-left: 6%
   // font-size: 1.4rem
   margin-bottom: 2%
-  
+
 
 .footer-copyright
   margin-left: 6%
@@ -471,4 +433,4 @@ body
 .tagcloud li:last-child::after
   content: ''
   margin-right: 0
-  
+
