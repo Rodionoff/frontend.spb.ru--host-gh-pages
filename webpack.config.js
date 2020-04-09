@@ -4,13 +4,16 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 
 module.exports = {
-  entry: [
-    './src/app.js',
-    './src/sass/style.sass'
-  ],
+  entry: {
+    bundle: [
+      './src/app.js',
+      './src/sass/style.sass',
+    ],
+    serviceWorker: './serviceWorker.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     rules: [{
@@ -63,10 +66,6 @@ module.exports = {
         to: './manifest.json'
       },
       {
-        from: './serviceWorker.js',
-        to: './serviceWorker.js'
-      },
-      {
         from: './src/works',
         to: './works'
       },
@@ -87,7 +86,8 @@ module.exports = {
       // filename is the name of the output file
       // template is the name of the source file
       filename: 'index.html',
-      template: 'index.html'
+      template: 'index.html',
+      excludeChunks: ['serviceWorker']
     }),
     new MiniCssExtractPlugin({
       filename: "style.css"
