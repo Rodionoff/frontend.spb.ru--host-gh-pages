@@ -47,41 +47,6 @@ self.addEventListener('install', e => {
     )
   )
 });
-// currentCaches.forEach(cache_name => {
-
-  // if (cache_name === 'assets') {
-  //   self.addEventListener('install', function (event) {
-  //     event.waitUntil(caches.open(cache_name)
-  //       .then(cache => cache.addAll(
-  //         [
-  //           './assets/icons/favicon.png',
-  //           './assets/img/frontend/vs_sw_screenshot.png',
-  //           './assets/icons/soyuz_apollo192.png',
-  //           './assets/icons/soyuz_apollo_apple_icon.png'
-  //         ]
-  //       ))
-  //     )
-  //   })
-  // }
-
-  // if (cache_name.startsWith('static')) {
-  //   self.addEventListener('install', function (event) {
-  //     event.waitUntil(caches.open(cache_name)
-  //       .then(cache => cache.addAll(
-  //         [
-  //           "./articles/pwa-basics/index.html",
-  //           "./bundle.js",
-  //           "./index.html",
-  //           './manifest.json',
-  //           "./style.css"
-  //         ]
-  //       ))
-  //       .catch(err => console.log('errorrR!', err))
-  //     )
-  //   })
-  // }
-// });
-
 
 self.addEventListener('activate', function (event) {
   // https://developer.mozilla.org/en-US/docs/Web/API/Cache
