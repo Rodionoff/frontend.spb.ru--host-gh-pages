@@ -14,16 +14,11 @@ currentCaches.forEach(cache_name => {
             './assets/icons/soyuz_apollo192.png',
             './assets/icons/soyuz_apollo_apple_icon.png'
           ]))
-          .then(() => new Promise(resolve => resolve(() => {
-            resolve(() => {
-              return cache_name + ' ' + 'resolved';
-            })
-          })))
+
         //  use catch for debug only
         //  for it not to return rejected promise in offline mode
 
         // .catch(err => console.log(cache_name + ' ' + 'rejected:\n', err))
-
       )
     })
   }
@@ -40,12 +35,7 @@ currentCaches.forEach(cache_name => {
             './manifest.json', // buggy ( better comment it while debugging )
             "./style.css"
           ]))
-          .then(() => new Promise(resolve => {
-              resolve(() => {
-                return cache_name + ' ' + 'resolved';
-              })
-            })
-          )
+
         //  use cache for debug only
         //  for it not to return rejected promise in offline mode
 
@@ -53,7 +43,8 @@ currentCaches.forEach(cache_name => {
       )
     })
   }
-})
+});
+
 
 self.addEventListener('activate', function (event) {
   // https://developer.mozilla.org/en-US/docs/Web/API/Cache
