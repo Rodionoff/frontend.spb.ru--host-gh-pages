@@ -2,8 +2,6 @@ import {version} from './package.json';
 
 const currentCaches = ['assets', `static-${version}`];
 
-console.log('version: ', version);
-
 
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -14,17 +12,19 @@ self.addEventListener('install', e => {
             .then(cache => cache.addAll([
               './assets/icons/favicon.png',
               './assets/img/frontend/vs_sw_screenshot.png',
-              './assets/img/frontend/vs_sw_screenshotII.png',
               './assets/icons/soyuz_apollo192.png',
               './assets/icons/soyuz_apollo_apple_icon.png'
             ]))
             .then(() => new Promise(resolve => resolve(() => {
               resolve(() => {
-                console.log(cache_name + ' ' + 'resolved');
                 return cache_name + ' ' + 'resolved';
               })
             })))
-            .catch(err => console.log(cache_name + ' ' + 'rejected:\n', err))
+
+          //  catch is using for debug only
+          // for it not to return rejected promise in offline mode
+
+          // .catch(err => console.log(cache_name + ' ' + 'rejected:\n', err))
         }
 
         if (cache_name.startsWith('static')) {
@@ -38,11 +38,14 @@ self.addEventListener('install', e => {
             ]))
             .then(() => new Promise(resolve => {
               resolve(() => {
-                console.log(cache_name + ' ' + 'resolved');
                 return cache_name + ' ' + 'resolved';
               })
             }))
-            .catch(err => console.log(cache_name + ' ' + 'rejected:\n', err))
+
+          //  catch is using for debug only
+          // for it not to return rejected promise in offline mode
+
+          // .catch(err => console.log(cache_name + ' ' + 'rejected:\n', err))
         }
       })
     )
