@@ -83,7 +83,7 @@
       <article class="post">
         <figure class="post-image">
           <a href='./pwa-basics'>
-            <img src="../assets/img/frontend/vs_sw_screenshotII.png" alt="vscode serviceWOrker screenshot">
+            <img src="../assets/img/frontend/vs_sw_screenshotII.png" alt="vscode service worker screenshot">
           </a>
         </figure>
         <h3 class="post-title">
@@ -217,21 +217,6 @@
     </p>
   </footer>
   <script type="text/javascript">
-  </script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./serviceWorker.js')
-          .then(registration => {
-            // Регистрация прошла успешно
-            console.log('Sw registered with scope: ', registration.scope);
-          })
-          .catch(err => {
-            // Регистрация не удалась
-            console.log('SW registration failed: ', err);
-          });
-      });
-    }
   </script>
   <script type="text/javascript" src="../bundle.js"></script>
 </body>
