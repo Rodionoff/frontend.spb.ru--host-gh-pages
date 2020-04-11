@@ -14,6 +14,7 @@ self.addEventListener('install', e => {
             .then(cache => cache.addAll([
               './assets/icons/favicon.png',
               './assets/img/frontend/vs_sw_screenshot.png',
+              './assets/img/frontend/vs_sw_screenshotII.png',
               './assets/icons/soyuz_apollo192.png',
               './assets/icons/soyuz_apollo_apple_icon.png'
             ]))

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121805242-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121805242-1');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#fafbfb" />
+  <link rel="shortcut icon" type="image/png" href="../../assets/icons/favicon.png">
+  <link rel="manifest" href="../../manifest.json">
+  <link rel="apple-touch-icon" href="../../assets/icons/soyuz_apollo_apple_icon.png">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Jura:500|Ubuntu&amp;subset=cyrillic" rel="stylesheet"> -->
+  <link rel='stylesheet' href='../../style.css'>
+  <title>Делаем свой веб-сайт прогрессивным | Павел Родионов, разработчик интерфейсов</title>
+
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="navbar-min">
+    <div class="navbar-logo">
+      <a href='../../'>
+        Главная
+      </a>
+    </div>
+    <div class="navbar-toggle">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+  <ul class="navbar-items">
+    <li class="navlink">
+      <a href="../">
+          <span>
+            Заметки
+          </span>
+      </a>
+    </li>
+    <li class="navlink">
+      <a href="../../works">
+          <span>
+            Портфолио
+          </span>
+      </a>
+    </li>
+    <li class='navlink'>
+      <a href="../../about">
+          <span>
+            Обо мне
+          </span>
+      </a>
+    </li>
+    <li class="navlink">
+      <a href="../../krooshkin">
+          <span>
+            krooshkin
+          </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<main class="main">
+  <header class="header">
+  </header>
+  <section class="post postDetail">
+    <div class="post-header">
+      <figure class="post-image">
+        <img src="../../assets/img/frontend/vs_sw_screenshotII.png" alt="vscode serviceWorker screenshot">
+      </figure>
+      <div class="info-card info-card-blue">
+        <h1>Сервис воркер: часть вторая</h1>
+      </div>
+    </div>
+    <p class="postDetail-text">
+      Пришло время кастомизировать скрипт сервис воркера.
+      <br>
+      <br>
+      Вообще, я узнал, что оказывается,
+      кэшем можно управлять не только из сервис воркера.
+      Оказывается, кэш доступен и из объекта window, то есть из обычного скрипта
+      можно добраться до кэша. А сервис воркер это оказывается воркер, то есть
+      джаваскрипт, который работает в дополнительном потоке.
+      <br>
+      <br>
+    </p>
+    <h3 class='postDetail-small-header'>
+      Часть 1: Причина
+    </h3>
+    <p class="postDetail-text">
+      Итак, причиной изменить код сервис воркера, стало то, что при обновлении
+      кода сайта, у некоторых пользователей осталась предыдущая закешированая
+      версия этих скриптов. Поэтому, чтобы у пользователей была самая
+      свежая версия скриптов и чтобы не менять версию сервис воркера
+      вручную при каждом малейшем изменении было решено сделать несколько
+      иной механизм обновлений. Например, через текущую
+      версию в package.json проекта.
+    </p>
+      <br>
+      <br>
+    <h3 class='postDetail-small-header'>
+      Часть 2: Решение
+    </h3>
+    <p class="postDetail-text">
+      Теперь, стало ясно, что можно иметь несколько версий кэша. Одну версию
+      с файлами которые не будут меняться ( несколько изображений ),
+      и версию со скриптами, стилями и версткой ( эта именно та версия, которая
+      будет меняться).
+      <br>
+      <br>
+      Итак, появился еще 1 кэш, с номером текущей версии проекта ( 1.0.1, 2.4.8, 15.16 ).
+      Появился механизм, который содержит вайт-лист кэшей ( тех кэшей, которые
+      сейчас актуальны и которые не надо удалять ). Так вот, если существует
+      кэш которого нету в этом вайт листе, то мы этот кэш удаляем.
+      <br>
+      <br>
+      В вайт-листе всегда кэш с изображениями ( у него всегда одно и то же название ), и
+      кэш со скриптами и стилями ( его название меняется каждый раз когда
+      меняется версия проекта. Таким образом, получается что при каждом обновлении
+      предыдущая закешированная версия скриптов удаляется, а вместе нее кэшируется
+      свежая)
+      <br>
+      <br>
+      Код, того что получилось вот здесь:
+    </p>
+    <pre class='postDetail-code'>
+        <code class='javascript'>
+import {version} from './package.json';
+
+const currentCaches = ['assets', `static-${version}`];
+
+self.addEventListener('install', e => {
+  e.waitUntil(
+    Promise.all(
+      currentCaches.map(cache_name => {
+        if (cache_name === 'assets') {
+          return caches.open(cache_name)
+            .then(cache => cache.addAll([
+              './assets/icons/favicon.png',
+              './assets/img/frontend/vs_sw_screenshot.png',
+              './assets/icons/soyuz_apollo192.png',
+              './assets/icons/soyuz_apollo_apple_icon.png'
+            ]))
+            .then(() => new Promise(resolve => resolve(() => {
+              resolve(() => {
+                console.log(cache_name + ' ' + 'resolved');
+                return cache_name + ' ' + 'resolved';
+              })
+            })))
+            .catch(err => console.log(cache_name + ' ' + 'rejected:\n', err))
+        }
+
+        if (cache_name.startsWith('static')) {
+          return caches.open(cache_name)
+            .then(cache => cache.addAll([
+              "./articles/pwa-basics/index.html",
+              "./bundle.js",
+              "./index.html",
+              './manifest.json', // buggy ( better comment it while debugging )
+              "./style.css"
+            ]))
+            .then(() => new Promise(resolve => {
+              resolve(() => {
+                console.log(cache_name + ' ' + 'resolved');
+                return cache_name + ' ' + 'resolved';
+              })
+            }))
+            .catch(err => console.log(cache_name + ' ' + 'rejected:\n', err))
+        }
+      })
+    )
+  )
+});
+
+self.addEventListener('activate', function (event) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/Cache
+
+  // Active worker won't be treated as activated until promise
+  // resolves successfully.
+
+  event.waitUntil(
+    caches.keys().then(function (cacheNames) {
+      return Promise.all(
+        cacheNames.map(function (cacheName) {
+          if (currentCaches.includes(cacheName) === false) {
+            console.log('Deleting out of date cache:', cacheName);
+
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    caches.match(event.request)
+      .then(matching => {
+        return matching || fetch(event.request)
+          .catch(err => `${err} нет сети`)
+      })
+  )
+});
+
+      </code>
+      </pre>
+    <p class="postDetail-text">
+      <br>
+      <br>
+      На 11 апреля 2020 на этом сайте 2 кэша
+      <br>
+      <br>
+      Спасибо за прочтение, надеюсь эта заметка получилась хотя бы мало мальски полезной
+
+      <img src="../../assets/img/frontend/finn_and_jacke_from_google.png" alt="finn and jacke">
+    </p>
+    <p class="post-date">
+      11 April 2020
+    </p>
+  </section>
+
+</main>
+<footer class="footer">
+  <p class="footer-whois">
+    Павел Родионов
+  </p>
+  <p class="footer-copyright">
+    2018 - 2019
+  </p>
+</footer>
+<script type="text/javascript">
+</script>
+<script type="text/javascript" src="../../bundle.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('../../serviceWorker.js')
+        .then(function (registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
+</script>
+</body>
+
+</html>
