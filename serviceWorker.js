@@ -1,50 +1,38 @@
 import {version} from './package.json';
 
+console.log('version: ', version);
+
 const currentCaches = ['assets', `static-${version}`];
 
 
-currentCaches.forEach(cache_name => {
-  if (cache_name === 'assets') {
-    self.addEventListener('install', e => {
-      e.waitUntil(
-        caches.open(cache_name)
-          .then(cache => cache.addAll([
-            './assets/icons/favicon.png',
-            './assets/img/frontend/vs_sw_screenshot.png',
-            './assets/icons/soyuz_apollo192.png',
-            './assets/icons/soyuz_apollo_apple_icon.png'
-          ]))
+self.addEventListener('install', e => {
+  e.waitUntil(
+    Promise.all(
+      currentCaches.map(cache_name => {
+        if (cache_name === 'assets') {
+          return caches.open(cache_name)
+            .then(cache => cache.addAll([
+              './assets/icons/favicon.png',
+              './assets/img/frontend/vs_sw_screenshot.png',
+              './assets/icons/soyuz_apollo192.png',
+              './assets/icons/soyuz_apollo_apple_icon.png'
+            ]))
+        }
 
-        //  use catch for debug only
-        //  for it not to return rejected promise in offline mode
-
-        // .catch(err => console.log(cache_name + ' ' + 'rejected:\n', err))
-      )
-    })
-  }
-
-  if (cache_name.startsWith('static')) {
-    self.addEventListener('install', e => {
-
-      e.waitUntil(
-        caches.open(cache_name)
-          .then(cache => cache.addAll([
-            "./articles/pwa-basics/index.html",
-            "./bundle.js",
-            "./index.html",
-            './manifest.json', // buggy ( better comment it while debugging )
-            "./style.css"
-          ]))
-
-        //  use cache for debug only
-        //  for it not to return rejected promise in offline mode
-
-        // .catch(err => console.log(cache_name + ' ' + 'rejected:\n', err))
-      )
-    })
-  }
+        if (cache_name.startsWith('static')) {
+          return caches.open(cache_name)
+            .then(cache => cache.addAll([
+              "./articles/pwa-basics/index.html",
+              "./bundle.js",
+              "./index.html",
+              './manifest.json', // buggy ( better comment it while debugging )
+              "./style.css"
+            ]))
+        }
+      })
+    )
+  )
 });
-
 
 self.addEventListener('activate', function (event) {
   // https://developer.mozilla.org/en-US/docs/Web/API/Cache
