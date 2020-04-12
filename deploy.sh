@@ -1,26 +1,5 @@
 #!/usr/bin/env sh
 
-# abort on errors
-set -e
+npm run build && cd dist && git commit -am 'deploy' && git push origin master:gh-pages
 
-# build
-npm run build
-
-# navigate into the build output directory
-cd dist
-
-# if you are deploying to a custom domain
-echo 'frontend.spb.ru' > CNAME
-
-git init
-git add -A
-git commit -m 'deploy'
-
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-#git push -f git@github.com:Rodionoff/portf.git master:gh-pages
-git push -f git@github.com:Rodionoff/frontend.spb.ru--host-gh-pages.git master:gh-pages
-
-cd -
+cd - || return
