@@ -97,7 +97,7 @@ body
   color: $header-font-color
   width: 90%
   display: none
-  padding: 0//1.7rem 0 0 //1.125rem
+  padding: 0 1.7rem 0 0 //1.125rem
   padding-left: 3.5vw
   margin-left: 1.5vw
   margin-bottom: 0.75rem
@@ -129,38 +129,40 @@ body
   box-shadow: $navbar-box-shadow
   z-index: 7
 
-.navbar-min
-  display: flex
-  justify-content: space-between
+  &-min
+    display: flex
+    justify-content: space-between
 
-.navbar-logo
-  font-size: 1.4rem
-  font-weight: 700
-  padding-bottom: 0px
+  &-logo
+    font-size: 1.4rem
+    font-weight: 700
+    padding-bottom: 0px
 
-.navbar-toggle
-  width: 21%
-  display: flex
-  flex-direction: column
-  justify-content: center
-  cursor: pointer
+  &-items
+    display: none
 
-  .line
-    height: .3vh
-    margin-bottom: 1vh
-    background-color: $navbar-font-color
-    width: 65%
-    margin-left: auto
+  &.show .navbar-items
+    display: block
 
-  .line:last-child
-    margin-bottom: 0
+  &-toggle
+    width: 21%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    cursor: pointer
 
-.hiddenToggle
+    .line
+      height: .3vh
+      margin-bottom: 1vh
+      background-color: $navbar-font-color
+      width: 65%
+      margin-left: auto
+
+    .line:last-child
+      margin-bottom: 0
+
+.navbar.show .line
   opacity: 0.1
-
-
-.navbar-items
-  display: none
 
 .navlink
   border-bottom: 1px solid transparent
@@ -172,16 +174,9 @@ body
     width: 100%
     padding: 0.175rem 0.175rem 0.175rem 0
 
-
-.navlink-active
-  padding: 0.175rem 0.175rem calc(0.175rem + 1px) 0
-
 .navlink:not(.navlink-active):hover span,
 .navlink-active span
   border-bottom: 1px solid $navbar-font-color
-
-.show
-  display: block
 
 .info-card
   display: none
@@ -218,8 +213,8 @@ body
     &:last-child
       margin-right: 0
 
-  .navbar-toggle
-    display: none
+  //.navbar-toggle
+  //  display: none
 
 @media only screen and (min-width: 730px)
   .info-card

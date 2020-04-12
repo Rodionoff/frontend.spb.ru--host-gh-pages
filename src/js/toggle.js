@@ -1,30 +1,23 @@
 (() => {
-  const navbarItems = document.querySelector('.navbar-items');
-  const navbarToggle = document.querySelector('.navbar-toggle');
   const main = document.querySelector('.main');
-  const lines = Array.from(document.getElementsByClassName('line'));
+  const navbar = document.querySelector('.navbar');
 
-  navbarToggle.addEventListener('click', toggleNavbar);
+  navbar.addEventListener('click', (e) => {
 
-  function toggleNavbar() {
-    navbarItems.classList.toggle('show');
+    const targetClassList = e.target.classList;
 
-    if (navbarItems.classList.contains('show')) {
-      // navbarToggle.innerHTML = 'x';
-      lines.forEach(line => line.classList.add('hiddenToggle'));
-      main.addEventListener('click', baz);
-    } else {
-      // navbarToggle.innerHTML = 'v';
-      lines.forEach(line => line.classList.remove('hiddenToggle'));
-    }
-  }
+    (targetClassList.contains('navbar-toggle')) && (() => {
+      if (navbar.classList.contains('show')) {
+        navbar.classList.remove('show');
 
-  function baz() {
-    navbarItems.classList.remove('show');
-    main.removeEventListener('click', baz);
-    // navbarToggle.innerHTML = 'v';
-    lines.forEach(line => line.classList.remove('hiddenToggle'))
-    // console.log('works');
-  }
+        main.onclick = undefined;
 
-})()
+        return
+      }
+
+      navbar.classList.add('show');
+
+      main.onclick = () => navbar.classList.remove('show');
+    })()
+  })
+})();
