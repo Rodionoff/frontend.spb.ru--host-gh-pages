@@ -84,6 +84,10 @@ module.exports = {
         from: './src/articles',
         to: './articles'
       },
+      {
+        from: './CNAME',
+        to: 'CNAME'
+      }
     ]),
     new HtmlWebpackPlugin({
       // filename is the name of the output file
