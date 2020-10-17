@@ -86,7 +86,7 @@ module.exports = {
       },
       {
         from: './CNAME',
-        to: 'CNAME'
+        to: './'
       }
     ]),
     new HtmlWebpackPlugin({
