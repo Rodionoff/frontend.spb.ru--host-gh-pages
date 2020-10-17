@@ -1,16 +1,16 @@
 .frontend
   .post-text
     display: none
-  
+
   .post-date
     display: none
-    
+
 @media only screen and (min-width: 730px)
-  .frontend 
+  .frontend
     display: grid
     grid-template-columns: repeat(auto-fill, minmax(45%, 1fr))
     grid-gap: 2vw
-    
+
 
     .post
       margin-bottom: 0
@@ -41,17 +41,18 @@
 
     &::after
       // content: ' ⌦'
-  
+
   .post-text
     // display: none
 
 @media only screen and (min-width: 1050px)
-  .frontend 
+  .frontend
     display: grid
     grid-template-columns: repeat(auto-fill, minmax(30%, 1fr))
 
     .post-image
       max-height: 25vh
+      min-width: 100%
 
 .tagcloud-wrapper
   margin-bottom: 1.2rem

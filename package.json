@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode=production",
     "start": "webpack --watch --mode=production",
-    "dev": "webpack --mode=development"
+    "dev": "webpack-dev-server --open --config webpack.config.js"
   },
   "keywords": [
     "verstka"
@@ -29,7 +29,8 @@
     "style-loader": "^0.23.0",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.1",
-    "webpack-cli": "^3.1.1"
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "highlight.js": "^9.13.1"

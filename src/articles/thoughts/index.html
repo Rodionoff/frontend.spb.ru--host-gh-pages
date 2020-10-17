@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121805242-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121805242-1');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#fafbfb" />
+  <link rel="shortcut icon" type="image/png" href="../../assets/icons/favicon.png">
+  <link rel="manifest" href="../../manifest.json">
+  <link rel="apple-touch-icon" href="../../assets/icons/soyuz_apollo_apple_icon.png">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Jura:500|Ubuntu&amp;subset=cyrillic" rel="stylesheet"> -->
+  <link rel='stylesheet' href='../../style.css'>
+  <title>Размышления | Roadmap | Павел Родионов, фронтенд разработчик</title>
+
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="navbar-min">
+    <div class="navbar-logo">
+      <a href='../../'>
+        Главная
+      </a>
+    </div>
+    <div class="navbar-toggle">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+  <ul class="navbar-items">
+    <li class="navlink">
+      <a href="../">
+          <span>
+            Заметки
+          </span>
+      </a>
+    </li>
+    <li class="navlink">
+      <a href="../../works">
+          <span>
+            Портфолио
+          </span>
+      </a>
+    </li>
+    <li class='navlink'>
+      <a href="../../about">
+          <span>
+            Обо мне
+          </span>
+      </a>
+    </li>
+    <li class="navlink">
+      <a href="../../krooshkin">
+          <span>
+            krooshkin
+          </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<main class="main">
+  <header class="header">
+  </header>
+  <section class="post postDetail">
+    <div class="post-header">
+      <figure class="post-image">
+        <img src="../../assets/img/stories/tolstoy.jpg" alt="Lev Tolstoy">
+      </figure>
+      <div class="info-card info-card-blue">
+        <h1>Размышления о том, что делать дальше</h1>
+      </div>
+    </div>
+    <p class="postDetail-text">
+      Интересным образом сейчас возник вопрос о дальнейших путях развития.
+      Что делать дальше? В какую сторону развиваться? Продолжить ли изучение
+      фронтенда на передовой его части ( новейшие, бысроизменяющиеся фреймворки )
+      или же продолжить изучение более стабильных и менее подверженных таким
+      стремительным изменениям вещам.
+    </p>
+
+    <p class="postDetail-text">
+      Ну думаю, что нужно что-то выбирать. <br>
+      Просто продолжить делать то, что делаешь, и интерес сам приведет туда, куда
+      нужно
+    </p>
+
+    <p class="postDetail-text">
+      В последнее время по вечерам и выходным иногда занимаюсь чтением и улучшением
+      понимания того, что происходит ( и может происходить ) н бэкенде. Довольно
+      интересно узнать какие возможности существуют, и что вообще можно сделать
+      в современном вебе.
+    </p>
+
+    <p class="postDetail-text">
+      Приятно осозновать, что та документация, и те непонятные моменты, которые
+      были неясными, вдруг, при повторном прочтении, спустя некоторое время
+      прояснились. То, что раньше казалось очень сложным и непонятным, сейчас
+      стало яснее.
+    </p>
+
+    <p class="postDetail-text">
+      На данный момент, есть несколько задач, которые весьма желательно реализовать.
+      Например, одна из таких задач -- это перенести данный ресурс на свой серврер ( на время
+      написания этого текста сайт хостится на github), добавить этому ресурсу динамики,
+      создав для него бэкенд на Django. <br>
+      Понятно, что бэкенд этот весьма базовый, но тем не менее, создание бэкенда --
+      новая и интересная задача, на пути реализации которой, весьма вероятно,
+      станут ясны некоторые неизвестные вещи и концепции.
+    </p>
+
+    <p class="post-date">
+      17 October 2020
+    </p>
+  </section>
+
+</main>
+<footer class="footer">
+  <p class="footer-whois">
+    Павел Родионов
+  </p>
+  <p class="footer-copyright">
+    2018 - 2019
+  </p>
+</footer>
+<script type="text/javascript">
+</script>
+<script type="text/javascript" src="../../bundle.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('../../serviceWorker.js')
+        .then(function (registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
+</script>
+</body>
+
+</html>
