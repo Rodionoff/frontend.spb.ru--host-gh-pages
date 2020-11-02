@@ -1,17 +1,19 @@
 {
-  "name": "verstka",
+  "name": "frontend.spb.ru",
   "version": "2.2.1",
-  "description": "verstka",
+  "description": "Static blog",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production",
-    "start": "webpack --watch --mode=production",
-    "dev": "webpack-dev-server --open --config webpack.config.js"
+    "start": "webpack-dev-server --open --config webpack.config.js",
+    "build": "webpack --mode=production"
   },
   "keywords": [
-    "verstka"
+    "frontend",
+    "spb",
+    "ru",
+    "frontend.spb.ru"
   ],
-  "author": "pavelrodionoff",
+  "author": "rodionov80 <rodionov134@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.0",
@@ -21,7 +23,6 @@
     "css-loader": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.3",
-    "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.5.0",
     "sass": "^1.27.0",
