@@ -1,24 +1,51 @@
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   entry: {
     bundle: [
       './src/app.js',
-      './src/sass/style.sass',
+      // './src/sass/style.sass',
     ],
     serviceWorker: './serviceWorker.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].[contenthash].bundle.js'
+  },
+  devServer: {
+    writeToDisk: true,
+    // https: true
+  },
+  optimization: {
+    moduleIds: 'hashed',
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   module: {
-    rules: [{
-        test: /\.(png|jpg|woff2)$/,
-        loader: "url-loader",
+    rules: [
+      {
+        test: /\.(woff2|png|svg|jpg|jpeg|gif)$/,
+        loader: "file-loader",
+        options: {
+          esModule: false
+        }
+      },
+      // {
+      //   test: /\.hbs$/,
+      //   loader: "handlebars-loader",
+      //   options: {
+      //     rootRelative: Path.resolve(__dirname, 'src/hbs') + '/',
+      //   }
+      // },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.sass$/,
@@ -33,7 +60,7 @@ module.exports = {
               ident: 'postcss',
               plugins: [
                 require('autoprefixer')({
-                  'browsers': ['> 1%', 'last 2 versions', 'IE > 7']
+                  'browsers': ['> 1%', 'last 2 versions']
                 }),
               ]
             }
@@ -59,6 +86,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "style.css"
+    }),
     new CopyWebpackPlugin([
       {
         from: './src/assets',
@@ -91,9 +122,6 @@ module.exports = {
       filename: 'index.html',
       template: 'index.html',
       excludeChunks: ['serviceWorker']
-    }),
-    new MiniCssExtractPlugin({
-      filename: "style.css"
-    }),
+    })
   ]
 };

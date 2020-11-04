@@ -28,8 +28,6 @@
   font-size: 2rem
   width: 7vw
   height: 3rem
-  // margin-left: 1.5vw
-  // margin-left: 1.5vw
   z-index: 8
   opacity: 0.6
   display: block
@@ -82,12 +80,12 @@
 .photo
   margin-bottom: 2.5vh
   background-color: $post-background-color
-  // backgroun-color: inherit
   color: $post-font-color
   box-shadow: $post-box-shadow
   position: relative
   z-index: 5
   cursor: pointer
+
 
 .photo-image
   align-self: center
@@ -100,9 +98,7 @@
   position: absolute
   bottom: 8%
   left: 3.5vw
-  // color: White
   color: lighten($header-font-color, 5%)
-  // font-weight: 700
   opacity: 0
   letter-spacing: 0.001
   width: 90%
@@ -116,15 +112,10 @@
   width: 100%
   height: 100%
   left: 0
-  // background-color: #000000
-  // background-color: #1778c2
   background-color: #fafbfb
   opacity: 0
   z-index: 2
-  // display: block
   display: none
-  // opacity: 1
-
 
 .showOverlay
   opacity: 0.85
@@ -133,9 +124,6 @@
 .showDescription
   opacity: 1
   z-index: 10
-// .imageDescription
-//   color: White
-//   bottom: 10%
 
 @media only screen and (min-width: 700px)
   .photos
@@ -147,24 +135,14 @@
     margin-bottom: 0
 
 @media only screen and (min-width: 1050px)
-
-  
   .photos
     display: grid
     grid-template-columns: repeat(3, 1fr)
-    grid-gap: 2vh
+    grid-gap: 5px
 
 .krooshkin .header
   display: block
-  // display: none
 
 .krooshkin .header-title,
 .krooshkin .header-text
   display: block
-
-.krooshkin .header-title
-  // padding-top: 1.2rem
-  // padding-top: calc(1.2rem / 1366px * 1vw)
-  // padding-top: .4rem
-.krooshkin .header-text
-  // margin-bottom: 0.3rem

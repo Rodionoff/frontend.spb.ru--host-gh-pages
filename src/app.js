@@ -1,13 +1,8 @@
-// import you .js files here
+import './sass/style.sass';
 
-// import './js/truncate.js';
-// import './js/tooltip.js';
-// import './js/displayOverlay.js';
 import './js/toggle';
 import './js/changeFooterYear';
 import './js/highlght';
 import './js/jsCarousel';
 import './js/lazyLoad';
 import './js/sortByTag';
-// import './js/handleWorkImagesSizes'
-// import './js/tagCloudLink';

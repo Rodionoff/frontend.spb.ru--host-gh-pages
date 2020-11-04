@@ -1,4 +1,3 @@
-// type your sass here
 %reset-Button
   border: none
   margin: 0
@@ -27,7 +26,6 @@
 *, *::before, *::after
   box-sizing: border-box
 
-// $primary-color: #ffeeff
 $primary-color: #fafbfb
 $cosmic-blue: #1778c2
 $light-blue: lighten(#d5e8e4, 8%)
@@ -39,17 +37,14 @@ $footer-font-color: $primary-color
 
 $navbar-background-color: darken($cosmic-blue, 15%)
 $header-background-color: $primary-color
-$body-background-color: lighten($primary-color, 0%)
-// $post-background-color: darken($primary-color, 2%)
+$body-background-color: $primary-color
 $post-background-color: White
-// $post-background-color: darken($primary-color, 1%)
 $post-date-background-color: darken($primary-color, 24%)
 $footer-background-color: $cosmic-blue
 
 $navbar-box-shadow: 3px 5px 4px 1px darken($primary-color, 25%)
 $post-box-shadow: 3px 5px 4px 1px darken($primary-color, 25%)
 $post-box-shadow--hover: 2px 2px 1px 1px darken($primary-color, 25%)
-// $post-date-box-shadow: 5px 4px 4px 1px darken(White, 20%)
 
 h1, h2, h3, p
   margin: 0
@@ -75,9 +70,12 @@ figure
   padding: 0
   display: block
 
+//@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap')
+
 html,
 body
   margin: 0
+  //font-family: "Open Sans", sans-serif
   font-family: 'Montserrat', sans-serif
   font-weight: 500
 
@@ -97,8 +95,7 @@ body
   color: $header-font-color
   width: 90%
   display: none
-  padding: 0 1.7rem 0 0 //1.125rem
-  padding-left: 3.5vw
+  padding: 0 1.7rem 0 3.5vw
   margin-left: 1.5vw
   margin-bottom: 0.75rem
 
@@ -213,12 +210,8 @@ body
     &:last-child
       margin-right: 0
 
-  //.navbar-toggle
-  //  display: none
-
 @media only screen and (min-width: 730px)
   .info-card
-    // background-color: #eee
     background-color: $light-blue
     display: flex
     flex-direction: column
@@ -227,22 +220,12 @@ body
     height: auto
     padding: 0 3.5vw
 
-    // &-blue
-      // background-color: $cosmic-blue
-
     h2,
     h3,
     p
       display: block
 
-    h2
-      // font-size: 1.3rem
-
-    h3
-      // font-size: 1rem
-
     p
-      // font-size: .9rem
       padding: 0
       margin-right: 0
       margin-left: auto
@@ -273,21 +256,9 @@ body
         border-bottom: 2px solid #1e1e1e
 
 @media (min-width: 730px) and (max-width: 835px)
-  .info-card
-    // h2
-      // font-size: 1.3rem
-      // margin-bottom: 0.5rem
-
-    // h3
-      // font-size: 1rem
-
-    .divider-line
-      // margin-bottom: .25rem
-
     p
       margin-left: 0
       margin-right: auto
-      // font-size: .85rem
 
 .navbar-fixed
   position: fixed
@@ -295,28 +266,12 @@ body
   width: 100%
   top: 0
 
-// .modal
-//   position: fixed
-//   top: 0
-//   left: 0
-//   bottom: 0
-//   right: 0
-//   opacity: 0.7
-//   background-color: black
-//   z-index: 22
-
-
-
-// .showHeaderText
-  // display: block
-
 .posts
   width: 95%
   margin-left: 2.5%
   margin-right: 2.5%
   line-height: 1.5rem
   margin-bottom: 5%
-  // box-shadow: $post-date-box-shadow
 
 .post
   display: flex
@@ -324,12 +279,9 @@ body
   padding-bottom: 3.5rem
   margin-bottom: 7vh
   position: relative
-  // padding: 1.3rem 1rem
   background-color: $post-background-color
   color: $post-font-color
-  // border-radius: 10px
   box-shadow: $post-box-shadow
-  // background-image: url("https://www.transparenttextures.com/patterns/dirty-old-black-shirt.png")
 
 .post-image
   align-self: center
@@ -340,35 +292,22 @@ body
 
     &:hover
       transform: scale(1.01)
-  // margin-bottom: 2rem
 
   img
     width: 100%
-    // border-radius: 10px
-    // box-shadow: $post-date-box-shadow
 
 .post-title
-  // margin-bottom: 1rem
   font-size: 1.3rem
-  // text-align: center
   padding: 1.3rem 3.5vw
 
 .post-date
-  // padding: 6vw
-  // background-color: $post-date-background-color
-  // margin-bottom: 1.7rem
-  // width: 60%
   border-radius: 7px
   padding: 1.3rem 3.5vw
   text-align: right
-  // box-shadow: $post-date-box-shadow
-  // color: $post-background-color
 
 .post-text
   letter-spacing: .075rem
-  color: #333
   line-height: 1.5rem
-  color: inherit
   margin-bottom: 1rem
   padding: .5rem 3.5vw 1.3rem 3.5vw
 
@@ -385,7 +324,6 @@ body
 
 .footer-whois
   margin-left: 6%
-  // font-size: 1.4rem
   margin-bottom: 2%
 
 
@@ -399,23 +337,12 @@ body
   bottom: 1rem
   left: 3.5vw
 
-.tagcloud-label
-  // margin-left: 3.5vw
-  // margin-bottom: .5rem
-
 .tagcloud
   display: flex
   margin-left: .5rem
   padding: 0
 
-.tagcloud::before
-  // content: '['
-
-.tagcloud::after
-  // content: ']'
-
 .tagcloud li
-  // margin-right: 0.5rem
   color: $cosmic-blue
 
 .tagcloud li:first-child::before
