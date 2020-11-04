@@ -1,4 +1,4 @@
-// import you .js files here
+import './sass/style.sass';
 
 import './js/toggle';
 import './js/changeFooterYear';
