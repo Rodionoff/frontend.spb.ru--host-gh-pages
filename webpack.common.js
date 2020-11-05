@@ -16,10 +16,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].bundle.js'
   },
-  devServer: {
-    writeToDisk: true,
+  // devServer: {
+  //   writeToDisk: true,
     // https: true
-  },
+  // },
   optimization: {
     moduleIds: 'hashed',
     runtimeChunk: 'single',
