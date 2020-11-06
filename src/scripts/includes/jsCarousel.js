@@ -1,4 +1,3 @@
-// export default function jsCarousel(links, images) {
 (() => {
   const modal = document.querySelector('.modal')
   const images = document.querySelectorAll('.photo-image')
@@ -20,12 +19,6 @@
       return arrow
     }
 
-    // links.forEach((link, index) => {
-    //   link.onclick = function() {
-    //     showModal(image, index)
-    //   }
-    // })
-
     imagesWrapper.addEventListener('click', (event) => {
       const findIndex = (node) => {
         if (node !== undefined) {
@@ -40,7 +33,6 @@
         const index = findIndex(parent)
         showModal(index)
       }
-
     })
 
     function showModal(i) {
@@ -50,16 +42,6 @@
       leftArrow.style.visibility = 'visible'
       rightArrow.style.visibility = 'visible'
       img.pk = i;
-      if (img.pk == 0) {
-        // leftArrow.style.visibility = 'hidden'
-        // rightArrow.style.visibility = 'visible'
-      } else if (img.pk > 0 && img.pk < images.length - 1) {
-        // leftArrow.style.visibility = 'visible'
-        // rightArrow.style.visibility = 'visible'
-      } else if (img.pk === images.length - 1) {
-        // leftArrow.style.visibility = 'visible'
-        // rightArrow.style.visibility = 'hidden'
-      }
       img.src = images[i].lastElementChild.src
       console.log(img)
       appendElementsToModal(img)
@@ -80,7 +62,6 @@
       let isLastImage = images[image.pk] === undefined
 
       if (isLastImage) {
-        // rightArrow.style.visibility = 'hidden'
         image.pk = 0
       }
       image.src = images[image.pk].lastElementChild.src
@@ -93,7 +74,6 @@
       let isFirstImage = images[image.pk] === undefined
 
       if (isFirstImage) {
-        // leftArrow.style.visibility = 'hidden'
         image.pk = images.length - 1
       }
       image.src = images[image.pk].lastElementChild.src
@@ -109,5 +89,4 @@
   };
 
   modal && images && imagesWrapper && jsCarousel();
-
 })();

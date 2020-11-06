@@ -7,19 +7,14 @@ const path = require('path');
 module.exports = {
   entry: {
     bundle: [
-      './src/app.js',
-      // './src/sass/style.sass',
+      './src/scripts/index.js'
     ],
     serviceWorker: './serviceWorker.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].bundle.js'
+    filename: '[name].[contenthash].bundle.scripts'
   },
-  // devServer: {
-  //   writeToDisk: true,
-    // https: true
-  // },
   optimization: {
     moduleIds: 'hashed',
     runtimeChunk: 'single',
@@ -36,13 +31,14 @@ module.exports = {
           esModule: false
         }
       },
-      // {
-      //   test: /\.hbs$/,
-      //   loader: "handlebars-loader",
-      //   options: {
-      //     rootRelative: Path.resolve(__dirname, 'src/hbs') + '/',
-      //   }
-      // },
+      {
+        test: /\.hbs$/,
+        loader: "handlebars-loader",
+        options: {
+          // rootRelative: path.resolve(__dirname, 'src/templates') + '/',
+          rootRelative: path.resolve(__dirname, 'src/templates/'),
+        }
+      },
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
@@ -59,9 +55,7 @@ module.exports = {
             options: {
               ident: 'postcss',
               plugins: [
-                require('autoprefixer')({
-                  'browsers': ['> 1%', 'last 2 versions']
-                }),
+                require('autoprefixer'),
               ]
             }
           },
@@ -91,6 +85,7 @@ module.exports = {
       filename: "style.css"
     }),
     new CopyWebpackPlugin([
+      // TODO: rewrite using html-webpack-plugin
       {
         from: './src/assets',
         to: './assets'

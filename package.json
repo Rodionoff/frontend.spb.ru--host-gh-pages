@@ -4,8 +4,22 @@
   "description": "Static blog",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.config.js",
-    "build": "webpack --mode=production"
+    "start": "webpack-dev-server --open --config webpack.development.js",
+    "build": "webpack --config webpack.production.js",
+    "lint:js": "standard src/scripts/**.js --fix"
+  },
+  "browserslist": {
+    "production": [
+      "> 1%",
+      "ie 10"
+    ],
+    "development": [
+      "> 1%"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodionov80/frontend.spb.ru.git"
   },
   "keywords": [
     "frontend",
@@ -29,11 +43,14 @@
     "postcss-preset-env": "^6.7.0",
     "sass": "^1.28.0",
     "sass-loader": "^7.3.1",
+    "standard": "^16.0.1",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.44.2",
+    "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.3.0"
   },
   "dependencies": {
     "highlight.js": "^9.18.3"
