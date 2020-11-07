@@ -35,8 +35,7 @@ module.exports = {
         test: /\.hbs$/,
         loader: "handlebars-loader",
         options: {
-          // rootRelative: path.resolve(__dirname, 'src/templates') + '/',
-          rootRelative: path.resolve(__dirname, 'src/templates/'),
+          rootRelative: path.resolve(__dirname, 'src/hbs/'),
         }
       },
       {
@@ -85,7 +84,6 @@ module.exports = {
       filename: "style.css"
     }),
     new CopyWebpackPlugin([
-      // TODO: rewrite using html-webpack-plugin
       {
         from: './src/assets',
         to: './assets'
@@ -95,28 +93,51 @@ module.exports = {
         to: './manifest.json'
       },
       {
-        from: './src/works',
-        to: './works'
-      },
-      {
-        from: './src/about',
-        to: './about'
-      },
-      {
-        from: './src/krooshkin',
-        to: './krooshkin'
-      },
-      {
-        from: './src/articles',
-        to: './articles'
+        from: './src/hbs/works',
+        to: './works',
+        globOptions: {
+          ignore: ['./src/works/index.hbs']
+        }
       },
     ]),
     new HtmlWebpackPlugin({
-      // filename is the name of the output file
-      // template is the name of the source file
-      filename: 'index.html',
-      template: 'index.html',
-      excludeChunks: ['serviceWorker']
-    })
+      template: './src/hbs/pages/index.hbs',
+      filename: './index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/hbs/pages/index.hbs',
+      filename: './articles/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/hbs/pages/articles/pwa-basics/index.hbs',
+      filename: './articles/pwa-basics/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/hbs/pages/articles/serviceWorker-2.0/index.hbs',
+      filename: './articles/serviceWorker-2.0/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/hbs/pages/articles/thoughts/index.hbs',
+      filename: './articles/thoughts/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/hbs/pages/works/index.hbs',
+      filename: './works/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/hbs/pages/about/index.hbs',
+      filename: './about/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/hbs/pages/krooshkin/index.hbs',
+      filename: './krooshkin/index.html'
+    }),
+    // new HtmlWebpackPlugin({
+    //   // filename is the name of the output file
+    //   // template is the name of the source file
+    //   filename: 'index.hbs',
+    //   template: 'index.hbs',
+    //   excludeChunks: ['serviceWorker']
+    // })
   ]
 };

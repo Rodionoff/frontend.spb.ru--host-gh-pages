@@ -23,9 +23,9 @@
 //         if (cache_name.startsWith('static')) {
 //           return caches.open(cache_name)
 //             .then(cache => cache.addAll([
-//               "./articles/pwa-basics/index.html",
+//               "./articles/pwa-basics/index.hbs",
 //               "./bundle.scripts",
-//               "./index.html",
+//               "./index.hbs",
 //               './manifest.json', // buggy ( better comment it while debugging )
 //               "./style.css"
 //             ]))
