@@ -1,10 +1,14 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 CURRENT=$(git branch --show-current)
 
 npm run build
-git checkout gh-pages
-git commit -am 'deploy'
-git push
+cd dist || exit
+git init
+git remote add origin git@github.com:rodionov80/frontend.spb.ru.git
+git checkout -b gh-pages
+git add .
+git commit -m 'deploy'
+git push --set-upstream origin gh-pages -f
 cd ..
 git checkout "$CURRENT"
