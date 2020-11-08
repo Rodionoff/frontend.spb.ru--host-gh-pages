@@ -4,15 +4,15 @@
   "description": "Static blog",
   "main": "index.js",
   "scripts": {
-    "start1": "webpack-dev-server --open --config webpack.development.js",
     "start": "webpack-dev-server --config webpack.development.js",
+    "serve": "webpack-dev-server --open --config webpack.development.js",
     "build": "webpack --config webpack.production.js",
     "lint:js": "standard src/scripts/**.js --fix"
   },
   "browserslist": {
     "production": [
       "> 1%",
-      "ie 10"
+      "last 2 versions"
     ],
     "development": [
       "> 1%"

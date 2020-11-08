@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
-npm run build && cp CNAME dist -f && cd dist && git commit -am 'deploy' && git push origin gh-pages
+CURRENT=$(git branch --show-current)
 
-cd - || return
+npm run build
+git checkout gh-pages
+git commit -am 'deploy'
+git push
+cd ..
+git checkout "$CURRENT"

@@ -3,20 +3,20 @@
 //
 // console.log('version: ', version);
 //
-// const currentCaches = ['assets', `static-${version}`];
+// const currentCaches = ['media', `static-${version}`];
 //
 //
 // self.addEventListener('install', e => {
 //   e.waitUntil(
 //     Promise.all(
 //       currentCaches.map(cache_name => {
-//         if (cache_name === 'assets') {
+//         if (cache_name === 'media') {
 //           return caches.open(cache_name)
 //             .then(cache => cache.addAll([
-//               './assets/icons/favicon.png',
-//               './assets/img/frontend/vs_sw_screenshot.png',
-//               './assets/icons/soyuz_apollo192.png',
-//               './assets/icons/soyuz_apollo_apple_icon.png'
+//               './media/icons/favicon.png',
+//               './media/img/frontend/vs_sw_screenshot.png',
+//               './media/icons/soyuz_apollo192.png',
+//               './media/icons/soyuz_apollo_apple_icon.png'
 //             ]))
 //         }
 //

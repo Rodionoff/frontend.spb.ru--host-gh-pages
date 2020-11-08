@@ -1,129 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+{{#> layouts/base title="Делаем свой веб-сайт прогрессивным | Павел Родионов, разработчик интерфейсов"}}
+  {{#*inline "content"}}
 
-<head>
-  <!-- Global site tag (gtag.scripts) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121805242-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-121805242-1');
-  </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#fafbfb" />
-  <link rel="shortcut icon" type="image/png" href="../../assets/icons/favicon.png">
-  <link rel="manifest" href="../../manifest.json">
-  <link rel="apple-touch-icon" href="../../assets/icons/soyuz_apollo_apple_icon.png">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Jura:500|Ubuntu&amp;subset=cyrillic" rel="stylesheet"> -->
-  <link rel='stylesheet' href='../../style.css'>
-  <title>Делаем свой веб-сайт прогрессивным | Павел Родионов, разработчик интерфейсов</title>
-
-</head>
-
-<body>
-  <nav class="navbar">
-    <div class="navbar-min">
-      <div class="navbar-logo">
-        <a href='../../'>
-          Главная
-        </a>
-      </div>
-      <div class="navbar-toggle">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    </div>
-    <ul class="navbar-items">
-      <li class="navlink">
-        <a href="../">
-          <span>
-            Заметки
-          </span>
-        </a>
-      </li>
-      <li class="navlink">
-        <a href="../../works">
-          <span>
-            Портфолио
-          </span>
-        </a>
-      </li>
-      <li class='navlink'>
-        <a href="../../about">
-          <span>
-            Обо мне
-          </span>
-        </a>
-      </li>
-      <li class="navlink">
-        <a href="../../krooshkin">
-          <span>
-            krooshkin
-          </span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <main class="main">
-    <header class="header">
-      <h1 class="header-title postDetail-header-title">
-        Делаем свой веб-сайт прогрессивным
-      </h1>
-    </header>
-    <section class="post postDetail">
-      <div class="post-header">
-        <figure class="post-image">
-          <img src="../../assets/img/frontend/vscode_sw.png" alt="vscode serviceWorker screenshot">
-        </figure>
-        <div class="info-card info-card-blue">
-          <h2>Как сделать веб-сайт прогрессивным</h2>
-          <h3>Краткое руководство</h3>
-          <div class="divider-line divider-line-vscode"></div>
-          <p>Приблизительное время чтения 5 мин</p>
+    <main class="main">
+      <header class="header">
+        <h1 class="header-title postDetail-header-title">
+          Делаем свой веб-сайт прогрессивным
+        </h1>
+      </header>
+      <section class="post postDetail">
+        <div class="post-header">
+          <figure class="post-image">
+            <img src="/media/img/frontend/vscode_sw.png" alt="vscode serviceWorker screenshot">
+          </figure>
+          <div class="info-card info-card-blue">
+            <h2>Как сделать веб-сайт прогрессивным</h2>
+            <h3>Краткое руководство</h3>
+            <div class="divider-line divider-line-vscode"></div>
+            <p>Приблизительное время чтения 5 мин</p>
+          </div>
         </div>
-      </div>
-      <p class="postDetail-text">
-        По версии Google Lighthouse мой сайт на 100% прогрессивен.
-        Ваш может также. Для этого нужно сделать пару небольших шагов и всё,- мы у цели и
-        можно двигаться к следующей.
-        <br>
-        <br>
-        Итак, что же нам потребуется? Потребуется https соединение,
-        создать и зарегистрировать Service Worker,
-        добавить manifest.json. Делается это просто,
-        и если вы знакомы с JavaScript, труда это не составит.
-        <br>
-        <br>
-        Service Worker'ы потребуются нам для того чтобы браузер
-        пользователя вашего сайта при первом заходе сохранял (кэшировал) в память все необходимые
-        указанные вами данные (css, html, js, etc.).
-        Использование этой технологии существенно ускорит загрузку страницы при повторном заходе на нее,
-        а значит, и увеличит лояльность вашей аудитории.
-        <br>
-        <br>
-        При условии что все жизненноважные
-        данные закэшированы, ServiceWorker способен поддерживать работу сайта и в оффлайне.
-        <br>
-        <br>
-      </p>
-      <h3 class='postDetail-small-header'>
-        Часть 1: Service Worker
-      </h3>
-      <p class='postDetail-text'>
-        Начнем работу с того что зарегистрируем наш SW.
-        Для этого идем и открываем html главной страницы вашего сайта.
-        Перед закрывающимся тэгом body вставляем скрипт:
-      </p>
-      <pre class='postDetail-code'>
+        <p class="postDetail-text">
+          По версии Google Lighthouse мой сайт на 100% прогрессивен.
+          Ваш может также. Для этого нужно сделать пару небольших шагов и всё,- мы у цели и
+          можно двигаться к следующей.
+          <br>
+          <br>
+          Итак, что же нам потребуется? Потребуется https соединение,
+          создать и зарегистрировать Service Worker,
+          добавить manifest.json. Делается это просто,
+          и если вы знакомы с JavaScript, труда это не составит.
+          <br>
+          <br>
+          Service Worker'ы потребуются нам для того чтобы браузер
+          пользователя вашего сайта при первом заходе сохранял (кэшировал) в память все необходимые
+          указанные вами данные (css, html, js, etc.).
+          Использование этой технологии существенно ускорит загрузку страницы при повторном заходе на нее,
+          а значит, и увеличит лояльность вашей аудитории.
+          <br>
+          <br>
+          При условии что все жизненноважные
+          данные закэшированы, ServiceWorker способен поддерживать работу сайта и в оффлайне.
+          <br>
+          <br>
+        </p>
+        <h3 class='postDetail-small-header'>
+          Часть 1: Service Worker
+        </h3>
+        <p class='postDetail-text'>
+          Начнем работу с того что зарегистрируем наш SW.
+          Для этого идем и открываем html главной страницы вашего сайта.
+          Перед закрывающимся тэгом body вставляем скрипт:
+        </p>
+        <pre class='postDetail-code'>
         <code class='javascript'>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -143,31 +71,31 @@ if ('serviceWorker' in navigator) {
       </code>
       </pre>
 
-      <p class="postDetail-text">
-        Этот скрипт регистрирует расположенный по адресу
-        './serviceWorker.js' воркер,-
-        собственно, он и будет кэшировать и отдавать нужные нам файлы.
-        Важно чтобы serviceWorker.js лежал в корне вашего сайта,
-        так как все url на файлы статики будут брать начало от его директории.
-        <br>
-        <br>
-        Теперь можно приступить непосредственно к написанию самого воркера.
-        Для этого создаем в корне проекта файл serviceWorker.js и
-        инициируем в нём хранящуюю произвольное имя кэша переменную.
-        В нашем случае кэш будет называться 'cache_v1':
-      </p>
-      <pre class='postDetail-code'>
+        <p class="postDetail-text">
+          Этот скрипт регистрирует расположенный по адресу
+          './serviceWorker.js' воркер,-
+          собственно, он и будет кэшировать и отдавать нужные нам файлы.
+          Важно чтобы serviceWorker.js лежал в корне вашего сайта,
+          так как все url на файлы статики будут брать начало от его директории.
+          <br>
+          <br>
+          Теперь можно приступить непосредственно к написанию самого воркера.
+          Для этого создаем в корне проекта файл serviceWorker.js и
+          инициируем в нём хранящуюю произвольное имя кэша переменную.
+          В нашем случае кэш будет называться 'cache_v1':
+        </p>
+        <pre class='postDetail-code'>
             <code class='javascript'>
 let cache_v1 = 'cache_v1';
   </code>
 </pre>
-      <p class="postDetail-text">
-        Чтобы наш SW приносил пользу,
-        его нужно не только установить, но и указать ему какие файлы кэшировать.
-        <br>
-        (Все пути до статики заменяем на нужные нам)
-      </p>
-      <pre class='postDetail-code'>
+        <p class="postDetail-text">
+          Чтобы наш SW приносил пользу,
+          его нужно не только установить, но и указать ему какие файлы кэшировать.
+          <br>
+          (Все пути до статики заменяем на нужные нам)
+        </p>
+        <pre class='postDetail-code'>
           <code class='javascript'>
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -184,38 +112,38 @@ self.addEventListener('install', function(event) {
 })
             </code>
             </pre>
-      <p class="postDetail-text">
+        <p class="postDetail-text">
 
-        <code class='javascript'>
-          event.waitUntil()
-        </code>
-        ждет момента завершения кэширования
-        <br>
-        <br>
-        <code class='javascript'>
-          caches.open()
-        </code>
-        открывает кэш
-        <br>
-        <br>
-        <code class='javascript'>
-          cache.addAll()
-        </code>
-        добавляет указанные нами файлы в кэш
-        <br>
-        <br>
-        Будьте внимательны: установка Service Worker'а пройдет успешно только в случае успешного
-        кэширования.
-        <br>
-        <br>
-        Далее нам нужно прослушивать событие "fetch".
-        Это событие триггерится каждый раз, когда
-        браузер делает запрос на получение файлов.
-        Мы сделаем проверку есть ли в кэше данные по этому запросу,
-        и если данные есть, вернем их из кэша, а если нету, то возьмем их
-        из интернета:
-      </p>
-      <pre class='postDetail-code'>
+          <code class='javascript'>
+            event.waitUntil()
+          </code>
+          ждет момента завершения кэширования
+          <br>
+          <br>
+          <code class='javascript'>
+            caches.open()
+          </code>
+          открывает кэш
+          <br>
+          <br>
+          <code class='javascript'>
+            cache.addAll()
+          </code>
+          добавляет указанные нами файлы в кэш
+          <br>
+          <br>
+          Будьте внимательны: установка Service Worker'а пройдет успешно только в случае успешного
+          кэширования.
+          <br>
+          <br>
+          Далее нам нужно прослушивать событие "fetch".
+          Это событие триггерится каждый раз, когда
+          браузер делает запрос на получение файлов.
+          Мы сделаем проверку есть ли в кэше данные по этому запросу,
+          и если данные есть, вернем их из кэша, а если нету, то возьмем их
+          из интернета:
+        </p>
+        <pre class='postDetail-code'>
           <code class='javascript'>
 self.addEventListener('fetch', function(event) {
   event.respondWith(
@@ -228,46 +156,44 @@ self.addEventListener('fetch', function(event) {
 })
         </code>
       </pre>
-      <p class="postDetail-text">
-        <code class='javascript'>
-          event.respondWith()
-        </code>
-        принимает в качестве аргумента то, чем мы будем отвечать
-        на запрос
+        <p class="postDetail-text">
+          <code class='javascript'>
+            event.respondWith()
+          </code>
+          принимает в качестве аргумента то, чем мы будем отвечать
+          на запрос
+          <br>
+          <br>
+          <code class='javascript'>
+            caches.match(event.request)
+          </code>
+          проверяет есть ли запрашиваемый ресурс в кэше
+          <br>
+          <br>
+        </p>
+
         <br>
-        <br>
-        <code class='javascript'>
-          caches.match(event.request)
-        </code>
-        проверяет есть ли запрашиваемый ресурс в кэше
-        <!-- <br>
-      <br>
-      <code class='javascript'>||</code>
-      является оператором "или" -->
-        <br>
-        <br>
-        <br>
-      </p>
-      <h3 class='postDetail-small-header'>
-        Часть 2: manifest.json
-      </h3>
-      <p class="postDetail-text">
-        Самое сложное позади. Осталось чуть-чуть. Обещаю.
-        <br>
-        <br>
-        Теперь мы должны рассказать браузеру о нашем приложении.
-        Сделать так чтобы его (приложение) можно было установить.
-        (При этом Chrome на мобильном телефоне станет сам предлагать
-        пользователю установить
-        приложение на рабочий стол)
-        <br>
-        <br>
-        Для того, чтобы получить ожидаемый результат,
-        создаем в корне нашего проекта файлик
-        <i>manifest.json</i>,
-        с примерно таким содержимым:
-      </p>
-      <pre class='postDetail-code'>
+
+        <h3 class='postDetail-small-header'>
+          Часть 2: manifest.json
+        </h3>
+        <p class="postDetail-text">
+          Самое сложное позади. Осталось чуть-чуть. Обещаю.
+          <br>
+          <br>
+          Теперь мы должны рассказать браузеру о нашем приложении.
+          Сделать так чтобы его (приложение) можно было установить.
+          (При этом Chrome на мобильном телефоне станет сам предлагать
+          пользователю установить
+          приложение на рабочий стол)
+          <br>
+          <br>
+          Для того, чтобы получить ожидаемый результат,
+          создаем в корне нашего проекта файлик
+          <i>manifest.json</i>,
+          с примерно таким содержимым:
+        </p>
+        <pre class='postDetail-code'>
         <code class='javascript'>
 {
   "short_name": "Frontend",
@@ -292,103 +218,58 @@ self.addEventListener('fetch', function(event) {
 
         </code>
       </pre>
-      <p class="postDetail-text">
-        Указываем короткое и полное имя приложения,
-        указываем пути до 2ух ваших иконок 192px и 512px,
-        которые станут лого на рабочем столе и
-        задаем урл с которого начинается приложение.
-        <br>
-        <br>
-        <code class="javascript">display: "standalone"</code>
-        будет запускать приложение без интерфейса браузера
-        <br>
-        <br>
-        <code class="javascript">theme_color</code>
-        определяет цвет фона статус бара
-        <br>
-        <br>
-        <code class="javascript">background_color</code>
-        определяет цвет фона приложения до его загрузки
-        <br>
-        <br>
-        Подключаем <i>manifest.json</i>
-        сверху нашей страницы внутри тэга "&lthead&gt":
-        <br>
-        "&ltlink rel="manifest" href="./manifest.json&gt"
-        <br>
-        <br>
-      </p>
-      <h3 class='postDetail-small-header'>
-        Часть 3: Готово
-      </h3>
-      <p class='postDetail-text'>
+        <p class="postDetail-text">
+          Указываем короткое и полное имя приложения,
+          указываем пути до 2ух ваших иконок 192px и 512px,
+          которые станут лого на рабочем столе и
+          задаем урл с которого начинается приложение.
+          <br>
+          <br>
+          <code class="javascript">display: "standalone"</code>
+          будет запускать приложение без интерфейса браузера
+          <br>
+          <br>
+          <code class="javascript">theme_color</code>
+          определяет цвет фона статус бара
+          <br>
+          <br>
+          <code class="javascript">background_color</code>
+          определяет цвет фона приложения до его загрузки
+          <br>
+          <br>
+          Подключаем <i>manifest.json</i>
+          сверху нашей страницы внутри тэга "&lthead&gt":
+          <br>
+          <code class="html">
+            "&ltlink rel="manifest" href="./manifest.json&gt"
+          </code>
+          <br>
+          <br>
+        </p>
+        <h3 class='postDetail-small-header'>
+          Часть 3: Готово
+        </h3>
+        <p class='postDetail-text'>
 
-        Вот и всё.
-        <br>
-        Прикрепляю ссылки на
-        <a href='https://github.com/Rodionoff/portf/blob/master/serviceWorker.js'>
-          код Service Worker'а
-        </a>
-        и
-        <a href="https://github.com/Rodionoff/portf/blob/master/manifest.json">
-          Manifest.json
-        </a>
-        <br>
-        Надеюсь статья получилась полезной.
-      </p>
-      <p class="post-date">
-        6 March 2019
-      </p>
-    </section>
-    <!-- <section id="disqus_thread"></section> -->
+          Вот и всё.
+          <br>
+          Прикрепляю ссылки на
+          <a href='https://github.com/Rodionoff/portf/blob/master/serviceWorker.js'>
+            код Service Worker'а
+          </a>
+          и
+          <a href="https://github.com/Rodionoff/portf/blob/master/manifest.json">
+            Manifest.json
+          </a>
+          <br>
+          Надеюсь статья получилась полезной.
+        </p>
 
-  </main>
-  <footer class="footer">
-    <p class="footer-whois">
-      Павел Родионов
-    </p>
-    <p class="footer-copyright">
-      2018 - 2019
-    </p>
-  </footer>
-  <script type="text/javascript">
-  </script>
-  <script type="text/javascript" src="../../bundle.js"></script>
-  <script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-    //     var disqus_config = function () {
-    //       this.page.url =
-    //         'https://pavelrodionoff.ru/delaem-svoi-website-progressivnim.html'; // Replace PAGE_URL with your page's canonical URL variable
-    //       this.page.identifier =
-    //         'delaem-svoi-website-progressivnim'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    //     };
+        <p class="post-date">
+          6 March 2019
+        </p>
 
-    //     (function () { // DON'T EDIT BELOW THIS LINE
-    //       var d = document,
-    //         s = d.createElement('script');
-    //       s.src = 'https://pavelrodionoff-ru.disqus.com/embed.js';
-    //       s.setAttribute('data-timestamp', +new Date());
-    //       (d.head || d.body).appendChild(s);
-    //     })();
-  </script>
-  <!-- <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-      Disqus.</a></noscript> -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('../../serviceWorker.js')
-          .then(function (registration) {
-            // Registration was successful
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          }, function (err) {
-            // registration failed :(
-            console.log('ServiceWorker registration failed: ', err);
-          });
-      });
-    }
-  </script>
-</body>
-
-</html>
+      </section>
+    </main>
+  {{/inline}}
+{{/layouts/base}}

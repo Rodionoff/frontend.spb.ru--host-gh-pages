@@ -42,13 +42,13 @@ const templates = [
 module.exports = {
   entry: {
     bundle: [
-      './src/scripts/index.js'
+      path.resolve(__dirname, 'src/scripts/index.js')
     ],
     serviceWorker: './serviceWorker.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].bundle.scripts'
+    filename: '[name].[contenthash].bundle.js'
   },
   optimization: {
     moduleIds: 'hashed',
@@ -120,18 +120,18 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: './src/assets',
-        to: './assets'
+        from: path.resolve(__dirname, 'src/media'),
+        to: 'media'
       },
       {
-        from: './manifest.json',
-        to: './manifest.json'
+        from: path.resolve(__dirname, 'manifest.json'),
+        to: 'manifest.json'
       },
       {
-        from: './src/hbs/works',
-        to: './works',
+        from: path.resolve(__dirname, 'src/hbs/works'),
+        to: 'works',
         globOptions: {
-          ignore: ['./src/works/index.hbs']
+          ignore: [path.resolve(__dirname, 'src/works/index.hbs')]
         }
       },
     ]),
