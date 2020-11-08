@@ -4,6 +4,41 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
+const templates = [
+  {
+    template: './src/hbs/pages/index.hbs',
+    filename: './index.html'
+  },
+  {
+    template: './src/hbs/pages/index.hbs',
+    filename: './articles/index.html'
+  },
+  {
+    template: './src/hbs/pages/articles/pwa-basics/index.hbs',
+    filename: './articles/pwa-basics/index.html'
+  },
+  {
+    template: './src/hbs/pages/articles/serviceWorker-2.0/index.hbs',
+    filename: './articles/serviceWorker-2.0/index.html'
+  },
+  {
+    template: './src/hbs/pages/articles/thoughts/index.hbs',
+    filename: './articles/thoughts/index.html'
+  },
+  {
+    template: './src/hbs/pages/works/index.hbs',
+    filename: './works/index.html'
+  },
+  {
+    template: './src/hbs/pages/about/index.hbs',
+    filename: './about/index.html'
+  },
+  {
+    template: './src/hbs/pages/krooshkin/index.hbs',
+    filename: './krooshkin/index.html'
+  },
+]
+
 module.exports = {
   entry: {
     bundle: [
@@ -35,7 +70,7 @@ module.exports = {
         test: /\.hbs$/,
         loader: "handlebars-loader",
         options: {
-          rootRelative: path.resolve(__dirname, 'src/hbs/'),
+          partialDirs: path.join(__dirname, 'src/hbs'),
         }
       },
       {
@@ -100,38 +135,8 @@ module.exports = {
         }
       },
     ]),
-    new HtmlWebpackPlugin({
-      template: './src/hbs/pages/index.hbs',
-      filename: './index.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/hbs/pages/index.hbs',
-      filename: './articles/index.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/hbs/pages/articles/pwa-basics/index.hbs',
-      filename: './articles/pwa-basics/index.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/hbs/pages/articles/serviceWorker-2.0/index.hbs',
-      filename: './articles/serviceWorker-2.0/index.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/hbs/pages/articles/thoughts/index.hbs',
-      filename: './articles/thoughts/index.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/hbs/pages/works/index.hbs',
-      filename: './works/index.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/hbs/pages/about/index.hbs',
-      filename: './about/index.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/hbs/pages/krooshkin/index.hbs',
-      filename: './krooshkin/index.html'
-    }),
+    ...templates.map(template => new HtmlWebpackPlugin(template)),
+
     // new HtmlWebpackPlugin({
     //   // filename is the name of the output file
     //   // template is the name of the source file

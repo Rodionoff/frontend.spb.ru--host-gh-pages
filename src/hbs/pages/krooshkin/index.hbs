@@ -1,212 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+{{#> layouts/base title="Фотографии | sanya krooshkin" bodyClass="krooshkin"}}
+  {{#*inline "head-block" }}
+    <meta name="description" content="sanya krooshkin">
+  {{/inline}}
+  {{#*inline "content"}}
+    <main class="main">
+      <header class="header">
+        <h1 class="header-title">
+          sanya krooshkin
+        </h1>
+        <h2 class="header-text">
+          мой друг @krooshkin есть и в
+          <a href='https://www.instagram.com/krooshkin/' title='link to krooshkin instagram'>инстаграм</a>
+        </h2>
+      </header>
 
-<head>
-  <!-- Global site tag (gtag.scripts) - Google Analytics -->
-<!--  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121805242-1"></script>-->
-<!--  <script>-->
-<!--    window.dataLayer = window.dataLayer || [];-->
+      <div class="modal"></div>
 
-<!--    function gtag() {-->
-<!--      dataLayer.push(arguments);-->
-<!--    }-->
-<!--    gtag('scripts', new Date());-->
+      <section class="photos">
 
-<!--    gtag('config', 'UA-121805242-1');-->
-<!--  </script>-->
+        <article class="photo">
+          <figure class="photo-image">
+            <img src="/assets/img/lazyLoad/lazyload.jpg"
+                 data-src="/assets/img/krooshkin/2.jpeg"
+                 alt="'autumn vibes' by krooshkin">
+          </figure>
+          <div class="overlay"></div>
+          <p class='imageDescription'>
+            <span>Leningrad region</span> <br>
+            autumn vibes </p>
+        </article>
 
-  <meta charset="UTF-8">
-  <meta name="description" content="sanya krooshkin">
+        <article class="photo">
+          <figure class="photo-image">
+            <img src="/assets/img/lazyLoad/lazyLoad.jpg"
+                 data-src="/assets/img/krooshkin/3.jpeg"
+                 alt="'a home' by krooshkin">
+          </figure>
+          <div class="overlay"></div>
+          <p class='imageDescription'>
+            <span>Paul's safehouse</span> <br>
+            a home
+          </p>
+        </article>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#fafbfb" />
-  <link rel="shortcut icon" type="image/png" href="../assets/icons/favicon.png">
-  <link rel="manifest" href="../manifest.json">
-  <link rel="apple-touch-icon" href="../assets/icons/soyuz_apollo_apple_icon.png">
-  <title>Фотографии | sanya krooshkin</title>
-</head>
+        <article class="photo">
+          <figure class="photo-image">
+            <img src="/assets/img/lazyLoad/lazyLoad.jpg"
+                 data-src="/assets/img/krooshkin/4.jpeg"
+                 alt="gradient by krooshkin">
+          </figure>
+          <div class="overlay"></div>
+          <p class='imageDescription'>
+            <span>Sevastopol, Crimea</span> <br>
+            gradient
+          </p>
+        </article>
 
-<body class="krooshkin">
-  <nav class="navbar">
-    <div class="navbar-min">
-      <div class="navbar-logo">
-        <a href='../'>
-          Главная
-        </a>
-      </div>
-      <div class="navbar-toggle">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    </div>
-    <ul class="navbar-items">
-      <li class="navlink">
-        <a href="../">
-          <span>
-            Заметки
-          </span>
-        </a>
-      </li>
-      <li class="navlink">
-        <a href="../works">
-          <span>
-            Портфолио
-          </span>
-        </a>
-      </li>
-      <li class='navlink'>
-        <a href="../about">
-          <span>
-            Обо мне
-          </span>
-        </a>
-      </li>
-      <li class="navlink navlink-active">
-        <span>
-          krooshkin
-        </span>
-      </li>
-    </ul>
-  </nav>
-  <main class="main">
-    <header class="header">
-      <h1 class="header-title">
-        sanya krooshkin
-      </h1>
-      <h2 class="header-text">
-        мой друг @krooshkin есть и в
-        <a href='https://www.instagram.com/krooshkin/' title='link to krooshkin instagram'>инстаграм</a>
-      </h2>
-    </header>
+        <article class="photo">
+          <figure class="photo-image">
+            <img src="/assets/img/lazyLoad/lazyLoad.jpg"
+                 data-src="/assets/img/krooshkin/5.jpeg"
+                 alt="a sad road to nowhere by krooshkin">
+          </figure>
+          <div class="overlay"></div>
+          <p class='imageDescription'>
+            <span>Saint-Petersburg</span> <br>
+            a sad road to nowhere
+          </p>
+        </article>
 
-    <div class="modal"></div>
+        <article class="photo">
+          <figure class="photo-image">
+            <img src="/assets/img/lazyLoad/lazyLoad.jpg"
+                 data-src="/assets/img/krooshkin/6.jpeg"
+                 alt="'a time when the life is better then it used to be' by krooshkin">
+          </figure>
+          <div class="overlay"></div>
+          <p class='imageDescription'>
+            <span>Sevastopol, Crimea</span> <br>
+            a time when the life is better then it used to be
+          </p>
+        </article>
 
-    <section class="photos">
+        <article class="photo">
+          <figure class="photo-image">
+            <img src="/assets/img/lazyLoad/lazyLoad.jpg"
+                 data-src="/assets/img/krooshkin/7.jpeg"
+                 alt="'do not look down' by krooshkin">
+          </figure>
+          <div class="overlay"></div>
+          <p class='imageDescription'>
+            <span>Yalta, Crimea</span> <br>
+            do not look down
+          </p>
+        </article>
 
-      <article class="photo">
-        <figure class="photo-image">
-          <img src="/assets/img/lazyLoad/lazyload.jpg"
-               data-src="/assets/img/krooshkin/2.jpeg"
-               alt="'autumn vibes' by krooshkin">
-        </figure>
-        <div class="overlay"></div>
-        <p class='imageDescription'>
-          <span>Leningrad region</span> <br>
-          autumn vibes </p>
-      </article>
+        <article class="photo">
+          <figure class="photo-image">
+            <img src="/assets/img/lazyLoad/lazyLoad.jpg"
+                 data-src="/assets/img/krooshkin/8.jpeg"
+                 alt="'it's time to sleep' by krooshkin">
+          </figure>
+          <div class="overlay"></div>
+          <p class='imageDescription'>
+            <span>Foros, Crimea</span> <br>
+            it's time to sleep
+          </p>
+        </article>
 
-      <article class="photo">
-        <figure class="photo-image">
-          <img src="/assets/img/lazyLoad/lazyLoad.jpg"
-               data-src="/assets/img/krooshkin/3.jpeg"
-               alt="'a home' by krooshkin">
-        </figure>
-        <div class="overlay"></div>
-        <p class='imageDescription'>
-          <span>Paul's safehouse</span> <br>
-          a home
-        </p>
-      </article>
-
-      <article class="photo">
-        <figure class="photo-image">
-          <img src="/assets/img/lazyLoad/lazyLoad.jpg"
-               data-src="/assets/img/krooshkin/4.jpeg"
-               alt="gradient by krooshkin">
-        </figure>
-        <div class="overlay"></div>
-        <p class='imageDescription'>
-          <span>Sevastopol, Crimea</span> <br>
-          gradient
-        </p>
-      </article>
-
-      <article class="photo">
-        <figure class="photo-image">
-          <img src="/assets/img/lazyLoad/lazyLoad.jpg"
-               data-src="/assets/img/krooshkin/5.jpeg"
-               alt="a sad road to nowhere by krooshkin">
-        </figure>
-        <div class="overlay"></div>
-        <p class='imageDescription'>
-          <span>Saint-Petersburg</span> <br>
-          a sad road to nowhere
-        </p>
-      </article>
-
-      <article class="photo">
-        <figure class="photo-image">
-          <img src="/assets/img/lazyLoad/lazyLoad.jpg"
-               data-src="/assets/img/krooshkin/6.jpeg"
-               alt="'a time when the life is better then it used to be' by krooshkin">
-        </figure>
-        <div class="overlay"></div>
-        <p class='imageDescription'>
-          <span>Sevastopol, Crimea</span> <br>
-          a time when the life is better then it used to be
-        </p>
-      </article>
-
-      <article class="photo">
-        <figure class="photo-image">
-          <img src="/assets/img/lazyLoad/lazyLoad.jpg"
-               data-src="/assets/img/krooshkin/7.jpeg"
-               alt="'do not look down' by krooshkin">
-        </figure>
-        <div class="overlay"></div>
-        <p class='imageDescription'>
-          <span>Yalta, Crimea</span> <br>
-          do not look down
-        </p>
-      </article>
-
-      <article class="photo">
-        <figure class="photo-image">
-          <img src="/assets/img/lazyLoad/lazyLoad.jpg"
-               data-src="/assets/img/krooshkin/8.jpeg"
-               alt="'it's time to sleep' by krooshkin">
-        </figure>
-        <div class="overlay"></div>
-        <p class='imageDescription'>
-          <span>Foros, Crimea</span> <br>
-          it's time to sleep
-        </p>
-      </article>
-
-    </section>
-  </main>
-  <footer class="footer">
-    <p class="footer-whois">
-      Павел Родионов
-    </p>
-    <p class="footer-copyright">
-      2018 - 2019
-    </p>
-  </footer>
-  <script type="text/javascript">
-    // ymaps.ready(init);
-    // function init(){
-    //     var myMap = new ymaps.Map("map", {
-    //         center: [59.93, 30.31],
-    //         zoom: 7
-    //     });
-    // }
-  </script>
-  <script>
-    // if ('serviceWorker' in navigator) {
-    //   window.addEventListener('load', function () {
-    //     navigator.serviceWorker.register('./serviceWorker.scripts').then(function (registration) {
-    //       // Registration was successful
-    //       console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    //     }, function (err) {
-    //       // registration failed :(
-    //       console.log('ServiceWorker registration failed: ', err);
-    //     });
-    //   });
-    // }
-  </script>
-</body>
-
-</html>
+      </section>
+    </main>
+  {{/inline}}
+{{/layouts/base}}

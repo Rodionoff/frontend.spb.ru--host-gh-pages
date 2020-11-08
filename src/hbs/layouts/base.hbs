@@ -1,0 +1,58 @@
+{{!-- layouts/base.hbs --}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  {{> includes/analytics-head-scripts }}
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#fafbfb"/>
+  <link rel="shortcut icon" type="image/png" href="/assets/icons/favicon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/soyuz_apollo_apple_icon.png">
+  <title>
+    {{#if title}}
+      {{title}}
+    {{else}}
+      Фронтенд Блог | Павел Родионов, разработчик интерфейсов
+    {{/if}}
+  </title>
+  {{#> head-block}}
+  {{!-- Custom <head> content per page could be added. --}}
+
+    <meta name="description"
+          content="Павел Родионов. Блог о фронтенде. (Pavel Rodionov frontend blog) @rodionov80">
+  {{/head-block}}
+</head>
+<body {{#if bodyClass}}class="{{bodyClass}}"{{/if}}>
+
+{{> includes/navbar }}
+
+{{#> content }}
+
+{{/ content }}
+
+{{> includes/footer }}
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/serviceWorker.js')
+          .then(registration => {
+            // Регистрация прошла успешно
+            console.log('Sw registered with scope: ', registration.scope)
+          })
+          .catch(err => {
+            // Регистрация не удалась
+            console.log('SW registration failed: ', err)
+          })
+    })
+  }
+</script>
+</body>
+</html>
