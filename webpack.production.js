@@ -1,15 +1,17 @@
-const {merge} = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js')
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: './CNAME',
-        to: './'
-      }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './CNAME',
+          to: './'
+        }
+      ]
+    })
   ]
 })

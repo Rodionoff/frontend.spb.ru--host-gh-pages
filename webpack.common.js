@@ -1,8 +1,8 @@
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
 
 const templates = [
   {
@@ -61,14 +61,14 @@ module.exports = {
     rules: [
       {
         test: /\.(woff2|png|svg|jpg|jpeg|gif)$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
           esModule: false
         }
       },
       {
         test: /\.hbs$/,
-        loader: "handlebars-loader",
+        loader: 'handlebars-loader',
         options: {
           partialDirs: path.join(__dirname, 'src/hbs'),
         }
@@ -82,10 +82,10 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader"
+            loader: 'css-loader'
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               ident: 'postcss',
               plugins: [
@@ -116,33 +116,38 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "style.css"
+      filename: 'style.css'
     }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, 'src/media'),
-        to: 'media'
-      },
-      {
-        from: path.resolve(__dirname, 'manifest.json'),
-        to: 'manifest.json'
-      },
-      {
-        from: path.resolve(__dirname, 'src/hbs/works'),
-        to: 'works',
-        globOptions: {
-          ignore: [path.resolve(__dirname, 'src/works/index.hbs')]
-        }
-      },
-    ]),
-    ...templates.map(template => new HtmlWebpackPlugin(template)),
+    new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, 'src/media'),
+            to: 'media'
+          },
+          {
+            from: path.resolve(__dirname, 'manifest.json'),
+            to: 'manifest.json'
+          },
+          {
+            from: path.resolve(__dirname, 'src/hbs/pages/works'),
+            to: 'works',
+            globOptions: {
+              ignore: [path.resolve(__dirname, 'src/hbs/pages/works/index.hbs')]
+            },
+          }
+        ]
+      }
+    ),
+    ...
+      templates.map(template => new HtmlWebpackPlugin(template)),
 
-    // new HtmlWebpackPlugin({
-    //   // filename is the name of the output file
-    //   // template is the name of the source file
-    //   filename: 'index.hbs',
-    //   template: 'index.hbs',
-    //   excludeChunks: ['serviceWorker']
-    // })
+// new HtmlWebpackPlugin({
+//   // filename is the name of the output file
+//   // template is the name of the source file
+//   filename: 'index.hbs',
+//   template: 'index.hbs',
+//   excludeChunks: ['serviceWorker']
+// })
   ]
-};
+}
+
