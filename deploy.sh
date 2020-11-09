@@ -1,7 +1,5 @@
 #!/bin/bash
 
-CURRENT=$(git branch --show-current)
-
 npm run build
 cd dist || exit
 git init
@@ -11,4 +9,3 @@ git add .
 git commit -m 'deploy'
 git push --set-upstream origin gh-pages -f
 cd ..
-git checkout "$CURRENT"
