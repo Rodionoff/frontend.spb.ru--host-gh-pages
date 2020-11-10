@@ -1,23 +1,13 @@
 (() => {
-  const main = document.querySelector('.main');
-  const navbar = document.querySelector('.navbar');
-
-  navbar.addEventListener('click', (e) => {
-
-    const targetClassList = e.target.classList;
-
-    (targetClassList.contains('navbar-toggle')) && (() => {
-      if (navbar.classList.contains('show')) {
-        navbar.classList.remove('show');
-
-        main.onclick = undefined;
-
-        return
+  const navbar = document.querySelector('.navbar')
+  if (navbar) {
+    window.addEventListener('click', e => {
+      if (e.target.classList.contains('navbar-toggle')) {
+        navbar.classList.add('show')
+        window.addEventListener('click', _ => {
+          navbar.classList.remove('show')
+        }, {once: true})
       }
-
-      navbar.classList.add('show');
-
-      main.onclick = () => navbar.classList.remove('show');
-    })()
-  })
-})();
+    })
+  }
+})()
