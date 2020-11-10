@@ -1,5 +1,4 @@
 (() => {
-  console.log('start')
   const images = document.querySelectorAll('.photo-image img')
   images.forEach(image => {
     const temp = new Image();

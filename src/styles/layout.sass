@@ -36,10 +36,10 @@ body
   background-image: url("../media/textures/concrete-wall.png")
   display: flex
   flex-direction: column
-  justify-content: space-between
   min-height: 100vh
 
 .main
+  flex-grow: 1
   padding-top: 26px
 
 .header
@@ -91,6 +91,10 @@ body
 
   &.show .navbar-items
     display: block
+    margin-top: 7.5px
+
+  &.show .navlink
+    padding: 7.5px 0
 
   &-toggle
     width: 21%
@@ -132,6 +136,7 @@ body
     align-items: center
 
   .navbar-min
+    align-items: center
     width: auto
     margin-bottom: 0
 
