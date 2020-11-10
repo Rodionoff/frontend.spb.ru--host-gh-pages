@@ -4,10 +4,12 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 module.exports = merge(common, {
   mode: 'development',
-  // devtool: 'inline-source-map',
+  devtool: 'inline-source-map',
   devServer: {
     writeToDisk: true,
-    contentBase: './dist'
+    contentBase: './dist',
+    useLocalIp: true,
+    host: '0.0.0.0'
   }
   // plugins: [
   //   new BundleAnalyzerPlugin()
