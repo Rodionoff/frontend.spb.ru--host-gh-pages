@@ -1,6 +1,6 @@
 {{!-- includes/navbar --}}
 
-<nav class="navbar">
+<nav class="navbar" {{#if hidden}}style="visibility: hidden; position: static;"{{/if}}>
   <div class="navbar-min">
     <div class="navbar-logo">
       <a href='/'>
@@ -14,7 +14,6 @@
     </div>
   </div>
   <ul class="navbar-items">
-    <!--        navlink-active-->
     <li class="navlink">
       <a href="/articles">
         <span>
