@@ -23,9 +23,9 @@ self.addEventListener('install', e => {
         if (cache_name.startsWith('static')) {
           return caches.open(cache_name)
             .then(cache => cache.addAll([
-              "./articles/pwa-basics/index.hbs",
+              // "./articles/pwa-basics/index.hbs",
               "./bundle.js",
-              "./index.hbs",
+              "./index.html",
               './manifest.json', // buggy ( better comment it while debugging )
               "./style.css"
             ]))

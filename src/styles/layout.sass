@@ -26,26 +26,6 @@
 *, *::before, *::after
   box-sizing: border-box
 
-$primary-color: #fafbfb
-$cosmic-blue: #1778c2
-$light-blue: lighten(#d5e8e4, 8%)
-
-$navbar-font-color: darken($primary-color, 0%)
-$header-font-color: darken($primary-color, 80%)
-$post-font-color: darken($primary-color, 80%)
-$footer-font-color: $primary-color
-
-$navbar-background-color: darken($cosmic-blue, 15%)
-$header-background-color: $primary-color
-$body-background-color: $primary-color
-$post-background-color: White
-$post-date-background-color: darken($primary-color, 24%)
-$footer-background-color: $cosmic-blue
-
-$navbar-box-shadow: 3px 5px 4px 1px darken($primary-color, 25%)
-$post-box-shadow: 3px 5px 4px 1px darken($primary-color, 25%)
-$post-box-shadow--hover: 2px 2px 1px 1px darken($primary-color, 25%)
-
 h1, h2, h3, p
   margin: 0
   padding: 0
@@ -80,7 +60,7 @@ body
   font-weight: 500
 
 body
-  background-color: $body-background-color
+  background-color: $secondary-color
   background-image: url("../media/textures/concrete-wall.png")
   display: flex
   flex-direction: column
@@ -92,7 +72,7 @@ body
 
 .header
   font-family: 'Ubuntu', sans-serif
-  color: $header-font-color
+  color: $primary-color-dark-2
   width: 90%
   display: none
   padding: 0 1.7rem 0 3.5vw
@@ -116,14 +96,14 @@ body
     cursor: pointer
 
 .navbar
-  background-color: $navbar-background-color
+  background-color: $primary-color-dark-1
   left: 0
   top: 0
   padding: 1.3rem 6vw 1.7rem
   width: 100%
   position: absolute
-  color: $navbar-font-color
-  box-shadow: $navbar-box-shadow
+  color: $secondary-color
+  box-shadow: 3px 5px 4px 1px $secondary-color-dark
   z-index: 7
 
   &-min
@@ -133,7 +113,7 @@ body
   &-logo
     font-size: 1.4rem
     font-weight: 700
-    padding-bottom: 0px
+    padding-bottom: 0
 
   &-items
     display: none
@@ -151,7 +131,7 @@ body
     .line
       height: .3vh
       margin-bottom: 1vh
-      background-color: $navbar-font-color
+      background-color: $secondary-color
       width: 65%
       margin-left: auto
 
@@ -173,7 +153,7 @@ body
 
 .navlink:not(.navlink-active):hover span,
 .navlink-active span
-  border-bottom: 1px solid $navbar-font-color
+  border-bottom: 1px solid $secondary-color
 
 .info-card
   display: none
@@ -212,7 +192,7 @@ body
 
 @media only screen and (min-width: 730px)
   .info-card
-    background-color: $light-blue
+    background-color: $accent-color
     display: flex
     flex-direction: column
     justify-content: center
@@ -249,7 +229,7 @@ body
     .divider-line
       height: 2px
       width: 100%
-      border-bottom: 2px solid $cosmic-blue
+      border-bottom: 2px solid $primary-color
       margin: 0 0 0.15rem
 
       &-vscode
@@ -279,9 +259,9 @@ body
   padding-bottom: 3.5rem
   margin-bottom: 7vh
   position: relative
-  background-color: $post-background-color
-  color: $post-font-color
-  box-shadow: $post-box-shadow
+  background-color: #fff
+  color: darken($secondary-color, 80%)
+  box-shadow: 3px 5px 4px 1px $secondary-color-dark
 
 .post-image
   align-self: center
@@ -317,8 +297,8 @@ body
     display: none
 
 .footer
-  background-color: $footer-background-color
-  color: $footer-font-color
+  background-color: $primary-color
+  color: $secondary-color
   padding: 7% 0
   font-family: 'Ubuntu', sans-serif
 
@@ -343,7 +323,7 @@ body
   padding: 0
 
 .tagcloud li
-  color: $cosmic-blue
+  color: $primary-color
 
 .tagcloud li:first-child::before
   content: ''

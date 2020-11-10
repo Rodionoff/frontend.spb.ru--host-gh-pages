@@ -24,7 +24,7 @@
 .arrow
   padding: 0
   margin: 0
-  color: $primary-color
+  color: $secondary-color
   font-size: 2rem
   width: 7vw
   height: 3rem
@@ -32,6 +32,7 @@
   opacity: 0.6
   display: block
   cursor: pointer
+  user-select: none
 
 .rightArrow
   margin: 5.9vh 0 0 0
@@ -42,13 +43,14 @@
   transform: rotate(270deg) 
 
 .exit
-  color: $primary-color
+  color: $secondary-color
   position: absolute
   top: 2.5vh
   right: 3.6%
   font-size: 1.5rem
   opacity: 0.6
   cursor: pointer
+  user-select: none
 
 @media only screen and (min-width: 480px)
   .modal
@@ -79,13 +81,12 @@
 
 .photo
   margin-bottom: 2.5vh
-  background-color: $post-background-color
-  color: $post-font-color
-  box-shadow: $post-box-shadow
+  background-color: #fff
+  color: $primary-color-dark-2
+  box-shadow: 3px 5px 4px 1px $secondary-color-dark
   position: relative
   z-index: 5
   cursor: pointer
-
 
 .photo-image
   align-self: center
@@ -98,9 +99,8 @@
   position: absolute
   bottom: 8%
   left: 3.5vw
-  color: lighten($header-font-color, 5%)
+  color: $secondary-color
   opacity: 0
-  letter-spacing: 0.001
   width: 90%
 
   span
