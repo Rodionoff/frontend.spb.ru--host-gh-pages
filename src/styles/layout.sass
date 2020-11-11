@@ -87,21 +87,20 @@ body
     padding-bottom: 0
 
   &-items
-    display: none
-
-  &.show .navbar-items
     display: block
     margin-top: 7.5px
 
-  &.show .navlink
+  .navlink
     padding: 7.5px 0
 
-  &-toggle
+  &-icon
     width: 21%
     display: flex
     flex-direction: column
     justify-content: center
     cursor: pointer
+    position: absolute
+    right: 6vw
 
     .line
       height: .3vh
@@ -139,6 +138,9 @@ body
     align-items: center
     width: auto
     margin-bottom: 0
+
+  .navbar-icon
+    display: none
 
   .navbar-items
     display: flex
