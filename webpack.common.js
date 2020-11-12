@@ -80,9 +80,12 @@ module.exports = {
       {
         test: /\.sass$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
           },
           {
             loader: 'postcss-loader',
@@ -90,13 +93,15 @@ module.exports = {
               ident: 'postcss',
               plugins: [
                 require('autoprefixer'),
-              ]
+              ],
+              sourceMap: true
             }
           },
           {
             loader: 'sass-loader',
             options: {
-              implementation: require('sass')
+              implementation: require('sass'),
+              sourceMap: true
             }
           }
         ]
