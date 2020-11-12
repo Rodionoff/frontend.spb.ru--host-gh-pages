@@ -143,8 +143,7 @@ module.exports = {
         ]
       }
     ),
-    ...
-      templates.map(template => new HtmlWebpackPlugin(template)),
+    ...templates.map(template => new HtmlWebpackPlugin(template)),
 
 // new HtmlWebpackPlugin({
 //   // filename is the name of the output file
