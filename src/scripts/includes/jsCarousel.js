@@ -1,31 +1,35 @@
+import { krooshkinPhotosLoadedEvent } from './lazyLoad'
+
 class Carousel {
   constructor () {
+    this.initializeControls()
+
+    window.addEventListener('click', (event) => {
+      const target = event.target
+
+      if (target.tagName === 'IMG') {
+        const parent = target.closest('.photo-image')
+        const index = [...this.images].indexOf(parent)
+        this.showModal(index)
+      }
+    })
+
+    window.addEventListener(krooshkinPhotosLoadedEvent.type, _ => {
+      // replace placeholders
+      this.images = document.querySelectorAll('.photo-image')
+    })
+
+    this.bindEventsToControls()
+  }
+
+  initializeControls() {
     this.modal = document.querySelector('.modal')
     this.images = document.querySelectorAll('.photo-image')
-    this.imagesWrapper = document.querySelector('.photos')
     this.exit = document.createElement('div')
     this.exit.classList.add('exit')
     this.exit.innerHTML = '⌧'
     this.leftArrow = this.createArrow('div', 'leftArrow', '⌦')
     this.rightArrow = this.createArrow('div', 'rightArrow', '⌦')
-
-    this.imagesWrapper.addEventListener('click', (event) => {
-      const findIndex = (node) => {
-        if (node !== undefined) {
-          return Array.prototype.indexOf.call(this.images, node)
-        }
-      }
-
-      const target = event.target
-
-      if (target.tagName === 'IMG') {
-        const parent = target.parentNode
-        const index = findIndex(parent)
-        this.showModal(index)
-      }
-    })
-
-    this.bindEventsToControls()
   }
 
   createArrow (elementName, className, sign) {
@@ -36,7 +40,7 @@ class Carousel {
     return arrow
   }
 
-  showModal (i) {
+  showModal(i) {
     let img = document.createElement('img')
     img.classList.add('modalImage')
 
@@ -88,6 +92,11 @@ class Carousel {
       this.modal.classList.remove('showModal')
     }
   }
+
+  refresh() {
+    this.initializeControls()
+    this.bindEventsToControls()
+  }
 }
 
-new Carousel()
+export default new Carousel()
