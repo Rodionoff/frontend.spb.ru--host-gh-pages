@@ -122,7 +122,11 @@ body
     display: block
     padding: 0.175rem 0.175rem 0.175rem 0
 
-.navlink:not(.navlink-active):hover span,
+
+.navlink:not(.navlink-active):hover span
+  @media only screen and (min-width: 650px)
+    border-bottom: 1px solid $secondary-color
+
 .navlink-active span
   border-bottom: 1px solid $secondary-color
 

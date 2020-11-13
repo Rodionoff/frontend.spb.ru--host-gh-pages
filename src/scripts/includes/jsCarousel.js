@@ -47,7 +47,7 @@ class Carousel {
     this.leftArrow.style.visibility = 'visible'
     this.rightArrow.style.visibility = 'visible'
     img.pk = i
-    img.src = this.images[i].lastElementChild.src
+    img.src = this.images[i].querySelector('img').src
     this.appendElementsToModal(img)
     this.modal.classList.add('showModal')
   }
@@ -62,30 +62,30 @@ class Carousel {
   bindEventsToControls() {
     this.rightArrow.onclick = () => {
       this.leftArrow.style.visibility = 'visible'
-      let image = document.getElementsByClassName('modalImage')[0]
+      let image = document.querySelector('.modalImage')
       image.pk += 1
       let isLastImage = this.images[image.pk] === undefined
 
       if (isLastImage) {
         image.pk = 0
       }
-      image.src = this.images[image.pk].lastElementChild.src
+      image.src = this.images[image.pk].querySelector('img').src
     }
 
     this.leftArrow.onclick = () => {
       this.rightArrow.style.visibility = 'visible'
-      let image = document.getElementsByClassName('modalImage')[0]
+      let image = document.querySelector('.modalImage')
       image.pk -= 1
       let isFirstImage = this.images[image.pk] === undefined
 
       if (isFirstImage) {
         image.pk = this.images.length - 1
       }
-      image.src = this.images[image.pk].lastElementChild.src
+      image.src = this.images[image.pk].querySelector('img').src
     }
 
     this.exit.onclick = () => {
-      let image = document.getElementsByClassName('modalImage')[0]
+      let image = document.querySelector('.modalImage')
       this.modal.removeChild(image)
       this.leftArrow.style.visibility = 'hidden'
       this.rightArrow.style.visibility = 'hidden'
