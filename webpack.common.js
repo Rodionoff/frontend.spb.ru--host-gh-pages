@@ -44,7 +44,7 @@ module.exports = {
     bundle: [
       path.resolve(__dirname, 'src/scripts/index.js')
     ],
-    serviceWorker: './serviceWorker.js'
+    // serviceWorker: './serviceWorker.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -70,7 +70,10 @@ module.exports = {
         test: /\.hbs$/,
         loader: 'handlebars-loader',
         options: {
-          partialDirs: path.join(__dirname, 'src/hbs'),
+          rootRelative: path.join(__dirname, 'src/hbs/'),
+          precompileOptions: {
+            knownHelpersOnly: false
+          },
         }
       },
       {
@@ -144,7 +147,6 @@ module.exports = {
       }
     ),
     ...templates.map(template => new HtmlWebpackPlugin(template)),
-
 // new HtmlWebpackPlugin({
 //   // filename is the name of the output file
 //   // template is the name of the source file
