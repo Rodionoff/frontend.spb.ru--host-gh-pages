@@ -31,7 +31,6 @@ const templates = [
     filename: './works/index.html'
   },
   {
-    newREandsfdfjsdkfRandom: 'yea oh yea',
     template: './src/hbs/pages/about/index.hbs',
     filename: './about/index.html'
   },

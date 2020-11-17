@@ -1,3 +1,5 @@
+const path = require('path')
+
 class SqipWebpackPlugin {
   constructor () {
     this.name = 'SqipWebpackPlugin'
@@ -13,10 +15,24 @@ class SqipWebpackPlugin {
         hook.tapPromise(
           this.name,
           (htmlPluginData) => {
-            return new Promise((resolve, reject) => {
-              const oldImage = '/media/img/frontend/vs_sw_screenshotII.png'
-              const newImage = 'https://www.urlaubsguru.at/wp-content/uploads/2017/03/sommer-von-helsinki-finnland-istock_000024367312_large-2.jpg'
-              htmlPluginData.html = htmlPluginData.html.replace(oldImage, newImage)
+            return new Promise(resolve => {
+              const htmlAttributeRegexp = /sqip-webpack-plugin-src=["'](.+?)\.(jpg|webp|jpeg|png|svg)/gi
+              const imageUrlRegexp = /(?<=sqip-webpack-plugin-src=["'])(.+?)\.(jpg|webp|jpeg|png|svg)/gi
+              let { html } = htmlPluginData;
+
+              const attributes = html.match(htmlAttributeRegexp)
+              if (Array.isArray(attributes)) {
+                attributes.forEach(attribute => {
+                  const urlSubstring = attribute.match(imageUrlRegexp)
+                  const url = path.join(__dirname, 'src', ...urlSubstring)
+                  const image = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.islandtours.ch%2Fmedia%2Fimg%2Fheader%2F1277x700%2Ffinnland-entlang-finnischer-nationalparks-shutterstock-1277.jpg&f=1&nofb=1'
+                  const newAttribute = `src="${image}"`
+                  html = html.replace(attribute, newAttribute)
+                  htmlPluginData.html = html
+
+                  resolve(htmlPluginData)
+                })
+              }
 
               resolve(htmlPluginData)
             })
