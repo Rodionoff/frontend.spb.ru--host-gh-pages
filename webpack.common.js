@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const path = require('path')
+const SqipWebpackPlugin = require('./sqip-webpack-plugin')
 
 const templates = [
   {
@@ -30,6 +31,7 @@ const templates = [
     filename: './works/index.html'
   },
   {
+    newREandsfdfjsdkfRandom: 'yea oh yea',
     template: './src/hbs/pages/about/index.hbs',
     filename: './about/index.html'
   },
@@ -144,7 +146,7 @@ module.exports = {
       }
     ),
     ...templates.map(template => new HtmlWebpackPlugin(template)),
-
+    new SqipWebpackPlugin()
 // new HtmlWebpackPlugin({
 //   // filename is the name of the output file
 //   // template is the name of the source file
