@@ -1,9 +1,22 @@
 const path = require('path')
+const sqip = require('sqip')
 
 class SqipWebpackPlugin {
   constructor () {
     this.name = 'SqipWebpackPlugin'
+    this.htmlAttributeRegexp = /sqip-webpack-plugin-src=["'](.+?)\.(jpg|webp|jpeg|png|svg)/gi
+    this.imageUrlRegexp = /(?<=sqip-webpack-plugin-src=["'])(.+?)\.(jpg|webp|jpeg|png|svg)/gi
   }
+
+  getattributes (html) {
+    return html.match(this.htmlAttributeRegexp)
+  }
+
+  getImagePath (attribute) {
+    const [parsedPath] = attribute.match(this.imageUrlRegexp)
+    return path.join(__dirname, 'src', parsedPath)
+  }
+
   apply (compiler) {
     compiler.hooks.compilation.tap(
       this.name,
@@ -14,32 +27,52 @@ class SqipWebpackPlugin {
 
         hook.tapPromise(
           this.name,
-          (htmlPluginData) => {
-            return new Promise(resolve => {
-              const htmlAttributeRegexp = /sqip-webpack-plugin-src=["'](.+?)\.(jpg|webp|jpeg|png|svg)/gi
-              const imageUrlRegexp = /(?<=sqip-webpack-plugin-src=["'])(.+?)\.(jpg|webp|jpeg|png|svg)/gi
-              let { html } = htmlPluginData;
+          async (htmlPluginData) => {
+            let { html } = htmlPluginData
+            const attributes = this.getattributes(html)
+            if (Array.isArray(attributes)) {
+              let promises = []
+              let counter = 0
+              attributes.forEach(attribute => {
+                counter++
+                const parsedUrl = this.getImagePath(attribute)
+                const url = path.join(__dirname, 'src', parsedUrl)
 
-              const attributes = html.match(htmlAttributeRegexp)
-              if (Array.isArray(attributes)) {
-                attributes.forEach(attribute => {
-                  const urlSubstring = attribute.match(imageUrlRegexp)
-                  const url = path.join(__dirname, 'src', ...urlSubstring)
-                  const image = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.islandtours.ch%2Fmedia%2Fimg%2Fheader%2F1277x700%2Ffinnland-entlang-finnischer-nationalparks-shutterstock-1277.jpg&f=1&nofb=1'
-                  const newAttribute = `src="${image}"`
-                  html = html.replace(attribute, newAttribute)
-                  htmlPluginData.html = html
+                promises.push((async () => `Promise ${counter} is set`)())
+              })
+              const results = await Promise.all(promises)
+              results.forEach(result => console.log(result))
+              console.log(`All promises have been resolved`)
+            }
 
-                  resolve(htmlPluginData)
-                })
-              }
-
-              resolve(htmlPluginData)
-            })
+            return htmlPluginData
           }
         )
-      }
-    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // hook.tapPromise(
+        //   this.name,
+        //   async (htmlPluginData) => {
+        //     const newHtml = await (() => 'heh2203')()
+        //     htmlPluginData.html = newHtml
+        //     return htmlPluginData
+        //   }
+        // )
+      })
   }
 }
 
