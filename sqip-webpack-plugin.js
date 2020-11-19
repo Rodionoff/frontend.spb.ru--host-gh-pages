@@ -1,5 +1,5 @@
 const path = require('path')
-const sqip = require('sqip')
+const sqip = require('sqip').default
 
 class SqipWebpackPlugin {
   constructor () {
@@ -21,11 +21,6 @@ class SqipWebpackPlugin {
     return new Promise(resolve => setTimeout(resolve, ms))
   }
 
-  getStringAfterDelay(string, ms) {
-    return this.delay(ms)
-      .then(() => string)
-  }
-
   apply (compiler) {
     compiler.hooks.compilation.tap(
       this.name,
@@ -40,48 +35,17 @@ class SqipWebpackPlugin {
             let { html } = htmlPluginData
             const attributes = this.getattributes(html)
             if (Array.isArray(attributes)) {
-              let counter = 0
-              const promises = attributes.map(async attribute => {
-                counter++
-                const parsedUrl = this.getImagePath(attribute)
-                const url = path.join(__dirname, 'src', parsedUrl)
-
-                const string = await this.getStringAfterDelay(counter, 20000*counter)
-                console.log(string)
-                return string
-              })
-
-              const results = await Promise.all(promises)
-              console.log(`All promises have been resolved`)
+              for (let i=0; i<attributes.length; i++) {
+                const attribute = attributes[i];
+                const imagePath = this.getImagePath(attribute)
+                const convertedImage = await sqip({input: imagePath})
+                console.log(convertedImage)
+              }
             }
 
             return htmlPluginData
           }
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // hook.tapPromise(
-        //   this.name,
-        //   async (htmlPluginData) => {
-        //     const newHtml = await (() => 'heh2203')()
-        //     htmlPluginData.html = newHtml
-        //     return htmlPluginData
-        //   }
-        // )
       })
   }
 }
