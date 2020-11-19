@@ -17,6 +17,15 @@ class SqipWebpackPlugin {
     return path.join(__dirname, 'src', parsedPath)
   }
 
+  delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+  }
+
+  getStringAfterDelay(string, ms) {
+    return this.delay(ms)
+      .then(() => string)
+  }
+
   apply (compiler) {
     compiler.hooks.compilation.tap(
       this.name,
@@ -27,21 +36,22 @@ class SqipWebpackPlugin {
 
         hook.tapPromise(
           this.name,
-          async (htmlPluginData) => {
+           async (htmlPluginData) => {
             let { html } = htmlPluginData
             const attributes = this.getattributes(html)
             if (Array.isArray(attributes)) {
-              let promises = []
               let counter = 0
-              attributes.forEach(attribute => {
+              const promises = attributes.map(async attribute => {
                 counter++
                 const parsedUrl = this.getImagePath(attribute)
                 const url = path.join(__dirname, 'src', parsedUrl)
 
-                promises.push((async () => `Promise ${counter} is set`)())
+                const string = await this.getStringAfterDelay(counter, 20000*counter)
+                console.log(string)
+                return string
               })
+
               const results = await Promise.all(promises)
-              results.forEach(result => console.log(result))
               console.log(`All promises have been resolved`)
             }
 
