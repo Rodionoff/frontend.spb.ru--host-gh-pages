@@ -4,11 +4,11 @@ const sqip = require('sqip').default
 class SqipWebpackPlugin {
   constructor () {
     this.name = 'SqipWebpackPlugin'
-    this.htmlAttributeRegexp = /sqip-webpack-plugin-src=["'](.+?)\.(jpg|webp|jpeg|png|svg)/gi
+    this.htmlAttributeRegexp = /sqip-webpack-plugin-src=["'](.+?)\.(jpg|webp|jpeg|png|svg)['"]/gi
     this.imageUrlRegexp = /(?<=sqip-webpack-plugin-src=["'])(.+?)\.(jpg|webp|jpeg|png|svg)/gi
   }
 
-  getattributes (html) {
+  getAttributes (html) {
     return html.match(this.htmlAttributeRegexp)
   }
 
@@ -17,8 +17,8 @@ class SqipWebpackPlugin {
     return path.join(__dirname, 'src', parsedPath)
   }
 
-  delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
+  createSrcAttribute(dataURI) {
+    return `src="${dataURI}"`
   }
 
   apply (compiler) {
@@ -33,16 +33,29 @@ class SqipWebpackPlugin {
           this.name,
            async (htmlPluginData) => {
             let { html } = htmlPluginData
-            const attributes = this.getattributes(html)
+            const attributes = this.getAttributes(html)
             if (Array.isArray(attributes)) {
               for (let i=0; i<attributes.length; i++) {
                 const attribute = attributes[i];
                 const imagePath = this.getImagePath(attribute)
-                const convertedImage = await sqip({input: imagePath})
-                console.log(convertedImage)
+                console.log(imagePath)
+                let convertedImage;
+                try {
+                  convertedImage = await sqip({input: imagePath})
+                  console.log(convertedImage)
+                } catch(err) {
+                  console.log(err)
+                }
+                console.log({convertedImage})
+                const { dataURI } = convertedImage.metadata
+                const src = this.createSrcAttribute(dataURI)
+                console.log({src})
+                html = html.replace(attribute, src)
+                console.log({html})
               }
             }
 
+            htmlPluginData.html = html
             return htmlPluginData
           }
         )
