@@ -9,7 +9,7 @@ class LazyLoad {
     const pathname = location.pathname
     const isLoaded = this.loadedPages.includes(pathname)
     if (isLoaded) return document.body.classList.add('pageLoaded')
-    if (document.body.classList.contains('pageLoaded')) document.body.classList.remove('pageLoaded')
+    // if (document.body.classList.contains('pageLoaded')) document.body.classList.remove('pageLoaded')
     this.images = document.querySelectorAll('img.lazyloading.with-placeholder')
     this.loadedImages = []
     this.images.forEach(image => {

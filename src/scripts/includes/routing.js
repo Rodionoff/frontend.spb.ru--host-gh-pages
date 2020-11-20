@@ -3,6 +3,9 @@ import setActiveNavbarLink from './setActiveNavbarLink'
 import carousel from './jsCarousel'
 import lazy from './LazyLoad'
 
+barba.hooks.afterLeave(() => {
+  document.body.classList.remove('pageLoaded')
+})
 barba.hooks.beforeEnter(lazy.load)
 barba.hooks.enter(setActiveNavbarLink)
 
