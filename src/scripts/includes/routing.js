@@ -1,9 +1,14 @@
 import barba from '@barba/core';
 import setActiveNavbarLink from './setActiveNavbarLink'
 import carousel from './jsCarousel'
-import { lazyLoad } from './lazyLoad'
+import { lazy } from './lazyLoad'
+
+barba.hooks.afterLeave(data => {
+  const nextPageUrl = data.next.pathname
+})
 
 barba.hooks.enter(() => {
+  lazy.load()
   setActiveNavbarLink()
 })
 
@@ -14,7 +19,6 @@ barba.init({
   views: [{
     namespace: 'krooshkin',
     afterEnter() {
-      lazyLoad()
       carousel.refresh()
     }
   }]
