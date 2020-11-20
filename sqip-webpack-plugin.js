@@ -1,65 +1,63 @@
 const path = require('path')
-const sqip = require('sqip').default
+const sqip = require('sqip')
 
 class SqipWebpackPlugin {
-  constructor () {
+  constructor() {
     this.name = 'SqipWebpackPlugin'
     this.htmlAttributeRegexp = /sqip-webpack-plugin-src=["'](.+?)\.(jpg|webp|jpeg|png|svg)['"]/gi
     this.imageUrlRegexp = /(?<=sqip-webpack-plugin-src=["'])(.+?)\.(jpg|webp|jpeg|png|svg)/gi
   }
 
-  getAttributes (html) {
+  getAttributes(html) {
     return html.match(this.htmlAttributeRegexp)
   }
 
-  getImagePath (attribute) {
+  getImagePath(attribute) {
     const [parsedPath] = attribute.match(this.imageUrlRegexp)
     return path.join(__dirname, 'src', parsedPath)
   }
 
-  createSrcAttribute(dataURI) {
-    return `src="${dataURI}"`
+  createSrcAttribute(svg_base64encoded) {
+    return `src='data:image/svg+xml;base64,${svg_base64encoded}'`
   }
 
-  apply (compiler) {
+  apply(compiler) {
     compiler.hooks.compilation.tap(
       this.name,
       (compilation) => {
         const [HtmlWebpackPlugin] = compiler.options.plugins.filter(
-          (plugin) => plugin.constructor.name === 'HtmlWebpackPlugin');
-        const hook = HtmlWebpackPlugin.constructor.getHooks(compilation).beforeEmit;
+          (plugin) => plugin.constructor.name === 'HtmlWebpackPlugin')
+        const hook = HtmlWebpackPlugin.constructor.getHooks(compilation).beforeEmit
 
         hook.tapPromise(
           this.name,
-           async (htmlPluginData) => {
+          async (htmlPluginData) => {
             let { html } = htmlPluginData
             const attributes = this.getAttributes(html)
             if (Array.isArray(attributes)) {
-              for (let i=0; i<attributes.length; i++) {
-                const attribute = attributes[i];
+              const promises = await attributes.map(async attribute => {
                 const imagePath = this.getImagePath(attribute)
-                console.log(imagePath)
-                let convertedImage;
-                try {
-                  convertedImage = await sqip({input: imagePath})
-                  console.log(convertedImage)
-                } catch(err) {
-                  console.log(err)
-                }
-                console.log({convertedImage})
-                const { dataURI } = convertedImage.metadata
-                const src = this.createSrcAttribute(dataURI)
-                console.log({src})
-                html = html.replace(attribute, src)
-                console.log({html})
-              }
+                return sqip({
+                  filename: imagePath,
+                })
+              })
+
+              const convertedImages = await Promise.all(promises)
+              convertedImages.forEach((converted, i) => {
+                const currentAttribute = attributes[i]
+                const { svg_base64encoded } = converted
+                const newAttribute = this.createSrcAttribute(svg_base64encoded)
+                html = html.replace(currentAttribute, newAttribute)
+                // console.log({converted})
+              })
             }
 
             htmlPluginData.html = html
             return htmlPluginData
           }
         )
-      })
+      }
+    )
   }
 }
 
