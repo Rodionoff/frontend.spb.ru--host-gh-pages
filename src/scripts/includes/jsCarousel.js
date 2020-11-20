@@ -7,19 +7,20 @@ class Carousel {
     window.addEventListener('click', (event) => {
       const target = event.target
 
-      if (target.tagName === 'IMG') {
+      if (target.tagName === 'IMG' && target.closest('.photo-image')) {
         const parent = target.closest('.photo-image')
         const index = [...this.images].indexOf(parent)
         this.showModal(index)
       }
     })
 
-    window.addEventListener(krooshkinPhotosLoadedEvent.type, _ => {
-      // replace placeholders
-      this.images = document.querySelectorAll('.photo-image')
-    })
-
     this.bindEventsToControls()
+  }
+
+  getImageSrc(index) {
+    const pageLoaded = document.body.classList.contains('pageLoaded')
+    const selector = pageLoaded ? 'img.without-placeholder' : 'img.with-placeholder'
+    return this.images[index].querySelector(selector).src
   }
 
   initializeControls() {
@@ -47,7 +48,7 @@ class Carousel {
     this.leftArrow.style.visibility = 'visible'
     this.rightArrow.style.visibility = 'visible'
     img.pk = i
-    img.src = this.images[i].querySelector('img').src
+    img.src = this.getImageSrc(i)
     this.appendElementsToModal(img)
     this.modal.classList.add('showModal')
   }
@@ -69,7 +70,7 @@ class Carousel {
       if (isLastImage) {
         image.pk = 0
       }
-      image.src = this.images[image.pk].querySelector('img').src
+      image.src = this.getImageSrc(image.pk)
     }
 
     this.leftArrow.onclick = () => {
@@ -81,7 +82,7 @@ class Carousel {
       if (isFirstImage) {
         image.pk = this.images.length - 1
       }
-      image.src = this.images[image.pk].querySelector('img').src
+      image.src = this.getImageSrc(image.pk)
     }
 
     this.exit.onclick = () => {
