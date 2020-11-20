@@ -1,5 +1,3 @@
-import { krooshkinPhotosLoadedEvent } from './lazyLoad'
-
 class Carousel {
   constructor () {
     this.initializeControls()

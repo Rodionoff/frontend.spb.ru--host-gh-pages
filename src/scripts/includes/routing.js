@@ -1,13 +1,10 @@
 import barba from '@barba/core';
 import setActiveNavbarLink from './setActiveNavbarLink'
 import carousel from './jsCarousel'
-import lazy from './lazyLoad'
+import lazy from './LazyLoad'
 
-barba.hooks.enter(() => {
-  setActiveNavbarLink()
-})
-
-barba.hooks.beforeEnter(() => lazy.load())
+barba.hooks.beforeEnter(lazy.load)
+barba.hooks.enter(setActiveNavbarLink)
 
 barba.init({
   transitions: [{

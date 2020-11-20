@@ -1,9 +1,11 @@
 class LazyLoad {
   constructor () {
     this.loadedPages = []
+    this.load = this.load.bind(this)
   }
 
   load() {
+    console.log({ loadPages: this.loadedPages})
     const pathname = location.pathname
     const isLoaded = this.loadedPages.includes(pathname)
     if (isLoaded) return document.body.classList.add('pageLoaded')
