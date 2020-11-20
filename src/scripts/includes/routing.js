@@ -7,7 +7,7 @@ barba.hooks.enter(() => {
   setActiveNavbarLink()
 })
 
-barba.hooks.afterEnter(() => lazy.load())
+barba.hooks.beforeEnter(() => lazy.load())
 
 barba.init({
   transitions: [{

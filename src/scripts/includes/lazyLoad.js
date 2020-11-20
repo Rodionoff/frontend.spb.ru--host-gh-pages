@@ -17,7 +17,6 @@ class LazyLoad {
         this.loadedImages.push(image)
         if (this.loadedImages.length === this.images.length) {
           this.loadedPages.push(pathname)
-          document.body.classList.add('pageLoaded')
         }
       }
       temp.src = image.dataset.src
