@@ -33,7 +33,7 @@ body
 
 body
   background-color: $secondary-color
-  background-image: url("../media/textures/concrete-wall.png")
+  background-image: url("../media/textures/concrete-wall.convert.to.base64.png")
   display: flex
   flex-direction: column
   min-height: 100vh
@@ -94,13 +94,18 @@ body
     padding: 7.5px 0
 
   &-icon
-    width: 21%
+    width: 21vw
+    height: 21vw
     display: flex
     flex-direction: column
     justify-content: center
     cursor: pointer
     position: absolute
     right: 6vw
+    background-image: url("../media/icons/chat-icon.convert.to.base64.webp")
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
 
     .line
       height: .3vh
@@ -111,6 +116,11 @@ body
 
     .line:last-child
       margin-bottom: 0
+
+  &-icon a
+    width: 100%
+    height: 100%
+    display: block
 
 .navbar.show .line
   opacity: 0.1

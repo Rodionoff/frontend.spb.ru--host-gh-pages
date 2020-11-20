@@ -61,6 +61,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /.convert.to.base64.(png|jpg|jpeg|webp)$/,
+        use: 'url-loader'
+      },
+      {
         test: /\.(woff2|png|svg|jpg|jpeg|gif)$/,
         loader: 'file-loader',
         options: {
