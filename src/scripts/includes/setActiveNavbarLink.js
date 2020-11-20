@@ -1,4 +1,4 @@
-export default () => {
+const setActiveNavbarLink = () => {
   const navlinks = document.querySelectorAll('.navlink a')
   navlinks.forEach(navlink => {
     const href = navlink.getAttribute('href')
@@ -12,3 +12,6 @@ export default () => {
     navlink.classList.remove('navlink-active')
   })
 }
+
+window.addEventListener('DOMContentLoaded', setActiveNavbarLink, {once: true})
+export default setActiveNavbarLink
