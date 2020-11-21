@@ -13,5 +13,4 @@ const setActiveNavbarLink = () => {
   })
 }
 
-window.addEventListener('DOMContentLoaded', setActiveNavbarLink, {once: true})
 export default setActiveNavbarLink
