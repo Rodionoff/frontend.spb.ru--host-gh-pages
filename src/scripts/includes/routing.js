@@ -39,7 +39,7 @@ barba.init({
   views: [{
     namespace: 'krooshkin',
     afterEnter() {
-      if (document.body.classList.contains('pageLoaded')) carousel.refresh()
+      carousel.refresh()
     }
   }]
 })
