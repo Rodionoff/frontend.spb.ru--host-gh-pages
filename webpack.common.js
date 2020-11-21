@@ -65,7 +65,11 @@ module.exports = {
         use: 'url-loader'
       },
       {
-        test: /\.(woff2|png|svg|jpg|jpeg|gif)$/,
+        test: /\.woff2$/,
+        use: 'url-loader'
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
         loader: 'file-loader',
         options: {
           esModule: false
