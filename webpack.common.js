@@ -1,9 +1,11 @@
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const Handlebars = require('handlebars')
+// const posthtml = require('posthtml')
+// const posthtmlWebp = require('posthtml-webp')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const path = require('path')
-const SqipWebpackPlugin = require('./sqip-webpack-plugin')
 
 const templates = [
   {
@@ -49,37 +51,78 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].bundle.js'
+    filename: '[name].[contenthash].bundle.js',
+    publicPath: ''
   },
   optimization: {
-    moduleIds: 'hashed',
+    moduleIds: 'deterministic',
     runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
     },
   },
+  resolve: {
+    alias: {
+      // hbs: path.resolve(__dirname, 'src/hbs'),
+      'media': path.resolve(__dirname, 'src/media/'),
+    }
+  },
   module: {
     rules: [
       {
-        test: /.convert.to.base64.(png|jpg|jpeg|webp)$/,
+        test: /(\/convert_to_base64\/(.+?)\.(png|jpe?g|webp)$)|(\.woff2$)/i,
         use: 'url-loader'
       },
       {
-        test: /\.woff2$/,
-        use: 'url-loader'
+        test: /\/sqip\/(.+?)\.(png|jp?g|webp)$/i,
+        use: [
+          'sqip-loader',
+          {
+            loader: 'url-loader',
+            options: {
+              esModule: false
+          }
+        }]
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        test: /\.(png|svg|jpe?g|gif)$/,
         loader: 'file-loader',
         options: {
           esModule: false
         }
       },
+      // {
+      //   test: /\.hbs$/i,
+      //   // use: [
+      //     // 'file-loader?name=[name].[ext]',
+      //     // 'extract-loader',
+      //     // {
+      //       loader: 'html-loader',
+      //       options: {
+      //         preprocessor: (content, loaderContext) => {
+      //           let result
+      //
+      //           try {
+      //             result = Handlebars.compile(content)()
+      //           } catch (error) {
+      //             loaderContext.emitError(error)
+      //
+      //             return content
+      //           }
+      //
+      //           return result
+      //         },
+      //       }
+      //     // }
+      //   // ]
+      // },
       {
         test: /\.hbs$/,
         loader: 'handlebars-loader',
         options: {
           partialDirs: path.join(__dirname, 'src/hbs'),
+          // inlineRequires: /\/sqip\/(.+?)(png|jpe?g|webp)$/i
+          inlineRequires: /\.(png|jpe?g|webp|gif)$/gi
         }
       },
       {
@@ -134,10 +177,10 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
         patterns: [
-          {
-            from: path.resolve(__dirname, 'src/media'),
-            to: 'media'
-          },
+         // {
+         //    from: path.resolve(__dirname, 'src/media'),
+         //    to: 'media'
+         //  },
           {
             from: path.resolve(__dirname, 'manifest.json'),
             to: 'manifest.json'
@@ -152,8 +195,7 @@ module.exports = {
         ]
       }
     ),
-    ...templates.map(template => new HtmlWebpackPlugin(template)),
-    new SqipWebpackPlugin()
+    ...templates.map(template => new HtmlWebpackPlugin(template))
 // new HtmlWebpackPlugin({
 //   // filename is the name of the output file
 //   // template is the name of the source file

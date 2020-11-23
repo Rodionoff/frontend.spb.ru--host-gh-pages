@@ -2,7 +2,7 @@
 
 {{#> layouts/base }}
   {{#*inline "head-block" }}
-    <link rel="preload" as="image" href="/media/img/aboutme/image.jpg">
+    <link rel="preload" as="image" href="media/images/aboutme/image.jpg">
   {{/inline}}
   {{#*inline "content"}}
 
@@ -18,17 +18,11 @@
       <section class="aboutme">
         <article class="about">
           <div class="about-header">
-            <figure class="about-image">
+            <figure class="about-image lazyloading-wrapper">
+              <div class="sqip-placeholder" style='background-image: url("media/images/aboutme/sqip/image.jpg")'></div>
               <img width="300"
-                   height="200"
-                   class="lazyloading without-placeholder"
-                   src="/media/img/aboutme/image.jpg"
-                   alt="Pavel Rodionov (@rodionov80)">
-              <img width="300"
-                   height="200"
-                   class="lazyloading with-placeholder"
-                   sqip-webpack-plugin-src="/media/img/aboutme/image.jpg"
-                   data-src="/media/img/aboutme/image.jpg"
+                   height="200"w
+                   src="media/images/aboutme/image.jpg"
                    alt="Pavel Rodionov (@rodionov80)">
             </figure>
             <div class="info-card">

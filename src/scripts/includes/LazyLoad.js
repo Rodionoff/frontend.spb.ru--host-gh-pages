@@ -4,19 +4,17 @@ class LazyLoad {
     this.load = this.load.bind(this)
   }
 
-  load({ container, pathname }) {
-    let images
-    if (container) {
-      images = container.querySelectorAll('img.lazyloading.with-placeholder')
-    } else {
-      images = document.querySelectorAll('img.lazyloading.with-placeholder')
-    }
+  load(pathname) {
+    const images = document.querySelectorAll('.lazyloading-wrapper images')
+    const placeholders = document.querySelectorAll('.lazyloading-wrapper .sqip-placeholder')
     if (images.length === 0) return
     const loadedImages = []
-    images.forEach(image => {
+    images.forEach((image, i) => {
       const temp = new Image()
       temp.onload = () => {
         image.src = temp.src
+        const placeholder = placeholders[i]
+        placeholder.classList.add('fade-away')
         loadedImages.push(image)
         if (loadedImages.length === images.length) {
           this.loadedPages.push(pathname)

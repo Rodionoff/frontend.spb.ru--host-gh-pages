@@ -1,8 +1,18 @@
-.lazyloading.without-placeholder
+.sqip-placeholder
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  opacity: 1
+  transition: opacity .125s
+  background-size: cover
+
+  &.fade-away
+    opacity: 0
+
+.pageLoaded .sqip-placeholder
   display: none
 
-.pageLoaded
-  .lazyloading.without-placeholder
-    display: block
-  .lazyloading.with-placeholder
-    display: none
+.lazyloading-wrapper
+  position: relative

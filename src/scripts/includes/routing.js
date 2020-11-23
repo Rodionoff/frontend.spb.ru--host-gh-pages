@@ -6,9 +6,8 @@ import lazy from './LazyLoad'
 window.addEventListener('DOMContentLoaded', _ => {
   return new Promise(resolve => {
     setActiveNavbarLink()
-    const page = {}
-    page.pathname = location.pathname
-    lazy.load(page)
+    const { pathname } = location
+    lazy.load(pathname)
 
     resolve()
   })
@@ -18,14 +17,12 @@ barba.hooks.enter(data => {
   return new Promise(resolve => {
     setActiveNavbarLink()
 
-    const page = {}
-    page.pathname = data.next.url.path
-    page.container = data.next.container
-    if (lazy.loadedPages.includes(page.pathname)) {
+    const pathname = data.next.url.path
+    if (lazy.loadedPages.includes(pathname)) {
       document.body.classList.add('pageLoaded')
     } else {
       document.body.classList.remove('pageLoaded')
-      lazy.load(page)
+      lazy.load(pathname)
     }
 
     resolve()
