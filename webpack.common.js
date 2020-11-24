@@ -1,8 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-// const Handlebars = require('handlebars')
-// const posthtml = require('posthtml')
-// const posthtmlWebp = require('posthtml-webp')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
@@ -101,12 +98,11 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        // use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(sass|scss)$/i,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -116,10 +112,13 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              ident: 'postcss',
-              plugins: [
-                require('autoprefixer'),
-              ],
+              postcssOptions: {
+                plugins: [
+                  [
+                    "autoprefixer",
+                  ],
+                ],
+              },
               sourceMap: true
             }
           },
