@@ -101,9 +101,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        // use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(sass|scss)$/,
+        test: /\.(sass|scss)$/i,
         use: [
           'style-loader',
           {
@@ -150,10 +151,6 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
         patterns: [
-          // {
-          //   from: path.resolve(__dirname, 'manifest.json'),
-          //   to: 'manifest.json'
-          // },
           {
             from: path.resolve(__dirname, 'src/hbs/pages/works'),
             to: 'works',
