@@ -4,7 +4,7 @@ class Carousel {
 
     window.addEventListener('click', (event) => {
       const target = event.target
-      const parent = target.closest('.photo-image.lazyloading-wrapper')
+      const parent = target.closest('.photo-image')
 
       if (parent) {
         const index = [...this.images].indexOf(parent)
@@ -16,7 +16,7 @@ class Carousel {
   }
 
   getImageSrc(index) {
-    const selector = '.lazyloading-wrapper images'
+    const selector = '.lazyloading-wrapper img'
     return this.images[index].querySelector(selector).src
   }
 
@@ -39,7 +39,7 @@ class Carousel {
   }
 
   showModal(i) {
-    let img = document.createElement('images')
+    let img = document.createElement('img')
     img.classList.add('modalImage')
 
     this.leftArrow.style.visibility = 'visible'

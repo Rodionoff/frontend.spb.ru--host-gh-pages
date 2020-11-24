@@ -63,7 +63,6 @@ module.exports = {
   },
   resolve: {
     alias: {
-      // hbs: path.resolve(__dirname, 'src/hbs'),
       'media': path.resolve(__dirname, 'src/media/'),
     }
   },
@@ -71,58 +70,32 @@ module.exports = {
     rules: [
       {
         test: /(\/convert_to_base64\/(.+?)\.(png|jpe?g|webp)$)|(\.woff2$)/i,
-        use: 'url-loader'
+        use: 'url-loader',
+        exclude: /sqip/
       },
       {
-        test: /\/sqip\/(.+?)\.(png|jp?g|webp)$/i,
-        use: [
-          'sqip-loader',
-          {
-            loader: 'url-loader',
-            options: {
-              esModule: false
-          }
-        }]
+        test: /\/sqip\/(.*?)\.(png|jpe?g|webp)$/i,
+        loader: 'sqip-loader'
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/,
         loader: 'file-loader',
+        exclude: /sqip/,
         options: {
-          esModule: false
+          esModule: false,
+          outputPath: 'images',
         }
       },
-      // {
-      //   test: /\.hbs$/i,
-      //   // use: [
-      //     // 'file-loader?name=[name].[ext]',
-      //     // 'extract-loader',
-      //     // {
-      //       loader: 'html-loader',
-      //       options: {
-      //         preprocessor: (content, loaderContext) => {
-      //           let result
-      //
-      //           try {
-      //             result = Handlebars.compile(content)()
-      //           } catch (error) {
-      //             loaderContext.emitError(error)
-      //
-      //             return content
-      //           }
-      //
-      //           return result
-      //         },
-      //       }
-      //     // }
-      //   // ]
-      // },
       {
         test: /\.hbs$/,
         loader: 'handlebars-loader',
+        exclude: /sqip/,
         options: {
-          partialDirs: path.join(__dirname, 'src/hbs'),
-          // inlineRequires: /\/sqip\/(.+?)(png|jpe?g|webp)$/i
-          inlineRequires: /\.(png|jpe?g|webp|gif)$/gi
+          inlineRequires: /\.(png|svg|jpe?g|gif)$/i,
+          rootRelative: path.join(__dirname, 'src/hbs/'),
+          precompileOptions: {
+            knownHelpersOnly: false
+          },
         }
       },
       {
@@ -177,10 +150,6 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
         patterns: [
-         // {
-         //    from: path.resolve(__dirname, 'src/media'),
-         //    to: 'media'
-         //  },
           {
             from: path.resolve(__dirname, 'manifest.json'),
             to: 'manifest.json'
