@@ -6,13 +6,13 @@ class LazyLoad {
 
   load(pathname) {
     const images = document.querySelectorAll('.lazyloading-wrapper img')
-    const placeholders = document.querySelectorAll('.lazyloading-wrapper .sqip-placeholder')
     if (images.length === 0) return
     const loadedImages = []
     images.forEach((image, i) => {
       const temp = new Image()
       temp.onload = () => {
-        const placeholder = placeholders[i]
+        const parent = image.closest('.lazyloading-wrapper')
+        const placeholder = parent.querySelector('.sqip-placeholder')
         placeholder && placeholder.classList.add('fade-away')
         loadedImages.push(image)
         if (loadedImages.length === images.length) {

@@ -48,8 +48,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].bundle.js',
-    publicPath: ''
+    filename: '[name].js',
+    publicPath: '/'
   },
   optimization: {
     moduleIds: 'deterministic',
@@ -66,12 +66,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /(\/convert_to_base64\/(.+?)\.(png|jpe?g|webp)$)|(\.woff2$)/i,
+        test: /(convert-to-base64.(png|jpe?g|webp)$)|(\.woff2$)/i,
         use: 'url-loader',
         exclude: /sqip/
       },
       {
-        test: /\/sqip\/(.*?)\.(png|jpe?g|webp)$/i,
+        test: /sqip\.(png|jpe?g|webp)$/i,
         loader: 'sqip-loader'
       },
       {
@@ -81,6 +81,7 @@ module.exports = {
         options: {
           esModule: false,
           outputPath: 'images',
+          name: '[name].[ext]',
         }
       },
       {
@@ -100,7 +101,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
-        test: /\.(sass|scss)$/i,
+        test: /\.(s[ac]ss)$/i,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -156,18 +157,19 @@ module.exports = {
             globOptions: {
               ignore: [path.resolve(__dirname, 'src/hbs/pages/works/index.hbs')]
             },
+          },
+          {
+            from: path.resolve(__dirname, 'manifest.json'),
+            to: 'manifest.json'
+          },
+          {
+            from: path.resolve(__dirname, 'src/media/icons'),
+            to: 'icons'
           }
         ]
       }
     ),
     ...templates.map(template => new HtmlWebpackPlugin(template))
-// new HtmlWebpackPlugin({
-//   // filename is the name of the output file
-//   // template is the name of the source file
-//   filename: 'index.hbs',
-//   template: 'index.hbs',
-//   excludeChunks: ['serviceWorker']
-// })
   ]
 }
 

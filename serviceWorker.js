@@ -1,67 +1,24 @@
-/* eslint-env serviceworker */
-import {version} from './package.json';
+import {registerRoute} from 'workbox-routing';
+import {CacheFirst, StaleWhileRevalidate} from 'workbox-strategies';
+import {ExpirationPlugin} from 'workbox-expiration';
 
-console.log('version: ', version);
+registerRoute(
+  ({request}) => request.destination === 'script' ||
+    request.destination === 'style',
+  new StaleWhileRevalidate({
+    cacheName: 'static-resources',
+  })
+);
 
-const currentCaches = ['media', `static-${version}`];
-
-
-self.addEventListener('install', e => {
-  e.waitUntil(
-    Promise.all(
-      currentCaches.map(cache_name => {
-        if (cache_name === 'media') {
-          return caches.open(cache_name)
-            .then(cache => cache.addAll([
-              './media/icons/favicon.png',
-              './media/images/frontend/vs_sw_screenshot.png',
-              './media/icons/soyuz_apollo192.png',
-              './media/icons/soyuz_apollo_apple_icon.png'
-            ]))
-        }
-
-        if (cache_name.startsWith('static')) {
-          return caches.open(cache_name)
-            .then(cache => cache.addAll([
-              // "./articles/pwa-basics/index.hbs",
-              "./bundle.js",
-              "./index.html",
-              './manifest.json', // buggy ( better comment it while debugging )
-              "./style.css"
-            ]))
-        }
-      })
-    )
-  )
-});
-
-self.addEventListener('activate', function (event) {
-  // https://developer.mozilla.org/en-US/docs/Web/API/Cache
-
-  // Active worker won't be treated as activated until promise
-  // resolves successfully.
-
-  event.waitUntil(
-    caches.keys().then( cacheNames => {
-      return Promise.all(
-        cacheNames.map( cacheName => {
-          if (currentCaches.includes(cacheName) === false) {
-            console.log('Deleting out of date cache:', cacheName);
-
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
-
-self.addEventListener('fetch', function (event) {
-  event.respondWith(
-    caches.match(event.request)
-      .then(matching => {
-        return matching || fetch(event.request)
-          .catch(err => `${err} нет сети`)
-      })
-  )
-});
+registerRoute(
+  ({request}) => request.destination === 'image',
+  new CacheFirst({
+    cacheName: 'images',
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 36,
+        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+      }),
+    ],
+  })
+);

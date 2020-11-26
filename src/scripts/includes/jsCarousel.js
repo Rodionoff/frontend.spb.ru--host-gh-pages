@@ -1,98 +1,94 @@
 class Carousel {
   constructor () {
-    this.initializeControls()
+    this.setControls()
+    this.bindEventsToControls()
+    this.setGlobalEventListener()
+  }
 
+  setGlobalEventListener() {
     window.addEventListener('click', (event) => {
       const target = event.target
-      const parent = target.closest('.photo-image')
+      const imageWrapper = target.closest('.photo-image')
 
-      if (parent) {
-        const index = [...this.images].indexOf(parent)
-        this.showModal(index)
+      if (imageWrapper) {
+        this.currentIndex = [...this.imageWrappers].indexOf(imageWrapper)
+        this.showModal()
       }
     })
-
-    this.bindEventsToControls()
   }
 
-  getImageSrc(index) {
-    const selector = '.lazyloading-wrapper img'
-    return this.images[index].querySelector(selector).src
-  }
-
-  initializeControls() {
+  setControls() {
     this.modal = document.querySelector('.modal')
-    this.images = document.querySelectorAll('.photo-image')
+    this.imageWrappers = document.querySelectorAll('.photo-image')
+    this.lastImageIndex = this.imageWrappers.length - 1
     this.exit = document.createElement('div')
     this.exit.classList.add('exit')
     this.exit.innerHTML = '⌧'
-    this.leftArrow = this.createArrow('div', 'leftArrow', '⌦')
-    this.rightArrow = this.createArrow('div', 'rightArrow', '⌦')
+    this.leftArrow = this.createArrow( 'leftArrow')
+    this.rightArrow = this.createArrow( 'rightArrow')
   }
 
-  createArrow (elementName, className, sign) {
-    let arrow = document.createElement(elementName)
-    arrow.classList.add('arrow')
-    arrow.classList.add(className)
-    arrow.innerHTML = sign
-    return arrow
+  setNewModalImage(nextPage) {
+    if (nextPage === 'next') {
+      this.currentIndex -= 1
+      if (this.currentIndex < 0) this.currentIndex = this.lastImageIndex
+    }
+    if (nextPage === 'prev') {
+      this.currentIndex += 1
+      if (this.currentIndex > this.lastImageIndex) this.currentIndex = 0
+    }
+
+    this.updateImage()
   }
 
-  showModal(i) {
-    let img = document.createElement('img')
-    img.classList.add('modalImage')
-
-    this.leftArrow.style.visibility = 'visible'
-    this.rightArrow.style.visibility = 'visible'
-    img.pk = i
-    img.src = this.getImageSrc(i)
-    this.appendElementsToModal(img)
-    this.modal.classList.add('showModal')
-  }
-
-  appendElementsToModal(img) {
-    this.modal.appendChild(this.exit)
-    this.modal.appendChild(this.leftArrow)
-    this.modal.appendChild(img)
-    this.modal.appendChild(this.rightArrow)
+  updateImage() {
+    this.modalImage.src = this.imageWrappers[this.currentIndex].querySelector('img').src
   }
 
   bindEventsToControls() {
     this.rightArrow.onclick = () => {
-      this.leftArrow.style.visibility = 'visible'
-      let image = document.querySelector('.modalImage')
-      image.pk += 1
-      let isLastImage = this.images[image.pk] === undefined
-
-      if (isLastImage) {
-        image.pk = 0
-      }
-      image.src = this.getImageSrc(image.pk)
+      this.setNewModalImage('next')
     }
 
     this.leftArrow.onclick = () => {
-      this.rightArrow.style.visibility = 'visible'
-      let image = document.querySelector('.modalImage')
-      image.pk -= 1
-      let isFirstImage = this.images[image.pk] === undefined
-
-      if (isFirstImage) {
-        image.pk = this.images.length - 1
-      }
-      image.src = this.getImageSrc(image.pk)
+      this.setNewModalImage('prev')
     }
 
     this.exit.onclick = () => {
-      let image = document.querySelector('.modalImage')
-      this.modal.removeChild(image)
+      this.modal.removeChild(this.modalImage)
       this.leftArrow.style.visibility = 'hidden'
       this.rightArrow.style.visibility = 'hidden'
       this.modal.classList.remove('showModal')
     }
   }
 
+  createArrow(className) {
+    let arrow = document.createElement('div')
+    arrow.classList.add('arrow', className)
+    arrow.innerHTML = '⌦'
+    return arrow
+  }
+
+  showModal() {
+    this.modalImage = document.createElement('img')
+    this.modalImage.classList.add('modalImage')
+
+    this.leftArrow.style.visibility = 'visible'
+    this.rightArrow.style.visibility = 'visible'
+    this.updateImage()
+    this.appendElementsToModal()
+    this.modal.classList.add('showModal')
+  }
+
+  appendElementsToModal() {
+    this.modal.appendChild(this.exit)
+    this.modal.appendChild(this.leftArrow)
+    this.modal.appendChild(this.modalImage)
+    this.modal.appendChild(this.rightArrow)
+  }
+
   refresh() {
-    this.initializeControls()
+    this.setControls()
     this.bindEventsToControls()
   }
 }

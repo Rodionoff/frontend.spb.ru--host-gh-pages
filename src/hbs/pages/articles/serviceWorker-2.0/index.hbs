@@ -74,9 +74,7 @@
         <pre class='postDetail-code'>
         <code class='javascript'>
 import {version} from './package.json';
-
 const currentCaches = ['assets', `static-${version}`];
-
 
 currentCaches.forEach(cache_name => {
   if (cache_name === 'assets') {
@@ -104,11 +102,11 @@ currentCaches.forEach(cache_name => {
       e.waitUntil(
         caches.open(cache_name)
           .then(cache => cache.addAll([
-            "./articles/pwa-basics/index.html",
-            "./bundle.js",
-            "./index.html",
+            './articles/pwa-basics/index.html',
+            './bundle.js',
+            './index.html',
             './manifest.json', // buggy ( better comment it while debugging )
-            "./style.css"
+            './style.css'
           ]))
 
         //  use cache for debug only
@@ -128,9 +126,9 @@ self.addEventListener('activate', function (event) {
   // resolves successfully.
 
   event.waitUntil(
-    caches.keys().then(function (cacheNames) {
+    caches.keys().then(cacheNames => {
       return Promise.all(
-        cacheNames.map(function (cacheName) {
+        cacheNames.map(cacheName => {
           if (currentCaches.includes(cacheName) === false) {
             console.log('Deleting out of date cache:', cacheName);
 
