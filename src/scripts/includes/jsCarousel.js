@@ -1,11 +1,13 @@
+import { imageLoadedEvent } from './events'
+
 class Carousel {
   constructor () {
     this.setControls()
     this.bindEventsToControls()
-    this.setGlobalEventListener()
+    this.setGlobalEventListeners()
   }
 
-  setGlobalEventListener() {
+  setGlobalEventListeners() {
     window.addEventListener('click', (event) => {
       const target = event.target
       const imageWrapper = target.closest('.photo-image')
@@ -14,6 +16,10 @@ class Carousel {
         this.currentIndex = [...this.imageWrappers].indexOf(imageWrapper)
         this.showModal()
       }
+    })
+
+    window.addEventListener(imageLoadedEvent.type, _ => {
+      console.log('хёх');this.updateImage()
     })
   }
 
@@ -30,19 +36,26 @@ class Carousel {
 
   setNewModalImage(nextPage) {
     if (nextPage === 'next') {
-      this.currentIndex -= 1
-      if (this.currentIndex < 0) this.currentIndex = this.lastImageIndex
-    }
-    if (nextPage === 'prev') {
       this.currentIndex += 1
       if (this.currentIndex > this.lastImageIndex) this.currentIndex = 0
+    }
+    if (nextPage === 'prev') {
+      this.currentIndex -= 1
+      if (this.currentIndex < 0) this.currentIndex = this.lastImageIndex
     }
 
     this.updateImage()
   }
 
   updateImage() {
-    this.modalImage.src = this.imageWrappers[this.currentIndex].querySelector('img').src
+    if (this.modalImage) {
+      const pageLoaded = document.body.classList.contains('pageLoaded')
+      const selector = pageLoaded ? '.not-a-placeholder' : '.placeholder'
+      const currentImage = this.imageWrappers[this.currentIndex].querySelector(selector)
+      const { src } = currentImage
+
+      this.modalImage.src = src
+    }
   }
 
   bindEventsToControls() {

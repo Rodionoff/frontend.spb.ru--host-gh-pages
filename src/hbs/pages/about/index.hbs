@@ -19,9 +19,14 @@
         <article class="about">
           <div class="about-header">
             <figure class="about-image lazyloading-wrapper">
-              <div class="sqip-placeholder" style="{{ [helpers/sqip] 'media/images/aboutme/sqip/image.sqip.jpg' }}"></div>
               <img width="300"
                    height="200"
+                   class="placeholder"
+                   src="{{ [helpers/sqip] 'media/images/aboutme/sqip/image.sqip.jpg' }}"
+                   alt="Pavel Rodionov (@rodionov80)">
+              <img width="300"
+                   height="200"
+                   class="not-a-placeholder"
                    src="media/images/aboutme/image.jpg"
                    alt="Pavel Rodionov (@rodionov80)">
             </figure>

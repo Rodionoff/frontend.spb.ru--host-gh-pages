@@ -1,18 +1,20 @@
-.sqip-placeholder
+.lazyloading-wrapper
+  position: relative
+
+.placeholder
+  --transition-time: .125s
+
   position: absolute
   top: 0
   left: 0
   right: 0
   bottom: 0
   opacity: 1
-  transition: opacity .125s
+  transition: opacity var(--transition-time)
   background-size: cover
 
-  &.fade-away
+  &.fade-out
     opacity: 0
 
-.pageLoaded .sqip-placeholder
+.pageLoaded .placeholder
   display: none
-
-.lazyloading-wrapper
-  position: relative

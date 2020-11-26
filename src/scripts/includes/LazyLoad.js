@@ -1,3 +1,5 @@
+import { imageLoadedEvent } from './events'
+
 class LazyLoad {
   constructor () {
     this.loadedPages = []
@@ -5,18 +7,24 @@ class LazyLoad {
   }
 
   load(pathname) {
-    const images = document.querySelectorAll('.lazyloading-wrapper img')
+    const images = document.querySelectorAll('.lazyloading-wrapper img.not-a-placeholder')
     if (images.length === 0) return
     const loadedImages = []
-    images.forEach((image, i) => {
+    images.forEach((image) => {
       const temp = new Image()
       temp.onload = () => {
-        const parent = image.closest('.lazyloading-wrapper')
-        const placeholder = parent.querySelector('.sqip-placeholder')
-        placeholder && placeholder.classList.add('fade-away')
         loadedImages.push(image)
+        const parent = image.closest('.lazyloading-wrapper')
+        const placeholder = parent.querySelector('img.placeholder')
+        placeholder.classList.add('fade-out')
+        const computedTime = getComputedStyle(placeholder).getPropertyValue('--transition-time')
+        const transitionTime = parseFloat(computedTime)
+        console.log({transitionTime})
+          setTimeout(() => {
+          placeholder.src = temp.src
+          window.dispatchEvent(imageLoadedEvent)
+        }, transitionTime)
         if (loadedImages.length === images.length) {
-          document.body.classList.add('pageLoaded')
           this.loadedPages.push(pathname)
         }
       }

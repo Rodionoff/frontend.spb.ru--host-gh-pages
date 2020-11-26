@@ -1,4 +1,3 @@
-module.exports = function(transformed) {
-  const placeholderDataURL = transformed.preview
-  return `background-image: url("${placeholderDataURL}")`
+module.exports = function(image) {
+  return image.preview
 };
