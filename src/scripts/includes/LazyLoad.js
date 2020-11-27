@@ -19,8 +19,7 @@ class LazyLoad {
         placeholder.classList.add('fade-out')
         const computedTime = getComputedStyle(placeholder).getPropertyValue('--transition-time')
         const transitionTime = parseFloat(computedTime)
-        console.log({transitionTime})
-          setTimeout(() => {
+        setTimeout(() => {
           placeholder.src = temp.src
           window.dispatchEvent(imageLoadedEvent)
         }, transitionTime)

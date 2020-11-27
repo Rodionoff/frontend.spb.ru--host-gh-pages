@@ -71,7 +71,7 @@ module.exports = {
         exclude: /sqip/
       },
       {
-        test: /sqip\.(png|jpe?g|webp)$/i,
+        test: /sqip\.(png|jpe?g|webp|gif)$/i,
         loader: 'sqip-loader'
       },
       {

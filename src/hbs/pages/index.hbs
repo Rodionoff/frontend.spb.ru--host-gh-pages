@@ -8,10 +8,16 @@
       </header>
       <section class="posts frontend">
         <article class="post">
-          <figure class="post-image">
+          <figure class="post-image lazyloading-wrapper">
             <a href='/articles/thoughts'>
               <img width="300"
                    height="200"
+                   class="placeholder"
+                   src="{{ [helpers/sqip] 'media/images/frontend/sqip/stock_photo.sqip.jpeg' }}"
+                   alt="placeholder image">
+              <img width="300"
+                   height="200"
+                   class="not-a-placeholder"
                    src="media/images/frontend/stock_photo.jpeg"
                    alt="placeholder image">
             </a>
@@ -42,10 +48,16 @@
           </p>
         </article>
         <article class="post">
-          <figure class="post-image">
+          <figure class="post-image lazyloading-wrapper">
             <a href='/articles/serviceWorker-2.0/'>
               <img width="300"
                    height="200"
+                   class="placeholder"
+                   src="{{ [helpers/sqip] 'media/images/frontend/sqip/vs_sw_screenshotII.sqip.png' }}"
+                   alt="vscode serviceworker screenshot">
+              <img width="300"
+                   height="200"
+                   class="not-a-placeholder"
                    src="media/images/frontend/vs_sw_screenshotII.png"
                    alt="vscode serviceworker screenshot">
             </a>
@@ -71,12 +83,18 @@
           </p>
         </article>
         <article class="post">
-          <figure class="post-image">
+          <figure class="post-image lazyloading-wrapper">
             <a href='/articles/pwa-basics'>
               <img width="300"
                    height="200"
+                   class="placeholder"
+                   src="{{ [helpers/sqip] 'media/images/frontend/sqip/vs_sw_screenshot.sqip.png' }}"
+                   alt="vscode serviceworker screenshot">
+              <img width="300"
+                   height="200"
+                   class="not-a-placeholder"
                    src="media/images/frontend/vs_sw_screenshot.png"
-                   alt="vscode serviceWOrker screenshot">
+                   alt="vscode serviceworker screenshot">
             </a>
           </figure>
           <h3 class="post-title">
@@ -101,7 +119,6 @@
         </article>
 
       </section>
-
     </main>
   {{/inline}}
 {{/ layouts/base }}
