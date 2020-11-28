@@ -1,3 +1,1 @@
-module.exports = function(image) {
-  return image.preview
-};
+module.exports = image => image.preview
