@@ -16,7 +16,7 @@ class LazyLoad {
         loadedImages.push(image)
         const parent = image.closest('.lazyloading-wrapper')
         const placeholder = parent.querySelector('img.placeholder')
-        placeholder.classList.add('fade-out')
+        placeholder && placeholder.classList.add('fade-out')
         const computedTime = getComputedStyle(placeholder).getPropertyValue('--transition-time')
         const transitionTime = parseFloat(computedTime)
         setTimeout(() => {
