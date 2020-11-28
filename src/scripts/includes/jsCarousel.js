@@ -19,7 +19,7 @@ class Carousel {
     })
 
     window.addEventListener(imageLoadedEvent.type, _ => {
-      this.updateImage()
+      console.log('хёх');this.updateImage()
     })
   }
 

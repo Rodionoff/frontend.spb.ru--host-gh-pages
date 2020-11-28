@@ -7,23 +7,7 @@ module.exports = merge(common, {
   devServer: {
     writeToDisk: true,
     contentBase: './dist',
-    // https: true,
-    // open: true,
-    // useLocalIp: true,
-    // host: '0.0.0.0'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(png|svg|jpe?g|gif)$/,
-        loader: 'file-loader',
-        exclude: /sqip/,
-        options: {
-          esModule: false,
-          outputPath: 'images',
-          name: '[name].[ext]',
-        }
-      },
-    ]
+    useLocalIp: true,
+    host: '0.0.0.0'
   }
 })
