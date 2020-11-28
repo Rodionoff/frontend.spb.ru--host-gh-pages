@@ -45,30 +45,5 @@ module.exports = merge(common, {
         }
       ]
     }),
-    // new ImageMinimizerPlugin({
-    //   test: /\.(png|jpe?g|webp|gif|svg)$/i,
-    //   deleteOriginalAssets: true,
-    //   filename: '[path][name].webp',
-    //   minimizerOptions: {
-    //     plugins: [
-    //       'imagemin-svgo',
-    //       'imagemin-webp',
-    //       'imagemin-gifsicle',
-    //       ['imagemin-mozjpeg', {quality:80}],
-    //       ['imagemin-pngquant', {quality: [0.75, 0.85]}]
-    //     ],
-    //   },
-    // }),
-    // new ImageMinimizerPlugin({
-    //   deleteOriginalAssets: true,
-    //   filter: (source, sourcePath) => {
-    //     return sourcePath.startsWith('works/') === false
-    //
-    //   },
-    //   filename: '[path][name].webp',
-    //   minimizerOptions: {
-    //     plugins: ['imagemin-webp'],
-    //   },
-    // })
   ]
 })

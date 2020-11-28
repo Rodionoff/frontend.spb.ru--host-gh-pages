@@ -7,7 +7,6 @@ module.exports = merge(common, {
   devServer: {
     writeToDisk: true,
     contentBase: './dist',
-    // https: true,
     // open: true,
     // useLocalIp: true,
     // host: '0.0.0.0'

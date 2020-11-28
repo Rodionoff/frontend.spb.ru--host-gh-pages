@@ -166,7 +166,8 @@ module.exports = {
       swDest: './serviceWorker.js',
       exclude: [
         /\.(png|svg|jpe?g|webp|gif)$/,
-        /^[\/]*?works\/.*?\//
+        /^[\/]*?works\/.*?\//,
+        /CNAME/
       ]
     })
   ]

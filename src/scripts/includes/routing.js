@@ -3,6 +3,7 @@ import setActiveNavbarLink from './setActiveNavbarLink'
 import carousel from './jsCarousel'
 import lazy from './LazyLoad'
 import highlight from './highlght'
+import resetPageScroll from './resetPageScroll'
 
 window.addEventListener('DOMContentLoaded', _ => {
   return new Promise(resolve => {
@@ -18,6 +19,7 @@ window.addEventListener('DOMContentLoaded', _ => {
 barba.hooks.enter(data => {
   return new Promise(resolve => {
     setActiveNavbarLink()
+    resetPageScroll()
     highlight()
 
     const pathname = data.next.url.path
