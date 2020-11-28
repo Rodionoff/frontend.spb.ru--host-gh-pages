@@ -2,6 +2,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { InjectManifest } = require('workbox-webpack-plugin');
 const path = require('path')
 
 const templates = [
@@ -44,11 +45,11 @@ module.exports = {
     bundle: [
       path.resolve(__dirname, 'src/scripts/index.js')
     ],
-    serviceWorker: './serviceWorker.js'
+    // serviceWorker: './serviceWorker.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: '[name].[contenthash].bundle.js',
     publicPath: '/'
   },
   optimization: {
@@ -75,21 +76,11 @@ module.exports = {
         loader: 'sqip-loader'
       },
       {
-        test: /\.(png|svg|jpe?g|gif)$/,
-        loader: 'file-loader',
-        exclude: /sqip/,
-        options: {
-          esModule: false,
-          outputPath: 'images',
-          name: '[name].[ext]',
-        }
-      },
-      {
         test: /\.hbs$/,
         loader: 'handlebars-loader',
         exclude: /sqip/,
         options: {
-          inlineRequires: /\.(png|svg|jpe?g|gif)$/i,
+          inlineRequires: /\.(png|svg|jpe?g|webp|gif)$/i,
           rootRelative: path.join(__dirname, 'src/hbs/'),
           precompileOptions: {
             knownHelpersOnly: false
@@ -152,7 +143,7 @@ module.exports = {
     new CopyWebpackPlugin({
         patterns: [
           {
-            from: path.resolve(__dirname, 'src/hbs/pages/works'),
+            from: path.resolve(__dirname, 'src/hbs/pages/works/'),
             to: 'works',
             globOptions: {
               ignore: [path.resolve(__dirname, 'src/hbs/pages/works/index.hbs')]
@@ -163,13 +154,21 @@ module.exports = {
             to: 'manifest.json'
           },
           {
-            from: path.resolve(__dirname, 'src/media/icons'),
+            from: path.resolve(__dirname, 'src/media/icons/'),
             to: 'icons'
           }
         ]
       }
     ),
-    ...templates.map(template => new HtmlWebpackPlugin(template))
+    ...templates.map(template => new HtmlWebpackPlugin(template)),
+    new InjectManifest({
+      swSrc: path.resolve(__dirname, 'serviceWorker.js'),
+      swDest: './serviceWorker.js',
+      exclude: [
+        /\.(png|svg|jpe?g|webp|gif)$/,
+        /^[\/]*?works\/.*?\//
+      ]
+    })
   ]
 }
 

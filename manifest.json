@@ -3,12 +3,12 @@
   "name": "Frontend Blog",
   "icons": [
     {
-      "src": "/media/icons/soyuz_apollo192.png",
+      "src": "/icons/soyuz_apollo192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/media/icons/soyuz_apollo512.png",
+      "src": "/icons/soyuz_apollo512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

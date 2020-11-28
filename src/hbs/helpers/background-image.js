@@ -1,1 +1,2 @@
-module.exports = url => `"background-image: url('${url}')"`
+module.exports = url => `background-image: url('${url.default}')`
+
