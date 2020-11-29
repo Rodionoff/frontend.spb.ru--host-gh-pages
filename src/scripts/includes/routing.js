@@ -1,5 +1,5 @@
-import barba from '@barba/core';
-import gsap from "gsap";
+import barba from '@barba/core'
+import gsap from 'gsap'
 import setActiveNavbarLink from './setActiveNavbarLink'
 import carousel from './jsCarousel'
 import lazy from './LazyLoad'
@@ -43,7 +43,7 @@ barba.init({
       return gsap.to(data.current.container, {
         opacity: 0,
         duration: .125,
-        ease: "power1.in",
+        ease: 'power1.in',
         display: 'none'
       });
     },
@@ -51,7 +51,7 @@ barba.init({
       return gsap.from(data.next.container, {
         opacity: 0,
         duration: .125,
-        ease: "power1.out"
+        ease: 'power1.out'
       });
     }
   }],

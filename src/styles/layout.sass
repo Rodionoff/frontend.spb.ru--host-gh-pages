@@ -30,17 +30,22 @@ body
   margin: 0
   font-family: 'Montserrat', sans-serif
   font-weight: 500
+  position: relative
 
 body
   background-color: $secondary-color
   background-image: url('../media/textures/convert_to_base64/concrete-wall.convert-to-base64.webp')
   display: flex
   flex-direction: column
+  justify-content: space-between
   min-height: 100vh
 
-.main
+.content-wrapper
   flex-grow: 1
+
+.main
   padding-top: 26px
+  will-change: opacify
 
 .header
   font-family: 'Ubuntu', sans-serif
@@ -292,6 +297,12 @@ body
   color: $secondary-color
   padding: 7% 0
   font-family: 'Ubuntu', sans-serif
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100%
+  position: absolute
+  z-index: 7
 
 .footer-whois
   margin-left: 6%
