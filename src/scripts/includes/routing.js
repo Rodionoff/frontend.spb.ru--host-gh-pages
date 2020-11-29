@@ -17,10 +17,10 @@ window.addEventListener('DOMContentLoaded', _ => {
   })
 }, {once: true})
 
+barba.hooks.leave(resetPageScroll)
 barba.hooks.enter(data => {
   return new Promise(resolve => {
     setActiveNavbarLink()
-    resetPageScroll()
     highlight()
 
     const pathname = data.next.url.path
