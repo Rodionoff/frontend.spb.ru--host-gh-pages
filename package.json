@@ -1,6 +1,6 @@
 {
   "name": "frontend.spb.ru",
-  "version": "3.0.0",
+  "version": "2.4.1",
   "description": "Static blog",
   "main": "index.js",
   "scripts": {
