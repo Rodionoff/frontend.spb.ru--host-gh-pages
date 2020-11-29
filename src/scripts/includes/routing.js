@@ -1,4 +1,5 @@
 import barba from '@barba/core';
+import gsap from "gsap";
 import setActiveNavbarLink from './setActiveNavbarLink'
 import carousel from './jsCarousel'
 import lazy from './LazyLoad'
@@ -34,9 +35,23 @@ barba.hooks.enter(data => {
   })
 })
 
+
 barba.init({
   transitions: [{
-    name: 'default-transition',
+    name: 'opacity-transition',
+    leave(data) {
+      return gsap.to(data.current.container, {
+        opacity: 0,
+        duration: .125,
+        display: 'none'
+      });
+    },
+    enter(data) {
+      return gsap.from(data.next.container, {
+        opacity: 0,
+        duration: .125
+      });
+    }
   }],
   views: [{
     namespace: 'krooshkin',

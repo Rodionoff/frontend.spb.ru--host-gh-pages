@@ -8,8 +8,8 @@ module.exports = merge(common, {
     writeToDisk: true,
     contentBase: './dist',
     // open: true,
-    // useLocalIp: true,
-    // host: '0.0.0.0'
+    useLocalIp: true,
+    host: '0.0.0.0'
   },
   module: {
     rules: [
