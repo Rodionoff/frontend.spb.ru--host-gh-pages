@@ -42,14 +42,16 @@ barba.init({
     leave(data) {
       return gsap.to(data.current.container, {
         opacity: 0,
-        duration: .125,
+        duration: .25,
+        ease: "power1.out",
         display: 'none'
       });
     },
     enter(data) {
       return gsap.from(data.next.container, {
         opacity: 0,
-        duration: .125
+        duration: .25,
+        ease: "power1.in"
       });
     }
   }],
