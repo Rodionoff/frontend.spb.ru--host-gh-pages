@@ -49,9 +49,7 @@ class Carousel {
 
   updateImage() {
     if (this.modalImage) {
-      const pageLoaded = document.body.classList.contains('pageLoaded')
-      const selector = pageLoaded ? '.not-a-placeholder' : '.placeholder'
-      const currentImage = this.imageWrappers[this.currentIndex].querySelector(selector)
+      const currentImage = this.imageWrappers[this.currentIndex].querySelector('img')
       const { src } = currentImage
 
       this.modalImage.src = src
