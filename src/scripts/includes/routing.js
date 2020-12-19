@@ -3,10 +3,12 @@ import setActiveNavbarLink from './setActiveNavbarLink'
 import carousel from './jsCarousel'
 import highlight from './highlght'
 import resetPageScroll from './resetPageScroll'
+import updateYear from './updateFooterYear'
 
 window.addEventListener('DOMContentLoaded', _ => {
   return new Promise(resolve => {
     setActiveNavbarLink()
+    updateYear()
     highlight()
 
     resolve()
@@ -23,6 +25,7 @@ barba.hooks.beforeEnter(_ => {
 barba.hooks.enter(_ => {
   return new Promise(resolve => {
       setActiveNavbarLink()
+      updateYear()
       highlight()
 
       resolve()
