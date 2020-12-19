@@ -42,10 +42,19 @@ body
 
 .content-wrapper
   flex-grow: 1
+  position: relative
 
-.main
-  padding-top: 26px
-  will-change: opacify
+.content
+  will-change: opacity
+  position: absolute
+  width: 100%
+  top: 26px
+  left: 0
+  right: 0
+  bottom: 0
+  display: flex
+  flex-direction: column
+  justify-content: space-between
 
 .header
   font-family: 'Ubuntu', sans-serif
@@ -297,12 +306,7 @@ body
   color: $secondary-color
   padding: 7% 0
   font-family: 'Ubuntu', sans-serif
-  bottom: 0
-  left: 0
-  right: 0
   width: 100%
-  position: absolute
-  z-index: 7
 
 .footer-whois
   margin-left: 6%

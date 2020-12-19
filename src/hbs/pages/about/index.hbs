@@ -5,97 +5,99 @@
     <link rel="preload" as="image" href="media/images/aboutme/image.jpg">
   {{/inline}}
   {{#*inline "content"}}
-
-    <main data-barba="container" class="main">
-      <header class="header">
-        <h1 class="header-title">
-          Павел Родионов
-        </h1>
-        <h2 class="header-text showHeaderText">
-          Разработчик интерфейсов
-        </h2>
-      </header>
-      <section class="aboutme">
-        <article class="about">
-          <div class="about-header">
-            <figure class="about-image">
-              <img width="300"
-                   height="200"
-                   src="media/images/aboutme/image.jpg"
-                   alt="Pavel Rodionov (@rodionov80)">
-            </figure>
-            <div class="info-card">
-              <h2>Привет, меня зовут Павел Родионов</h2>
-              <h3>Я занимаюсь разработкой интерфейсов</h3>
-              <div class="divider-line"></div>
-              <p>Рад видеть вас на этом сайте</p>
-            </div>
-          </div>
-
-          <h3 class="about-title">
-            ###
-          </h3>
-          <div class="about-text">
-            <p>
-              Много про себя писать не буду,-
-              достаточно того что программированием я увлекся в 2017
-              и что это именно та отрасль,
-              в которой я хочу расти и добиваться поставленных целей.
-            </p>
-
-            <br>
-            <br>
-
-            <div class="list-wrapper">
-              <div class="list-inner-left">
-                <p>
-                  Относительно неплохо знаю:
-                </p>
-                <ul>
-                  <li>JavaScript (es5, es6)</li>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                </ul>
+    <div data-barba="container" class="content">
+      <main class="main">
+        <header class="header">
+          <h1 class="header-title">
+            Павел Родионов
+          </h1>
+          <h2 class="header-text showHeaderText">
+            Разработчик интерфейсов
+          </h2>
+        </header>
+        <section class="aboutme">
+          <article class="about">
+            <div class="about-header">
+              <figure class="about-image">
+                <img width="300"
+                     height="200"
+                     src="media/images/aboutme/image.jpg"
+                     alt="Pavel Rodionov (@rodionov80)">
+              </figure>
+              <div class="info-card">
+                <h2>Привет, меня зовут Павел Родионов</h2>
+                <h3>Я занимаюсь разработкой интерфейсов</h3>
+                <div class="divider-line"></div>
+                <p>Рад видеть вас на этом сайте</p>
               </div>
+            </div>
+
+            <h3 class="about-title">
+              ###
+            </h3>
+            <div class="about-text">
+              <p>
+                Много про себя писать не буду,-
+                достаточно того что программированием я увлекся в 2017
+                и что это именно та отрасль,
+                в которой я хочу расти и добиваться поставленных целей.
+              </p>
 
               <br>
               <br>
 
-              <div class="list-inner-right">
-                <p>Имею опыт:</p>
-                <ul>
-                  <li>Angular2+</li>
-                  <li>Webpack</li>
-                  <li>Babel</li>
-                  <li>SASS (и SCSS)</li>
-                </ul>
+              <div class="list-wrapper">
+                <div class="list-inner-left">
+                  <p>
+                    Относительно неплохо знаю:
+                  </p>
+                  <ul>
+                    <li>JavaScript (es5, es6)</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                  </ul>
+                </div>
+
+                <br>
+                <br>
+
+                <div class="list-inner-right">
+                  <p>Имею опыт:</p>
+                  <ul>
+                    <li>Angular2+</li>
+                    <li>Webpack</li>
+                    <li>Babel</li>
+                    <li>SASS (и SCSS)</li>
+                  </ul>
+                </div>
               </div>
+
+              <p>
+                Здесь выкладываю фотографии
+                моего друга крушкина, пишу статьи
+                и делюсь своими работами.
+              </p>
+
+              <br>
+
+              <p>
+                Для связи пишите мне в:
+              <ul>
+                <li>
+                  <a href="tg://resolve?domain=rodionov80">
+                    телеграм
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=100000918994969">фейсбук</a>
+                </li>
+              </ul>
+              </p>
             </div>
-
-            <p>
-              Здесь выкладываю фотографии
-              моего друга крушкина, пишу статьи
-              и делюсь своими работами.
-            </p>
-
-            <br>
-
-            <p>
-              Для связи пишите мне в:
-            <ul>
-              <li>
-                <a href="tg://resolve?domain=rodionov80">
-                  телеграм
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/profile.php?id=100000918994969">фейсбук</a>
-              </li>
-            </ul>
-            </p>
-          </div>
-        </article>
-      </section>
-    </main>
+          </article>
+        </section>
+      </main>
+      {{> includes/footer }}
+    </div>
   {{/inline}}
 {{/layouts/base}}
