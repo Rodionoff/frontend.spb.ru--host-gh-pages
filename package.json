@@ -66,7 +66,7 @@
     "@babel/runtime": "^7.12.5",
     "@barba/core": "^2.9.7",
     "gsap": "^3.5.1",
-    "highlight.js": "^10.4.0",
+    "highlight.js": "^10.4.1",
     "workbox-cacheable-response": "^5.1.4",
     "workbox-expiration": "^5.1.4",
     "workbox-precaching": "^5.1.4",
