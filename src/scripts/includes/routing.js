@@ -27,6 +27,7 @@ barba.hooks.enter(_ => {
       setActiveNavbarLink()
       updateYear()
       highlight()
+      setDisqus();
 
       resolve()
   })
