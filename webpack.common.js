@@ -27,6 +27,10 @@ const templates = [
     filename: './articles/thoughts/index.html'
   },
   {
+    template: './src/hbs/pages/articles/thoughts_2.0/index.hbs',
+    filename: './articles/thoughts_2.0/index.html'
+  },
+  {
     template: './src/hbs/pages/works/index.hbs',
     filename: './works/index.html'
   },
